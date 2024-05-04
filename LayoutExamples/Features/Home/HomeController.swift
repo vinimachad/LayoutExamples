@@ -62,6 +62,6 @@ class HomeController: UIViewController {
 
 extension HomeController: HomeViewDelegate {
     func didSelect(at row: Int, with item: HomeModel.Item.Name) {
-        coordinatorDelegate?.routeTo(.stackView)
+        coordinatorDelegate?.routeTo(item)
     }
 }

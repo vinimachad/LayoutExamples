@@ -105,15 +105,15 @@
 		3C295C1C2BE27361004081A1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				3C295C282BE45828004081A1 /* Resources */,
 				3C295C252BE27A70004081A1 /* Cells */,
 				3C295C1D2BE2738B004081A1 /* HomeController.swift */,
+				3C295C382BE55A7B004081A1 /* HomeCoordinator.swift */,
+				3C295C3D2BE55BF4004081A1 /* HomeFactory.swift */,
+				3C295C232BE2784F004081A1 /* HomeModel.swift */,
 				3C295C1F2BE27395004081A1 /* HomeView.swift */,
 				3C295C212BE2739F004081A1 /* HomeViewModel.swift */,
-				3C295C232BE2784F004081A1 /* HomeModel.swift */,
-				3C295C382BE55A7B004081A1 /* HomeCoordinator.swift */,
+				3C295C282BE45828004081A1 /* Resources */,
 				3C295C332BE552C0004081A1 /* Samples */,
-				3C295C3D2BE55BF4004081A1 /* HomeFactory.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -171,6 +171,7 @@
 		3C295C352BE552E4004081A1 /* StackView */ = {
 			isa = PBXGroup;
 			children = (
+				3C295C442BE6A098004081A1 /* Samples */,
 				3C295C362BE552F1004081A1 /* StackViewSampleController.swift */,
 			);
 			path = StackView;
@@ -183,6 +184,21 @@
 				3C295C422BE68477004081A1 /* AppCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		3C295C442BE6A098004081A1 /* Samples */ = {
+			isa = PBXGroup;
+			children = (
+				3C295C452BE6A0A1004081A1 /* Wallet */,
+			);
+			path = Samples;
+			sourceTree = "<group>";
+		};
+		3C295C452BE6A0A1004081A1 /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Wallet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
