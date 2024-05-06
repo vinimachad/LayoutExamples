@@ -11,11 +11,9 @@
 		3C295C0F2BE271BE004081A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C295C0E2BE271BE004081A1 /* Assets.xcassets */; };
 		3C295C122BE271BE004081A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C295C102BE271BE004081A1 /* LaunchScreen.storyboard */; };
 		3C295C1E2BE2738B004081A1 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C295C1D2BE2738B004081A1 /* HomeController.swift */; };
-		3C295C202BE27395004081A1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C295C1F2BE27395004081A1 /* HomeView.swift */; };
 		3C295C222BE2739F004081A1 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C295C212BE2739F004081A1 /* HomeViewModel.swift */; };
 		3C295C242BE2784F004081A1 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C295C232BE2784F004081A1 /* HomeModel.swift */; };
 		3C295C272BE27F1F004081A1 /* BoxCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C295C262BE27F1F004081A1 /* BoxCollectionViewCell.swift */; };
-		3C295C2B2BE45843004081A1 /* HomeViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C295C2A2BE45843004081A1 /* HomeViewFlowLayout.swift */; };
 		3C295C2F2BE47FCA004081A1 /* UIView+Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C295C2E2BE47FCA004081A1 /* UIView+Debug.swift */; };
 		3C295C312BE55006004081A1 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C295C302BE55006004081A1 /* UIView+Utils.swift */; };
 		3C295C372BE552F1004081A1 /* StackViewSampleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C295C362BE552F1004081A1 /* StackViewSampleController.swift */; };
@@ -23,6 +21,19 @@
 		3C295C3C2BE55AA1004081A1 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C295C3B2BE55AA1004081A1 /* Coordinator.swift */; };
 		3C295C3E2BE55BF4004081A1 /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C295C3D2BE55BF4004081A1 /* HomeFactory.swift */; };
 		3C295C432BE68478004081A1 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C295C422BE68477004081A1 /* AppCoordinator.swift */; };
+		3C295C4B2BE6A1EA004081A1 /* GridCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C295C4A2BE6A1EA004081A1 /* GridCollectionView.swift */; };
+		3C295C4E2BE6A255004081A1 /* GridCollectionFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C295C4D2BE6A255004081A1 /* GridCollectionFlowLayout.swift */; };
+		3C295C502BE7C2DE004081A1 /* StackViewSampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C295C4F2BE7C2DE004081A1 /* StackViewSampleModel.swift */; };
+		3C295C522BE7C760004081A1 /* StackViewSampleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C295C512BE7C760004081A1 /* StackViewSampleViewModel.swift */; };
+		3C295C542BE7CB2B004081A1 /* StackViewSampleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C295C532BE7CB2B004081A1 /* StackViewSampleFactory.swift */; };
+		3C295C582BE84549004081A1 /* WalletController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C295C572BE84549004081A1 /* WalletController.swift */; };
+		3C295C5A2BE84550004081A1 /* WalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C295C592BE84550004081A1 /* WalletViewModel.swift */; };
+		3C295C5C2BE84557004081A1 /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C295C5B2BE84557004081A1 /* WalletView.swift */; };
+		3C295C5E2BE84562004081A1 /* WalletModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C295C5D2BE84562004081A1 /* WalletModel.swift */; };
+		3C295C612BE847B1004081A1 /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C295C602BE847B1004081A1 /* VerticalStackView.swift */; };
+		3C295C632BE84B25004081A1 /* HorizontalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C295C622BE84B25004081A1 /* HorizontalStackView.swift */; };
+		3C295C662BE84C3A004081A1 /* UIEdgesInsets+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C295C652BE84C3A004081A1 /* UIEdgesInsets+Utils.swift */; };
+		3C295C692BE84F3B004081A1 /* UIStackView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C295C682BE84F3B004081A1 /* UIStackView+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,11 +43,9 @@
 		3C295C112BE271BE004081A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C295C132BE271BE004081A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C295C1D2BE2738B004081A1 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
-		3C295C1F2BE27395004081A1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		3C295C212BE2739F004081A1 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		3C295C232BE2784F004081A1 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		3C295C262BE27F1F004081A1 /* BoxCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxCollectionViewCell.swift; sourceTree = "<group>"; };
-		3C295C2A2BE45843004081A1 /* HomeViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewFlowLayout.swift; sourceTree = "<group>"; };
 		3C295C2E2BE47FCA004081A1 /* UIView+Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Debug.swift"; sourceTree = "<group>"; };
 		3C295C302BE55006004081A1 /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
 		3C295C362BE552F1004081A1 /* StackViewSampleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewSampleController.swift; sourceTree = "<group>"; };
@@ -44,6 +53,19 @@
 		3C295C3B2BE55AA1004081A1 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		3C295C3D2BE55BF4004081A1 /* HomeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactory.swift; sourceTree = "<group>"; };
 		3C295C422BE68477004081A1 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		3C295C4A2BE6A1EA004081A1 /* GridCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionView.swift; sourceTree = "<group>"; };
+		3C295C4D2BE6A255004081A1 /* GridCollectionFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionFlowLayout.swift; sourceTree = "<group>"; };
+		3C295C4F2BE7C2DE004081A1 /* StackViewSampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewSampleModel.swift; sourceTree = "<group>"; };
+		3C295C512BE7C760004081A1 /* StackViewSampleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewSampleViewModel.swift; sourceTree = "<group>"; };
+		3C295C532BE7CB2B004081A1 /* StackViewSampleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewSampleFactory.swift; sourceTree = "<group>"; };
+		3C295C572BE84549004081A1 /* WalletController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletController.swift; sourceTree = "<group>"; };
+		3C295C592BE84550004081A1 /* WalletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewModel.swift; sourceTree = "<group>"; };
+		3C295C5B2BE84557004081A1 /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
+		3C295C5D2BE84562004081A1 /* WalletModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletModel.swift; sourceTree = "<group>"; };
+		3C295C602BE847B1004081A1 /* VerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
+		3C295C622BE84B25004081A1 /* HorizontalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalStackView.swift; sourceTree = "<group>"; };
+		3C295C652BE84C3A004081A1 /* UIEdgesInsets+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgesInsets+Utils.swift"; sourceTree = "<group>"; };
+		3C295C682BE84F3B004081A1 /* UIStackView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,14 +127,11 @@
 		3C295C1C2BE27361004081A1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				3C295C252BE27A70004081A1 /* Cells */,
 				3C295C1D2BE2738B004081A1 /* HomeController.swift */,
 				3C295C382BE55A7B004081A1 /* HomeCoordinator.swift */,
 				3C295C3D2BE55BF4004081A1 /* HomeFactory.swift */,
 				3C295C232BE2784F004081A1 /* HomeModel.swift */,
-				3C295C1F2BE27395004081A1 /* HomeView.swift */,
 				3C295C212BE2739F004081A1 /* HomeViewModel.swift */,
-				3C295C282BE45828004081A1 /* Resources */,
 				3C295C332BE552C0004081A1 /* Samples */,
 			);
 			path = Home;
@@ -126,25 +145,10 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		3C295C282BE45828004081A1 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				3C295C292BE4582D004081A1 /* FlowLayout */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		3C295C292BE4582D004081A1 /* FlowLayout */ = {
-			isa = PBXGroup;
-			children = (
-				3C295C2A2BE45843004081A1 /* HomeViewFlowLayout.swift */,
-			);
-			path = FlowLayout;
-			sourceTree = "<group>";
-		};
 		3C295C2C2BE47FAC004081A1 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				3C295C482BE6A1BC004081A1 /* UI */,
 				3C295C3A2BE55A91004081A1 /* Coordinator */,
 				3C295C2D2BE47FB6004081A1 /* Extensions */,
 			);
@@ -154,8 +158,10 @@
 		3C295C2D2BE47FB6004081A1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3C295C652BE84C3A004081A1 /* UIEdgesInsets+Utils.swift */,
 				3C295C2E2BE47FCA004081A1 /* UIView+Debug.swift */,
 				3C295C302BE55006004081A1 /* UIView+Utils.swift */,
+				3C295C682BE84F3B004081A1 /* UIStackView+Utils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -171,8 +177,11 @@
 		3C295C352BE552E4004081A1 /* StackView */ = {
 			isa = PBXGroup;
 			children = (
-				3C295C442BE6A098004081A1 /* Samples */,
 				3C295C362BE552F1004081A1 /* StackViewSampleController.swift */,
+				3C295C532BE7CB2B004081A1 /* StackViewSampleFactory.swift */,
+				3C295C4F2BE7C2DE004081A1 /* StackViewSampleModel.swift */,
+				3C295C512BE7C760004081A1 /* StackViewSampleViewModel.swift */,
+				3C295C442BE6A098004081A1 /* Samples */,
 			);
 			path = StackView;
 			sourceTree = "<group>";
@@ -197,8 +206,48 @@
 		3C295C452BE6A0A1004081A1 /* Wallet */ = {
 			isa = PBXGroup;
 			children = (
+				3C295C572BE84549004081A1 /* WalletController.swift */,
+				3C295C592BE84550004081A1 /* WalletViewModel.swift */,
+				3C295C5B2BE84557004081A1 /* WalletView.swift */,
+				3C295C5D2BE84562004081A1 /* WalletModel.swift */,
 			);
 			path = Wallet;
+			sourceTree = "<group>";
+		};
+		3C295C482BE6A1BC004081A1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				3C295C5F2BE847A8004081A1 /* StackView */,
+				3C295C492BE6A1BF004081A1 /* GridCollectionView */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		3C295C492BE6A1BF004081A1 /* GridCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				3C295C4C2BE6A244004081A1 /* Resources */,
+				3C295C4A2BE6A1EA004081A1 /* GridCollectionView.swift */,
+			);
+			path = GridCollectionView;
+			sourceTree = "<group>";
+		};
+		3C295C4C2BE6A244004081A1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3C295C252BE27A70004081A1 /* Cells */,
+				3C295C4D2BE6A255004081A1 /* GridCollectionFlowLayout.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3C295C5F2BE847A8004081A1 /* StackView */ = {
+			isa = PBXGroup;
+			children = (
+				3C295C602BE847B1004081A1 /* VerticalStackView.swift */,
+				3C295C622BE84B25004081A1 /* HorizontalStackView.swift */,
+			);
+			path = StackView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,18 +320,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C295C202BE27395004081A1 /* HomeView.swift in Sources */,
+				3C295C4B2BE6A1EA004081A1 /* GridCollectionView.swift in Sources */,
+				3C295C692BE84F3B004081A1 /* UIStackView+Utils.swift in Sources */,
 				3C295C1E2BE2738B004081A1 /* HomeController.swift in Sources */,
 				3C295C062BE271BC004081A1 /* AppDelegate.swift in Sources */,
 				3C295C372BE552F1004081A1 /* StackViewSampleController.swift in Sources */,
 				3C295C2F2BE47FCA004081A1 /* UIView+Debug.swift in Sources */,
 				3C295C392BE55A7B004081A1 /* HomeCoordinator.swift in Sources */,
-				3C295C2B2BE45843004081A1 /* HomeViewFlowLayout.swift in Sources */,
 				3C295C242BE2784F004081A1 /* HomeModel.swift in Sources */,
+				3C295C542BE7CB2B004081A1 /* StackViewSampleFactory.swift in Sources */,
+				3C295C582BE84549004081A1 /* WalletController.swift in Sources */,
 				3C295C3C2BE55AA1004081A1 /* Coordinator.swift in Sources */,
+				3C295C5E2BE84562004081A1 /* WalletModel.swift in Sources */,
+				3C295C522BE7C760004081A1 /* StackViewSampleViewModel.swift in Sources */,
+				3C295C502BE7C2DE004081A1 /* StackViewSampleModel.swift in Sources */,
+				3C295C4E2BE6A255004081A1 /* GridCollectionFlowLayout.swift in Sources */,
+				3C295C632BE84B25004081A1 /* HorizontalStackView.swift in Sources */,
+				3C295C612BE847B1004081A1 /* VerticalStackView.swift in Sources */,
 				3C295C272BE27F1F004081A1 /* BoxCollectionViewCell.swift in Sources */,
+				3C295C662BE84C3A004081A1 /* UIEdgesInsets+Utils.swift in Sources */,
 				3C295C3E2BE55BF4004081A1 /* HomeFactory.swift in Sources */,
 				3C295C432BE68478004081A1 /* AppCoordinator.swift in Sources */,
+				3C295C5C2BE84557004081A1 /* WalletView.swift in Sources */,
+				3C295C5A2BE84550004081A1 /* WalletViewModel.swift in Sources */,
 				3C295C312BE55006004081A1 /* UIView+Utils.swift in Sources */,
 				3C295C222BE2739F004081A1 /* HomeViewModel.swift in Sources */,
 			);

@@ -10,9 +10,27 @@ import UIKit
 
 protocol CoordinatorProtocol {
     var navigationController: UINavigationController { get }
+    var childCoordinator: CoordinatorProtocol? { get set }
     func start() -> UIViewController
     func dismiss()
     func returnToPrevious()
+}
+
+protocol CoordinatorDelegate {
+    func dismiss()
+    func returnToPrevious()
+}
+
+//  MARK: - Extensions
+
+extension CoordinatorDelegate where Self: CoordinatorProtocol {
+    func dismiss() {
+        self.dismiss()
+    }
+    
+    func returnToPrevious() {
+        self.returnToPrevious()
+    }
 }
 
 extension CoordinatorProtocol {

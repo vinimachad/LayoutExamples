@@ -7,17 +7,18 @@
 
 import UIKit
 
-protocol HomeCoordinatorDelegate: AnyObject {
+protocol HomeCoordinatorDelegate: AnyObject, CoordinatorDelegate {
     func routeTo(_ destination: HomeCoordinator.Destinations)
 }
 
-class HomeCoordinator: CoordinatorProtocol {
+final class HomeCoordinator: CoordinatorProtocol {
     
     typealias Destinations = HomeModel.Item.Name
     
-    // MARK: - Computed properties
+    // MARK: - Public properties
     
     var navigationController: UINavigationController = UINavigationController()
+    var childCoordinator: CoordinatorProtocol?
     
     // MARK: - Start
     
@@ -35,10 +36,22 @@ extension HomeCoordinator: HomeCoordinatorDelegate {
     func routeTo(_ destination: Destinations) {
         switch destination {
         case .stackView:
-            let stackViewController = StackViewSampleController()
+            let stackViewController = StackViewSampleFactory.create(coordinatorDelegate: self)
             navigationController.pushViewController(stackViewController, animated: true)
         case .collectionView: break
         case .tableView: break
+        }
+    }
+}
+
+// MARK: - StackViewSampleCoordinatorDelegate
+
+extension HomeCoordinator: StackViewSampleCoordinatorDelegate {
+    func routeTo(_ destination: StackViewSampleModel.Item) {
+        switch destination {
+        case .wallet:
+            let walletController = StackViewSampleFactory.wallet()
+            navigationController.pushViewController(walletController, animated: true)
         }
     }
 }

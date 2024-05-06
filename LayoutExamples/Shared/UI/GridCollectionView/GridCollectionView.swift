@@ -1,32 +1,40 @@
 //
-//  HomeView.swift
+//  GridCollectionView.swift
 //  LayoutExamples
 //
-//  Created by Vinicius Galhardo Machado on 01/05/24.
+//  Created by Vinicius Galhardo Machado on 04/05/24.
 //
 
 import UIKit
 
-protocol HomeViewProtocol: UIView {
-    var delegate: HomeViewDelegate? { get set }
-    func bindIn(items: [HomeModel.Item.Name])
+public protocol GridLayoutItem {
+    var title: String { get }
 }
 
-protocol HomeViewDelegate: AnyObject {
-    func didSelect(at row: Int, with item: HomeModel.Item.Name)
+protocol GridCollectionViewDelegate<Item>: AnyObject {
+    associatedtype Item = GridLayoutItem
+    func didSelect(at row: Int, with item: Item)
 }
 
-class HomeView: UIView, HomeViewProtocol {
+protocol GridCollectionViewProtocol<Item>: UIView {
+    associatedtype Item = GridLayoutItem
+    var delegate: (any GridCollectionViewDelegate<Item>)? { get set }
+    func bindIn(items: [Item])
+}
+
+open class GridCollectionView<T: GridLayoutItem>: UIView, GridCollectionViewProtocol, UICollectionViewDelegate, UICollectionViewDataSource {
+
+    typealias Item = T
     
     // MARK: - Public properties
     
-    weak var delegate: HomeViewDelegate?
+    weak var delegate: (any GridCollectionViewDelegate<Item>)?
     
     // MARK: - Private properties
     
-    private var items: [HomeModel.Item.Name] = []
-    private var collectionViewFlowLayout: HomeViewFlowLayout
-
+    private var items: [T] = []
+    private var collectionViewFlowLayout: GridCollectionFlowLayout
+    
     // MARK: - UI Components
     
     private lazy var collectionView: UICollectionView = {
@@ -42,24 +50,20 @@ class HomeView: UIView, HomeViewProtocol {
     // MARK: - Init
     
     init() {
-        collectionViewFlowLayout = HomeViewFlowLayout()
+        collectionViewFlowLayout = GridCollectionFlowLayout()
         super.init(frame: .zero)
         configure()
     }
     
     @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        collectionViewFlowLayout = HomeViewFlowLayout()
+    required public init?(coder: NSCoder) {
+        collectionViewFlowLayout = GridCollectionFlowLayout()
         super.init(coder: coder)
     }
     
-    func bindIn(items: [HomeModel.Item.Name]) {
+    func bindIn(items: [T]) {
         self.items = items
         collectionView.reloadData()
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
     }
     
     // MARK: - Configurations
@@ -78,24 +82,22 @@ class HomeView: UIView, HomeViewProtocol {
             collectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
-}
-
-// MARK: - UICollectionViewDelegate & UICollectionViewDataSource
-
-extension HomeView: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    
+    // MARK: - UICollectionViewDelegate & UICollectionViewDataSource
+    
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         items.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BoxCollectionViewCell.identifier, for: indexPath) as? BoxCollectionViewCell 
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BoxCollectionViewCell.identifier, for: indexPath) as? BoxCollectionViewCell
         else { return UICollectionViewCell() }
         
         cell.bindIn(item: items[indexPath.row])
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let row = indexPath.row
         let item = items[row]
         delegate?.didSelect(at: row, with: item)

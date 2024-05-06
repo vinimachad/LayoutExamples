@@ -37,7 +37,7 @@ class BoxCollectionViewCell: UICollectionViewCell {
     
     // MARK: - BindIn
     
-    func bindIn(item: HomeModel.Item.Name) {
+    func bindIn(item: GridLayoutItem) {
         title.text = item.title
     }
     

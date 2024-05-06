@@ -1,15 +1,14 @@
 //
-//  HomeViewFlowLayout.swift
+//  GridCollectionFlowLayout.swift
 //  LayoutExamples
 //
-//  Created by Vinicius Galhardo Machado on 02/05/24.
+//  Created by Vinicius Galhardo Machado on 04/05/24.
 //
 
-import Foundation
 import UIKit
 
-class HomeViewFlowLayout: UICollectionViewFlowLayout {
-        
+class GridCollectionFlowLayout: UICollectionViewFlowLayout {
+    
     // MARK: - Constant's
     
     private let kMargin: CGFloat = 16
