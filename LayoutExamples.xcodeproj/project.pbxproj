@@ -39,6 +39,10 @@
 		3CA604F52BEA824F007E7DA0 /* UIImage+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA604F42BEA824F007E7DA0 /* UIImage+Utils.swift */; };
 		3CA604F92BEA8E4A007E7DA0 /* NSMutableAttributedString+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA604F82BEA8E4A007E7DA0 /* NSMutableAttributedString+Utils.swift */; };
 		3CA604FB2BEAD126007E7DA0 /* WalletBalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA604FA2BEAD126007E7DA0 /* WalletBalanceView.swift */; };
+		3CA604FD2BEAD898007E7DA0 /* WalletQuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA604FC2BEAD898007E7DA0 /* WalletQuoteView.swift */; };
+		3CA604FF2BEADAEA007E7DA0 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA604FE2BEADAEA007E7DA0 /* Colors.swift */; };
+		3CA605012BEAEFA9007E7DA0 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA605002BEAEFA9007E7DA0 /* Colors.swift */; };
+		3CA605042BEAF17B007E7DA0 /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA605032BEAF17B007E7DA0 /* UIColor+Utils.swift */; };
 		3CAF97842BE9D0B30009F9D2 /* WalletHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAF97832BE9D0B30009F9D2 /* WalletHeaderView.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +81,10 @@
 		3CA604F42BEA824F007E7DA0 /* UIImage+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Utils.swift"; sourceTree = "<group>"; };
 		3CA604F82BEA8E4A007E7DA0 /* NSMutableAttributedString+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Utils.swift"; sourceTree = "<group>"; };
 		3CA604FA2BEAD126007E7DA0 /* WalletBalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletBalanceView.swift; sourceTree = "<group>"; };
+		3CA604FC2BEAD898007E7DA0 /* WalletQuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletQuoteView.swift; sourceTree = "<group>"; };
+		3CA604FE2BEADAEA007E7DA0 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		3CA605002BEAEFA9007E7DA0 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		3CA605032BEAF17B007E7DA0 /* UIColor+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
 		3CAF97832BE9D0B30009F9D2 /* WalletHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,11 +179,11 @@
 		3C295C2D2BE47FB6004081A1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3CA605022BEAF165007E7DA0 /* Token */,
 				3C295C652BE84C3A004081A1 /* UIEdgesInsets+Utils.swift */,
 				3C295C2E2BE47FCA004081A1 /* UIView+Debug.swift */,
 				3C295C302BE55006004081A1 /* UIView+Utils.swift */,
 				3C295C682BE84F3B004081A1 /* UIStackView+Utils.swift */,
-				3CA604F42BEA824F007E7DA0 /* UIImage+Utils.swift */,
 				3CA604F82BEA8E4A007E7DA0 /* NSMutableAttributedString+Utils.swift */,
 			);
 			path = Extensions;
@@ -270,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				3CA604EF2BEA8108007E7DA0 /* Image.swift */,
+				3CA604FE2BEADAEA007E7DA0 /* Colors.swift */,
 			);
 			path = Tokens;
 			sourceTree = "<group>";
@@ -278,8 +287,18 @@
 			isa = PBXGroup;
 			children = (
 				3CA604F22BEA8149007E7DA0 /* Images.swift */,
+				3CA605002BEAEFA9007E7DA0 /* Colors.swift */,
 			);
 			path = Tokens;
+			sourceTree = "<group>";
+		};
+		3CA605022BEAF165007E7DA0 /* Token */ = {
+			isa = PBXGroup;
+			children = (
+				3CA604F42BEA824F007E7DA0 /* UIImage+Utils.swift */,
+				3CA605032BEAF17B007E7DA0 /* UIColor+Utils.swift */,
+			);
+			path = Token;
 			sourceTree = "<group>";
 		};
 		3CAF97812BE9D0980009F9D2 /* Resources */ = {
@@ -296,6 +315,7 @@
 			children = (
 				3CAF97832BE9D0B30009F9D2 /* WalletHeaderView.swift */,
 				3CA604FA2BEAD126007E7DA0 /* WalletBalanceView.swift */,
+				3CA604FC2BEAD898007E7DA0 /* WalletQuoteView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -371,7 +391,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C295C4B2BE6A1EA004081A1 /* GridCollectionView.swift in Sources */,
+				3CA604FF2BEADAEA007E7DA0 /* Colors.swift in Sources */,
 				3CA604F02BEA8108007E7DA0 /* Image.swift in Sources */,
+				3CA605012BEAEFA9007E7DA0 /* Colors.swift in Sources */,
+				3CA604FD2BEAD898007E7DA0 /* WalletQuoteView.swift in Sources */,
 				3C295C692BE84F3B004081A1 /* UIStackView+Utils.swift in Sources */,
 				3C295C1E2BE2738B004081A1 /* HomeController.swift in Sources */,
 				3C295C062BE271BC004081A1 /* AppDelegate.swift in Sources */,
@@ -387,6 +410,7 @@
 				3C295C3C2BE55AA1004081A1 /* Coordinator.swift in Sources */,
 				3C295C5E2BE84562004081A1 /* WalletModel.swift in Sources */,
 				3C295C522BE7C760004081A1 /* StackViewSampleViewModel.swift in Sources */,
+				3CA605042BEAF17B007E7DA0 /* UIColor+Utils.swift in Sources */,
 				3C295C502BE7C2DE004081A1 /* StackViewSampleModel.swift in Sources */,
 				3CAF97842BE9D0B30009F9D2 /* WalletHeaderView.swift in Sources */,
 				3C295C4E2BE6A255004081A1 /* GridCollectionFlowLayout.swift in Sources */,

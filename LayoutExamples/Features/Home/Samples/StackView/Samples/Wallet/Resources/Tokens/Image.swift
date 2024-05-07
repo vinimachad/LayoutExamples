@@ -13,6 +13,6 @@ enum WalletImageLiterals: String, ImageTokenProtocol  {
     // MARK: - ImageTokenProtocol implementation
     
     var name: String {
-        "StackView/" + self.rawValue
+        "StackView/Wallet/Icons/\(self.rawValue)"
     }
 }

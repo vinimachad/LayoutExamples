@@ -44,7 +44,7 @@ class WalletView: VerticalStackView, WalletViewProtocol {
     override func configure() {
         super.configure()
         spacing = 32
-        backgroundColor = #colorLiteral(red: 0.582781136, green: 0.9413846135, blue: 0.7231652141, alpha: 1)
+        backgroundColor = #colorLiteral(red: 0.5843137255, green: 0.9411764706, blue: 0.7215686275, alpha: 1)
         layoutMargins = .init(edges: 32)
         configureHierarchy()
     }
