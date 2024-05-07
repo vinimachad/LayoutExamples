@@ -60,7 +60,6 @@ class WalletHeaderView: HorizontalStackView {
         super.configure()
         spacing = 8
         verticalAlignment = .center
-        widthDistribution = .fill
         configureHierarchy()
         configurePriorities()
         configureConstraints()

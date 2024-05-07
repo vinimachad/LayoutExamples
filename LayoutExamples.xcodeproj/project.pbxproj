@@ -38,6 +38,7 @@
 		3CA604F32BEA8149007E7DA0 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA604F22BEA8149007E7DA0 /* Images.swift */; };
 		3CA604F52BEA824F007E7DA0 /* UIImage+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA604F42BEA824F007E7DA0 /* UIImage+Utils.swift */; };
 		3CA604F92BEA8E4A007E7DA0 /* NSMutableAttributedString+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA604F82BEA8E4A007E7DA0 /* NSMutableAttributedString+Utils.swift */; };
+		3CA604FB2BEAD126007E7DA0 /* WalletBalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA604FA2BEAD126007E7DA0 /* WalletBalanceView.swift */; };
 		3CAF97842BE9D0B30009F9D2 /* WalletHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAF97832BE9D0B30009F9D2 /* WalletHeaderView.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		3CA604F22BEA8149007E7DA0 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		3CA604F42BEA824F007E7DA0 /* UIImage+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Utils.swift"; sourceTree = "<group>"; };
 		3CA604F82BEA8E4A007E7DA0 /* NSMutableAttributedString+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Utils.swift"; sourceTree = "<group>"; };
+		3CA604FA2BEAD126007E7DA0 /* WalletBalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletBalanceView.swift; sourceTree = "<group>"; };
 		3CAF97832BE9D0B30009F9D2 /* WalletHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -293,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				3CAF97832BE9D0B30009F9D2 /* WalletHeaderView.swift */,
+				3CA604FA2BEAD126007E7DA0 /* WalletBalanceView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				3C295C392BE55A7B004081A1 /* HomeCoordinator.swift in Sources */,
 				3C295C242BE2784F004081A1 /* HomeModel.swift in Sources */,
 				3CA604F92BEA8E4A007E7DA0 /* NSMutableAttributedString+Utils.swift in Sources */,
+				3CA604FB2BEAD126007E7DA0 /* WalletBalanceView.swift in Sources */,
 				3C295C542BE7CB2B004081A1 /* StackViewSampleFactory.swift in Sources */,
 				3C295C582BE84549004081A1 /* WalletController.swift in Sources */,
 				3C295C3C2BE55AA1004081A1 /* Coordinator.swift in Sources */,

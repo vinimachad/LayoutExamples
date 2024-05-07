@@ -16,9 +16,8 @@ class WalletView: VerticalStackView, WalletViewProtocol {
         return view
     }()
     
-    private lazy var balanceView: VerticalStackView = {
-        let view = VerticalStackView()
-        view.backgroundColor = .red
+    private lazy var balanceView: WalletBalanceView = {
+        let view = WalletBalanceView()
         return view
     }()
     
@@ -44,10 +43,9 @@ class WalletView: VerticalStackView, WalletViewProtocol {
     
     override func configure() {
         super.configure()
-        heightDistribution = .fillProportionally
         spacing = 32
-        layoutMargins = .init(edges: 32)
         backgroundColor = #colorLiteral(red: 0.582781136, green: 0.9413846135, blue: 0.7231652141, alpha: 1)
+        layoutMargins = .init(edges: 32)
         configureHierarchy()
     }
     
