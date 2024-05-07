@@ -11,9 +11,8 @@ protocol WalletViewProtocol: UIView { }
 
 class WalletView: VerticalStackView, WalletViewProtocol {
     
-    private lazy var headerView: HorizontalStackView = {
-        let view = HorizontalStackView()
-        view.backgroundColor = .black
+    private lazy var headerView: WalletHeaderView = {
+        let view = WalletHeaderView()
         return view
     }()
     
@@ -55,6 +54,12 @@ class WalletView: VerticalStackView, WalletViewProtocol {
     // MARK: - Hierarchy
     
     private func configureHierarchy() {
-        addArrangedSubviews([headerView, balanceView, cardView, quoteView, menuView])
+        addArrangedSubviews([
+            headerView,
+            balanceView,
+            cardView,
+            quoteView,
+            menuView
+        ])
     }
 }

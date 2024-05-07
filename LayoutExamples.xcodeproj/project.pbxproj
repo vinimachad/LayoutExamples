@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3C295C062BE271BC004081A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C295C052BE271BC004081A1 /* AppDelegate.swift */; };
-		3C295C0F2BE271BE004081A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C295C0E2BE271BE004081A1 /* Assets.xcassets */; };
 		3C295C122BE271BE004081A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C295C102BE271BE004081A1 /* LaunchScreen.storyboard */; };
 		3C295C1E2BE2738B004081A1 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C295C1D2BE2738B004081A1 /* HomeController.swift */; };
 		3C295C222BE2739F004081A1 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C295C212BE2739F004081A1 /* HomeViewModel.swift */; };
@@ -34,12 +33,17 @@
 		3C295C632BE84B25004081A1 /* HorizontalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C295C622BE84B25004081A1 /* HorizontalStackView.swift */; };
 		3C295C662BE84C3A004081A1 /* UIEdgesInsets+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C295C652BE84C3A004081A1 /* UIEdgesInsets+Utils.swift */; };
 		3C295C692BE84F3B004081A1 /* UIStackView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C295C682BE84F3B004081A1 /* UIStackView+Utils.swift */; };
+		3CA604ED2BEA805E007E7DA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CA604EC2BEA805E007E7DA0 /* Assets.xcassets */; };
+		3CA604F02BEA8108007E7DA0 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA604EF2BEA8108007E7DA0 /* Image.swift */; };
+		3CA604F32BEA8149007E7DA0 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA604F22BEA8149007E7DA0 /* Images.swift */; };
+		3CA604F52BEA824F007E7DA0 /* UIImage+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA604F42BEA824F007E7DA0 /* UIImage+Utils.swift */; };
+		3CA604F92BEA8E4A007E7DA0 /* NSMutableAttributedString+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA604F82BEA8E4A007E7DA0 /* NSMutableAttributedString+Utils.swift */; };
+		3CAF97842BE9D0B30009F9D2 /* WalletHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAF97832BE9D0B30009F9D2 /* WalletHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3C295C022BE271BC004081A1 /* LayoutExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LayoutExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C295C052BE271BC004081A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3C295C0E2BE271BE004081A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C295C112BE271BE004081A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C295C132BE271BE004081A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C295C1D2BE2738B004081A1 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -66,6 +70,12 @@
 		3C295C622BE84B25004081A1 /* HorizontalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalStackView.swift; sourceTree = "<group>"; };
 		3C295C652BE84C3A004081A1 /* UIEdgesInsets+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgesInsets+Utils.swift"; sourceTree = "<group>"; };
 		3C295C682BE84F3B004081A1 /* UIStackView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Utils.swift"; sourceTree = "<group>"; };
+		3CA604EC2BEA805E007E7DA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3CA604EF2BEA8108007E7DA0 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		3CA604F22BEA8149007E7DA0 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		3CA604F42BEA824F007E7DA0 /* UIImage+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Utils.swift"; sourceTree = "<group>"; };
+		3CA604F82BEA8E4A007E7DA0 /* NSMutableAttributedString+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Utils.swift"; sourceTree = "<group>"; };
+		3CAF97832BE9D0B30009F9D2 /* WalletHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +111,6 @@
 				3C295C2C2BE47FAC004081A1 /* Shared */,
 				3C295C1A2BE27266004081A1 /* SupportingFiles */,
 				3C295C192BE2724B004081A1 /* Features */,
-				3C295C0E2BE271BE004081A1 /* Assets.xcassets */,
 				3C295C102BE271BE004081A1 /* LaunchScreen.storyboard */,
 				3C295C132BE271BE004081A1 /* Info.plist */,
 			);
@@ -120,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				3C295C052BE271BC004081A1 /* AppDelegate.swift */,
+				3CA604EC2BEA805E007E7DA0 /* Assets.xcassets */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -148,6 +158,7 @@
 		3C295C2C2BE47FAC004081A1 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				3CA604F12BEA813F007E7DA0 /* Tokens */,
 				3C295C482BE6A1BC004081A1 /* UI */,
 				3C295C3A2BE55A91004081A1 /* Coordinator */,
 				3C295C2D2BE47FB6004081A1 /* Extensions */,
@@ -162,6 +173,8 @@
 				3C295C2E2BE47FCA004081A1 /* UIView+Debug.swift */,
 				3C295C302BE55006004081A1 /* UIView+Utils.swift */,
 				3C295C682BE84F3B004081A1 /* UIStackView+Utils.swift */,
+				3CA604F42BEA824F007E7DA0 /* UIImage+Utils.swift */,
+				3CA604F82BEA8E4A007E7DA0 /* NSMutableAttributedString+Utils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -206,6 +219,7 @@
 		3C295C452BE6A0A1004081A1 /* Wallet */ = {
 			isa = PBXGroup;
 			children = (
+				3CAF97812BE9D0980009F9D2 /* Resources */,
 				3C295C572BE84549004081A1 /* WalletController.swift */,
 				3C295C592BE84550004081A1 /* WalletViewModel.swift */,
 				3C295C5B2BE84557004081A1 /* WalletView.swift */,
@@ -248,6 +262,39 @@
 				3C295C622BE84B25004081A1 /* HorizontalStackView.swift */,
 			);
 			path = StackView;
+			sourceTree = "<group>";
+		};
+		3CA604EE2BEA8100007E7DA0 /* Tokens */ = {
+			isa = PBXGroup;
+			children = (
+				3CA604EF2BEA8108007E7DA0 /* Image.swift */,
+			);
+			path = Tokens;
+			sourceTree = "<group>";
+		};
+		3CA604F12BEA813F007E7DA0 /* Tokens */ = {
+			isa = PBXGroup;
+			children = (
+				3CA604F22BEA8149007E7DA0 /* Images.swift */,
+			);
+			path = Tokens;
+			sourceTree = "<group>";
+		};
+		3CAF97812BE9D0980009F9D2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3CA604EE2BEA8100007E7DA0 /* Tokens */,
+				3CAF97822BE9D09F0009F9D2 /* Subviews */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3CAF97822BE9D09F0009F9D2 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				3CAF97832BE9D0B30009F9D2 /* WalletHeaderView.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,7 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C295C122BE271BE004081A1 /* LaunchScreen.storyboard in Resources */,
-				3C295C0F2BE271BE004081A1 /* Assets.xcassets in Resources */,
+				3CA604ED2BEA805E007E7DA0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,24 +368,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C295C4B2BE6A1EA004081A1 /* GridCollectionView.swift in Sources */,
+				3CA604F02BEA8108007E7DA0 /* Image.swift in Sources */,
 				3C295C692BE84F3B004081A1 /* UIStackView+Utils.swift in Sources */,
 				3C295C1E2BE2738B004081A1 /* HomeController.swift in Sources */,
 				3C295C062BE271BC004081A1 /* AppDelegate.swift in Sources */,
 				3C295C372BE552F1004081A1 /* StackViewSampleController.swift in Sources */,
 				3C295C2F2BE47FCA004081A1 /* UIView+Debug.swift in Sources */,
+				3CA604F52BEA824F007E7DA0 /* UIImage+Utils.swift in Sources */,
 				3C295C392BE55A7B004081A1 /* HomeCoordinator.swift in Sources */,
 				3C295C242BE2784F004081A1 /* HomeModel.swift in Sources */,
+				3CA604F92BEA8E4A007E7DA0 /* NSMutableAttributedString+Utils.swift in Sources */,
 				3C295C542BE7CB2B004081A1 /* StackViewSampleFactory.swift in Sources */,
 				3C295C582BE84549004081A1 /* WalletController.swift in Sources */,
 				3C295C3C2BE55AA1004081A1 /* Coordinator.swift in Sources */,
 				3C295C5E2BE84562004081A1 /* WalletModel.swift in Sources */,
 				3C295C522BE7C760004081A1 /* StackViewSampleViewModel.swift in Sources */,
 				3C295C502BE7C2DE004081A1 /* StackViewSampleModel.swift in Sources */,
+				3CAF97842BE9D0B30009F9D2 /* WalletHeaderView.swift in Sources */,
 				3C295C4E2BE6A255004081A1 /* GridCollectionFlowLayout.swift in Sources */,
 				3C295C632BE84B25004081A1 /* HorizontalStackView.swift in Sources */,
 				3C295C612BE847B1004081A1 /* VerticalStackView.swift in Sources */,
 				3C295C272BE27F1F004081A1 /* BoxCollectionViewCell.swift in Sources */,
 				3C295C662BE84C3A004081A1 /* UIEdgesInsets+Utils.swift in Sources */,
+				3CA604F32BEA8149007E7DA0 /* Images.swift in Sources */,
 				3C295C3E2BE55BF4004081A1 /* HomeFactory.swift in Sources */,
 				3C295C432BE68478004081A1 /* AppCoordinator.swift in Sources */,
 				3C295C5C2BE84557004081A1 /* WalletView.swift in Sources */,

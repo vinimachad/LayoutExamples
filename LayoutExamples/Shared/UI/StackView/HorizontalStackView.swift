@@ -11,8 +11,8 @@ class HorizontalStackView: UIStackView {
     
     // MARK: - Public properties
     
-    /// É responsável pelo alinhamento horizontal da view
-    var horizontalAlignment: UIStackView.Alignment {
+    /// É responsável pelo alinhamento vertical da view
+    var verticalAlignment: UIStackView.Alignment {
         get { alignment }
         set { alignment = newValue }
     }
@@ -46,6 +46,6 @@ class HorizontalStackView: UIStackView {
     func configure() {
         axis = .horizontal
         widthDistribution = .fill
-        horizontalAlignment = .fill
+        verticalAlignment = .fill
     }
 }
