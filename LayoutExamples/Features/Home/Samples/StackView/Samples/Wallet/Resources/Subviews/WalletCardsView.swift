@@ -7,37 +7,72 @@
 
 import UIKit
 
-class WalletCardsView: VerticalStackView {
+class WalletCardsView: UIView, ConfigurableView {
     
-    // MARK: - UI Components
+    // MARK: - Init
     
-    private lazy var cardView: UIView = {
+    init() {
+        super.init(frame: .zero)
+        configure()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        configure()
+    }
+    
+    // MARK: - Layout methods
+    
+    private func createCard(data: UIColor) -> UIView {
         let view = UIView()
+        view.backgroundColor = data
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
-    }()
-    
-    private lazy var cardView2: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
+    }
     
     // MARK: - Configure
     
-    override func configure() {
-        super.configure()
-        horizontalAlignment = .fill
-    }
-    
-    override func configureHierarchy() {
-        addArrangedSubviews([cardView, cardView2])
-    }
-    
-    override func configureConstraints() {
-        NSLayoutConstraint.activate([
-            cardView.heightAnchor.constraint(equalToConstant: 150),
-            cardView2.heightAnchor.constraint(equalToConstant: 150)
-        ])
+    func configure() {
+        let cards: [UIColor] = [.red, .gray, .blue, .black, .systemPink, .green, .cyan, .purple]
+        
+        cards.reversed().enumerated().forEach {
+            let view = self.createCard(data: $0.element)
+            addSubview(view)
+            
+            if let viewIndexInSubviews = subviews.firstIndex(of: view) {
+                let previousViewIndex = subviews.index(before: viewIndexInSubviews)
+                
+                if  viewIndexInSubviews == 0 {
+                    let parentView = self
+                    // It is the base
+                    NSLayoutConstraint.activate([
+                        view.heightAnchor.constraint(equalToConstant: 150),
+                        view.topAnchor.constraint(equalTo: parentView.topAnchor),
+                        view.leadingAnchor.constraint(equalTo: parentView.leadingAnchor),
+                        view.trailingAnchor.constraint(equalTo: parentView.trailingAnchor)
+                    ])
+                } else {
+                    // It is the Top View
+                    let previousView = subviews[previousViewIndex]
+                    
+                    if ((viewIndexInSubviews % (cards.count - 1)) != 0) {
+                        NSLayoutConstraint.activate([
+                            view.heightAnchor.constraint(equalToConstant: 150),
+                            view.leadingAnchor.constraint(equalTo: leadingAnchor),
+                            view.trailingAnchor.constraint(equalTo: trailingAnchor),
+                            view.centerYAnchor.constraint(equalTo: previousView.centerYAnchor, constant: 45),
+                        ])
+                    } else {
+                        NSLayoutConstraint.activate([
+                            view.heightAnchor.constraint(equalToConstant: 150),
+                            view.leadingAnchor.constraint(equalTo: leadingAnchor),
+                            view.trailingAnchor.constraint(equalTo: trailingAnchor),
+                            view.bottomAnchor.constraint(equalTo: bottomAnchor),
+                            view.centerYAnchor.constraint(equalTo: previousView.centerYAnchor, constant: 45),
+                        ])
+                    }
+                }
+            }
+        }
     }
 }

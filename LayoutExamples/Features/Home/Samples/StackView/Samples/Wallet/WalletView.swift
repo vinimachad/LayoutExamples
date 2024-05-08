@@ -53,19 +53,15 @@ class WalletView: UIScrollView, WalletViewProtocol, ConfigurableView {
             quoteView,
             menuView
         ])
-        configureConstraints()
     }
     
     func configureConstraints() {
         containerView.translatesAutoresizingMaskIntoConstraints = false
-        let heightAnchor = containerView.heightAnchor.constraint(equalTo: heightAnchor)
-        heightAnchor.priority = .defaultLow
-        
         NSLayoutConstraint.activate([
             containerView.topAnchor.constraint(equalTo: self.topAnchor),
             containerView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             containerView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            containerView.widthAnchor.constraint(equalTo: self.widthAnchor)
+            containerView.widthAnchor.constraint(equalTo: self.widthAnchor),
         ])
     }
 }
