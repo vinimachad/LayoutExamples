@@ -7,7 +7,7 @@
 
 import UIKit
 
-class VerticalStackView: UIStackView {
+class VerticalStackView: UIStackView, ConfigurableView {
     
     // MARK: - Public properties
     
@@ -47,5 +47,20 @@ class VerticalStackView: UIStackView {
         axis = .vertical
         horizontalAlignment = .fill
         heightDistribution = .fill
+        configureHierarchy()
+        configurePriorities()
+        configureConstraints()
+    }
+    
+    func configureHierarchy() {
+        // Implement with override
+    }
+    
+    func configurePriorities() {
+        // Implement with override
+    }
+    
+    func configureConstraints() {
+        // Implement with override
     }
 }

@@ -60,13 +60,10 @@ class WalletHeaderView: HorizontalStackView {
         super.configure()
         spacing = 8
         verticalAlignment = .center
-        configureHierarchy()
-        configurePriorities()
-        configureConstraints()
         setupAttributedTextNameLabel()
     }
     
-    private func configureHierarchy() {
+    override func configureHierarchy() {
         addArrangedSubviews([
             iconView,
             nameLabel,
@@ -74,11 +71,11 @@ class WalletHeaderView: HorizontalStackView {
         ])
     }
     
-    private func configurePriorities() {
+    override func configurePriorities() {
         nameLabel.setContentHuggingPriority(.init(100), for: .horizontal)
     }
     
-    private func configureConstraints() {
+    override func configureConstraints() {
         NSLayoutConstraint.activate([
             iconView.widthAnchor.constraint(equalToConstant: 40),
             iconView.heightAnchor.constraint(equalToConstant: 40)

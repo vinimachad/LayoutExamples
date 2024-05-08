@@ -34,7 +34,7 @@ class WalletView: VerticalStackView, WalletViewProtocol {
     
     // MARK: - Hierarchy
     
-    private func configureHierarchy() {
+    override func configureHierarchy() {
         addArrangedSubviews([
             headerView,
             balanceView,

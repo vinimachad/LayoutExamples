@@ -32,10 +32,9 @@ class WalletBalanceView: VerticalStackView {
         super.configure()
         spacing = 4
         horizontalAlignment = .leading
-        configureHierarchy()
     }
     
-    private func configureHierarchy() {
+     override func configureHierarchy() {
         addArrangedSubviews([titleLabel, balanceLabel])
     }
 }

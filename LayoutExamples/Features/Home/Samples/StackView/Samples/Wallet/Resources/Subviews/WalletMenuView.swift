@@ -42,11 +42,9 @@ class WalletMenuView: HorizontalStackView {
     override func configure() {
         super.configure()
         spacing = 16
-        configureHierarchy()
-        configurePriorities()
     }
     
-    private func configureHierarchy() {
+    override func configureHierarchy() {
         addArrangedSubviews([
             addButton,
             scanButton,
@@ -54,11 +52,11 @@ class WalletMenuView: HorizontalStackView {
         ])
     }
     
-    private func configurePriorities() {
+    override func configurePriorities() {
         paymentButton.setContentHuggingPriority(.init(100), for: .horizontal)
     }
     
-    private func configureConstraints() {
+    override func configureConstraints() {
         NSLayoutConstraint.activate([
             
         ])
