@@ -27,9 +27,8 @@ class WalletView: VerticalStackView, WalletViewProtocol {
         return view
     }()
     
-    private lazy var quoteView: HorizontalStackView = {
-        let view = HorizontalStackView()
-        view.backgroundColor = .blue
+    private lazy var quoteView: WalletQuoteView = {
+        let view = WalletQuoteView()
         return view
     }()
     
@@ -45,7 +44,7 @@ class WalletView: VerticalStackView, WalletViewProtocol {
         super.configure()
         spacing = 32
         backgroundColor = #colorLiteral(red: 0.5843137255, green: 0.9411764706, blue: 0.7215686275, alpha: 1)
-        layoutMargins = .init(edges: 32)
+        layoutMargins = .init(edges: 16)
         configureHierarchy()
     }
     

@@ -40,7 +40,7 @@
 		3CA604F92BEA8E4A007E7DA0 /* NSMutableAttributedString+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA604F82BEA8E4A007E7DA0 /* NSMutableAttributedString+Utils.swift */; };
 		3CA604FB2BEAD126007E7DA0 /* WalletBalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA604FA2BEAD126007E7DA0 /* WalletBalanceView.swift */; };
 		3CA604FD2BEAD898007E7DA0 /* WalletQuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA604FC2BEAD898007E7DA0 /* WalletQuoteView.swift */; };
-		3CA604FF2BEADAEA007E7DA0 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA604FE2BEADAEA007E7DA0 /* Colors.swift */; };
+		3CA604FF2BEADAEA007E7DA0 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA604FE2BEADAEA007E7DA0 /* Color.swift */; };
 		3CA605012BEAEFA9007E7DA0 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA605002BEAEFA9007E7DA0 /* Colors.swift */; };
 		3CA605042BEAF17B007E7DA0 /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA605032BEAF17B007E7DA0 /* UIColor+Utils.swift */; };
 		3CAF97842BE9D0B30009F9D2 /* WalletHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAF97832BE9D0B30009F9D2 /* WalletHeaderView.swift */; };
@@ -82,7 +82,7 @@
 		3CA604F82BEA8E4A007E7DA0 /* NSMutableAttributedString+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Utils.swift"; sourceTree = "<group>"; };
 		3CA604FA2BEAD126007E7DA0 /* WalletBalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletBalanceView.swift; sourceTree = "<group>"; };
 		3CA604FC2BEAD898007E7DA0 /* WalletQuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletQuoteView.swift; sourceTree = "<group>"; };
-		3CA604FE2BEADAEA007E7DA0 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		3CA604FE2BEADAEA007E7DA0 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		3CA605002BEAEFA9007E7DA0 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		3CA605032BEAF17B007E7DA0 /* UIColor+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
 		3CAF97832BE9D0B30009F9D2 /* WalletHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletHeaderView.swift; sourceTree = "<group>"; };
@@ -278,7 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				3CA604EF2BEA8108007E7DA0 /* Image.swift */,
-				3CA604FE2BEADAEA007E7DA0 /* Colors.swift */,
+				3CA604FE2BEADAEA007E7DA0 /* Color.swift */,
 			);
 			path = Tokens;
 			sourceTree = "<group>";
@@ -391,7 +391,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C295C4B2BE6A1EA004081A1 /* GridCollectionView.swift in Sources */,
-				3CA604FF2BEADAEA007E7DA0 /* Colors.swift in Sources */,
+				3CA604FF2BEADAEA007E7DA0 /* Color.swift in Sources */,
 				3CA604F02BEA8108007E7DA0 /* Image.swift in Sources */,
 				3CA605012BEAEFA9007E7DA0 /* Colors.swift in Sources */,
 				3CA604FD2BEAD898007E7DA0 /* WalletQuoteView.swift in Sources */,

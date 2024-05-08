@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIColor {
-    convenience init?(liteal: ColorTokenProtocol) {
-        self.init(named: liteal.name)
+    convenience init?(literal: ColorTokenProtocol) {
+        self.init(named: literal.name)
     }
 }
