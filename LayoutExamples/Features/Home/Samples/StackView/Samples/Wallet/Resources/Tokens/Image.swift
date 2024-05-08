@@ -9,6 +9,8 @@ import Foundation
 
 enum WalletImageLiterals: String, ImageTokenProtocol  {
     case menu
+    case scan
+    case add
     
     // MARK: - ImageTokenProtocol implementation
     

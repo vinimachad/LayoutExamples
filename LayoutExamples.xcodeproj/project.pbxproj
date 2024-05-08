@@ -43,6 +43,7 @@
 		3CA604FF2BEADAEA007E7DA0 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA604FE2BEADAEA007E7DA0 /* Color.swift */; };
 		3CA605012BEAEFA9007E7DA0 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA605002BEAEFA9007E7DA0 /* Colors.swift */; };
 		3CA605042BEAF17B007E7DA0 /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA605032BEAF17B007E7DA0 /* UIColor+Utils.swift */; };
+		3CA605062BEB085A007E7DA0 /* WalletMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA605052BEB085A007E7DA0 /* WalletMenuView.swift */; };
 		3CAF97842BE9D0B30009F9D2 /* WalletHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAF97832BE9D0B30009F9D2 /* WalletHeaderView.swift */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,7 @@
 		3CA604FE2BEADAEA007E7DA0 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		3CA605002BEAEFA9007E7DA0 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		3CA605032BEAF17B007E7DA0 /* UIColor+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
+		3CA605052BEB085A007E7DA0 /* WalletMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletMenuView.swift; sourceTree = "<group>"; };
 		3CAF97832BE9D0B30009F9D2 /* WalletHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -316,6 +318,7 @@
 				3CAF97832BE9D0B30009F9D2 /* WalletHeaderView.swift */,
 				3CA604FA2BEAD126007E7DA0 /* WalletBalanceView.swift */,
 				3CA604FC2BEAD898007E7DA0 /* WalletQuoteView.swift */,
+				3CA605052BEB085A007E7DA0 /* WalletMenuView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				3C295C692BE84F3B004081A1 /* UIStackView+Utils.swift in Sources */,
 				3C295C1E2BE2738B004081A1 /* HomeController.swift in Sources */,
 				3C295C062BE271BC004081A1 /* AppDelegate.swift in Sources */,
+				3CA605062BEB085A007E7DA0 /* WalletMenuView.swift in Sources */,
 				3C295C372BE552F1004081A1 /* StackViewSampleController.swift in Sources */,
 				3C295C2F2BE47FCA004081A1 /* UIView+Debug.swift in Sources */,
 				3CA604F52BEA824F007E7DA0 /* UIImage+Utils.swift in Sources */,

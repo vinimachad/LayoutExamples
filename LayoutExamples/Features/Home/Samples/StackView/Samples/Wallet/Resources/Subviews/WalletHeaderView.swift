@@ -27,10 +27,10 @@ class WalletHeaderView: HorizontalStackView {
     
     private lazy var moreButton: UIButton = {
         let view = UIButton()
-        view.setImage(.init(literal: WalletImageLiterals.menu), for: .normal)
-        view.imageView?.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
         view.contentMode = .scaleAspectFit
+        view.setImage(.init(literal: WalletImageLiterals.menu)?.withRenderingMode(.alwaysTemplate), for: .normal)
+        view.imageView?.tintColor = .black
         return view
     }()
     
@@ -49,8 +49,8 @@ class WalletHeaderView: HorizontalStackView {
         let full = "Hello,\n"
         
         let mutable = NSMutableAttributedString()
-        mutable.addAttribute(.foregroundColor, value: UIColor.black, string: full)
-        mutable.addAttribute(.foregroundColor, value: UIColor.red, string: name)
+        mutable.addAttribute(.foregroundColor, value: UIColor.black.withAlphaComponent(0.5), string: full)
+        mutable.addAttribute(.foregroundColor, value: UIColor.black, string: name)
         nameLabel.attributedText = mutable
     }
     
@@ -88,13 +88,5 @@ class WalletHeaderView: HorizontalStackView {
             moreButton.widthAnchor.constraint(equalToConstant: 40),
             moreButton.heightAnchor.constraint(equalToConstant: 40),
         ])
-        
-        if let moreButtonImageView = moreButton.imageView {
-            NSLayoutConstraint.activate([
-                moreButtonImageView.heightAnchor.constraint(equalToConstant: 30),
-                moreButtonImageView.widthAnchor.constraint(equalToConstant: 30)
-            ])
-        }
-        
     }
 }
