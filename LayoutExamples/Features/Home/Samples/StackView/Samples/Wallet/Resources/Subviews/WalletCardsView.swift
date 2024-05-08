@@ -13,11 +13,13 @@ class WalletCardsView: VerticalStackView {
     
     private lazy var cardView: UIView = {
         let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     private lazy var cardView2: UIView = {
         let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
@@ -25,13 +27,17 @@ class WalletCardsView: VerticalStackView {
     
     override func configure() {
         super.configure()
+        horizontalAlignment = .fill
     }
     
     override func configureHierarchy() {
-        super.configureHierarchy()
+        addArrangedSubviews([cardView, cardView2])
     }
     
     override func configureConstraints() {
-        
+        NSLayoutConstraint.activate([
+            cardView.heightAnchor.constraint(equalToConstant: 150),
+            cardView2.heightAnchor.constraint(equalToConstant: 150)
+        ])
     }
 }

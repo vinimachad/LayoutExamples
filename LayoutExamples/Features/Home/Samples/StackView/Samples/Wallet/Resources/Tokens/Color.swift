@@ -8,7 +8,7 @@
 import UIKit
 
 enum WalletColorLiterals: String, ColorTokenProtocol {
-    case primay
+    case primary
     case red
     case blue
     case white100 = "white-100"

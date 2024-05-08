@@ -7,40 +7,65 @@
 
 import UIKit
 
-protocol WalletViewProtocol: UIView { }
+protocol WalletViewProtocol: UIScrollView { }
 
-class WalletView: VerticalStackView, WalletViewProtocol {
+class WalletView: UIScrollView, WalletViewProtocol, ConfigurableView {
     
+    private lazy var containerView: VerticalStackView = VerticalStackView()
     private lazy var headerView: WalletHeaderView = WalletHeaderView()
     private lazy var balanceView: WalletBalanceView = WalletBalanceView()
-    private lazy var cardView: HorizontalStackView = {
-        let view = HorizontalStackView()
-        view.backgroundColor = .white
-        return view
-    }()
-    
+    private lazy var cardView: WalletCardsView = WalletCardsView()
     private lazy var quoteView: WalletQuoteView = WalletQuoteView()
     private lazy var menuView: WalletMenuView = WalletMenuView()
     
+    // MARK: - Init
+    
+    init() {
+        super.init(frame: .zero)
+        configure()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        configure()
+    }
+    
     // MARK: - Configure
     
-    override func configure() {
-        super.configure()
-        spacing = 16
-        backgroundColor = #colorLiteral(red: 0.5843137255, green: 0.9411764706, blue: 0.7215686275, alpha: 1)
-        layoutMargins = .init(edges: 16)
+    func configure() {
+        contentInsetAdjustmentBehavior = .never
+        backgroundColor = .init(literal: WalletColorLiterals.primary)
+        containerView.spacing = 16
+        containerView.backgroundColor = .clear
+        containerView.layoutMargins = .init(edges: 16)
         configureHierarchy()
+        configureConstraints()
     }
     
     // MARK: - Hierarchy
     
-    override func configureHierarchy() {
-        addArrangedSubviews([
+    func configureHierarchy() {
+        addSubview(containerView)
+        containerView.addArrangedSubviews([
             headerView,
             balanceView,
             cardView,
             quoteView,
             menuView
+        ])
+        configureConstraints()
+    }
+    
+    func configureConstraints() {
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        let heightAnchor = containerView.heightAnchor.constraint(equalTo: heightAnchor)
+        heightAnchor.priority = .defaultLow
+        
+        NSLayoutConstraint.activate([
+            containerView.topAnchor.constraint(equalTo: self.topAnchor),
+            containerView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            containerView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            containerView.widthAnchor.constraint(equalTo: self.widthAnchor)
         ])
     }
 }
