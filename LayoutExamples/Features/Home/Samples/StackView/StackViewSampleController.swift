@@ -46,6 +46,16 @@ final class StackViewSampleController: UIViewController {
         self.view = contentView
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setDefaultAppearance()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.resetNavigationAppearance()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Stack View Samples"

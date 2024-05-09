@@ -33,6 +33,16 @@ class WalletController: UIViewController {
         view = contentView
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureNavigationBarAppearance()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.resetNavigationAppearance()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
@@ -42,6 +52,14 @@ class WalletController: UIViewController {
     
     private func configure() {
         
+    }
+    
+    private func configureNavigationBarAppearance() {
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.configureWithOpaqueBackground()
+        navBarAppearance.backgroundColor = .init(literal: WalletColorLiterals.primary)
+        navigationController?.navigationBar.tintColor = .black
+        navigationController?.setDefaultAppearance(navBarAppearance)
     }
     
     private func bind() {

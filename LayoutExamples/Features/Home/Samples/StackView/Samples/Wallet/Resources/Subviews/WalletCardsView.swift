@@ -44,7 +44,7 @@ class WalletCardsView: UIView, ConfigurableView {
                 
                 if  viewIndexInSubviews == 0 {
                     let parentView = self
-                    // It is the base
+                    
                     NSLayoutConstraint.activate([
                         view.heightAnchor.constraint(equalToConstant: 150),
                         view.topAnchor.constraint(equalTo: parentView.topAnchor),
@@ -52,7 +52,7 @@ class WalletCardsView: UIView, ConfigurableView {
                         view.trailingAnchor.constraint(equalTo: parentView.trailingAnchor)
                     ])
                 } else {
-                    // It is the Top View
+                    
                     let previousView = subviews[previousViewIndex]
                     
                     if ((viewIndexInSubviews % (cards.count - 1)) != 0) {

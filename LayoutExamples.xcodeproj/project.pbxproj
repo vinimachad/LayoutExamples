@@ -47,6 +47,7 @@
 		3CA605092BEB9ACA007E7DA0 /* WalletCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA605082BEB9ACA007E7DA0 /* WalletCardsView.swift */; };
 		3CA6050D2BEB9BE0007E7DA0 /* ViewConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA6050C2BEB9BE0007E7DA0 /* ViewConfigurations.swift */; };
 		3CA6050F2BEC45D8007E7DA0 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA6050E2BEC45D8007E7DA0 /* ScrollView.swift */; };
+		3CA605132BEC5AD3007E7DA0 /* UINavigationController+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA605122BEC5AD3007E7DA0 /* UINavigationController+Style.swift */; };
 		3CAF97842BE9D0B30009F9D2 /* WalletHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAF97832BE9D0B30009F9D2 /* WalletHeaderView.swift */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +94,7 @@
 		3CA605082BEB9ACA007E7DA0 /* WalletCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCardsView.swift; sourceTree = "<group>"; };
 		3CA6050C2BEB9BE0007E7DA0 /* ViewConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfigurations.swift; sourceTree = "<group>"; };
 		3CA6050E2BEC45D8007E7DA0 /* ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
+		3CA605122BEC5AD3007E7DA0 /* UINavigationController+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Style.swift"; sourceTree = "<group>"; };
 		3CAF97832BE9D0B30009F9D2 /* WalletHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -193,6 +195,7 @@
 				3C295C302BE55006004081A1 /* UIView+Utils.swift */,
 				3C295C682BE84F3B004081A1 /* UIStackView+Utils.swift */,
 				3CA604F82BEA8E4A007E7DA0 /* NSMutableAttributedString+Utils.swift */,
+				3CA605122BEC5AD3007E7DA0 /* UINavigationController+Style.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				3C295C5A2BE84550004081A1 /* WalletViewModel.swift in Sources */,
 				3C295C312BE55006004081A1 /* UIView+Utils.swift in Sources */,
 				3C295C222BE2739F004081A1 /* HomeViewModel.swift in Sources */,
+				3CA605132BEC5AD3007E7DA0 /* UINavigationController+Style.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
