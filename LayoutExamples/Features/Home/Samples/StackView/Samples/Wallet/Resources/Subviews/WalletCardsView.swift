@@ -38,7 +38,7 @@ final class WalletCardsView: UIView, ConfigurableView {
     // MARK: - Configure
     
     func configure() {
-        let cards: [UIColor] = [.red, .gray]
+        let cards: [UIColor] = [.red, .gray, .blue, .red]
         
         cards.reversed().enumerated().forEach {
             let view = self.createCard(data: $0.element)
@@ -49,7 +49,6 @@ final class WalletCardsView: UIView, ConfigurableView {
                 
                 if  viewIndexInSubviews == 0 {
                     let parentView = self
-                    view.backgroundColor = .init(literal: WalletColorLiterals.white100)
                     NSLayoutConstraint.activate([
                         view.topAnchor.constraint(equalTo: parentView.topAnchor),
                         view.leadingAnchor.constraint(equalTo: parentView.leadingAnchor),
@@ -120,6 +119,7 @@ extension WalletCardsView {
         }
         
         private func createInfos() -> HorizontalStackView {
+            
             let view = HorizontalStackView()
             view.widthDistribution = .equalSpacing
             let cardNumberLabel = UILabel()
@@ -134,6 +134,13 @@ extension WalletCardsView {
             
             view.addArrangedSubviews([cardNumberLabel, dueDateLabel, nameLabel])
             return view
+        }
+        
+        // MARK: - Life cycle
+        
+        override func layoutSubviews() {
+            super.layoutSubviews()
+            addShadow(radius: 10, opacity: 0.2, pos: .init(x: 0, y: -2))
         }
         
         // MARK: - Configure
