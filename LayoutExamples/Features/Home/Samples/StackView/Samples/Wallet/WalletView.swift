@@ -36,10 +36,11 @@ class WalletView: ScrollView<VerticalStackView>, WalletViewProtocol {
     
     override func configure() {
         super.configure()
-        backgroundColor = .init(literal: WalletColorLiterals.primary)
         containerView.spacing = 16
         containerView.backgroundColor = .clear
         containerView.layoutMargins = .init(edges: 16)
+        containerView.setCustomSpacing(32, after: headerView)
+        backgroundColor = .init(literal: WalletColorLiterals.primary)
     }
     
     // MARK: - Hierarchy

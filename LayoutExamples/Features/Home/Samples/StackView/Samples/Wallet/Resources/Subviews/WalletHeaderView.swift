@@ -49,8 +49,11 @@ class WalletHeaderView: HorizontalStackView {
         let full = "Hello,\n"
         
         let mutable = NSMutableAttributedString()
-        mutable.addAttribute(.foregroundColor, value: UIColor.black.withAlphaComponent(0.5), string: full)
-        mutable.addAttribute(.foregroundColor, value: UIColor.black, string: name)
+        mutable.addAttribute(.foregroundColor, value: UIColor.black.withAlphaComponent(0.7), string: full)
+        mutable.addAttributes([
+            .font: UIFont.systemFont(ofSize: 16, weight: .bold),
+            .foregroundColor: UIColor.black
+        ], string: name)
         nameLabel.attributedText = mutable
     }
     

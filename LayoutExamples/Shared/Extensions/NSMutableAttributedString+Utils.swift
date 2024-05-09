@@ -12,4 +12,9 @@ extension NSMutableAttributedString {
         let attrString = NSAttributedString(string: string, attributes: [name: value])
         self.append(attrString)
     }
+    
+    func addAttributes(_ attributes: [NSAttributedString.Key: Any], string: String) {
+        let attrString = NSAttributedString(string: string, attributes: attributes)
+        self.append(attrString)
+    }
 }
