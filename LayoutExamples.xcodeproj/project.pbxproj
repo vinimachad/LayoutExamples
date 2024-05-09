@@ -46,6 +46,7 @@
 		3CA605062BEB085A007E7DA0 /* WalletMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA605052BEB085A007E7DA0 /* WalletMenuView.swift */; };
 		3CA605092BEB9ACA007E7DA0 /* WalletCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA605082BEB9ACA007E7DA0 /* WalletCardsView.swift */; };
 		3CA6050D2BEB9BE0007E7DA0 /* ViewConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA6050C2BEB9BE0007E7DA0 /* ViewConfigurations.swift */; };
+		3CA6050F2BEC45D8007E7DA0 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA6050E2BEC45D8007E7DA0 /* ScrollView.swift */; };
 		3CAF97842BE9D0B30009F9D2 /* WalletHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAF97832BE9D0B30009F9D2 /* WalletHeaderView.swift */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,7 @@
 		3CA605052BEB085A007E7DA0 /* WalletMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletMenuView.swift; sourceTree = "<group>"; };
 		3CA605082BEB9ACA007E7DA0 /* WalletCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCardsView.swift; sourceTree = "<group>"; };
 		3CA6050C2BEB9BE0007E7DA0 /* ViewConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfigurations.swift; sourceTree = "<group>"; };
+		3CA6050E2BEC45D8007E7DA0 /* ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
 		3CAF97832BE9D0B30009F9D2 /* WalletHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -312,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				3CA6050C2BEB9BE0007E7DA0 /* ViewConfigurations.swift */,
+				3CA6050E2BEC45D8007E7DA0 /* ScrollView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				3C295C542BE7CB2B004081A1 /* StackViewSampleFactory.swift in Sources */,
 				3C295C582BE84549004081A1 /* WalletController.swift in Sources */,
 				3C295C3C2BE55AA1004081A1 /* Coordinator.swift in Sources */,
+				3CA6050F2BEC45D8007E7DA0 /* ScrollView.swift in Sources */,
 				3C295C5E2BE84562004081A1 /* WalletModel.swift in Sources */,
 				3C295C522BE7C760004081A1 /* StackViewSampleViewModel.swift in Sources */,
 				3CA605042BEAF17B007E7DA0 /* UIColor+Utils.swift in Sources */,

@@ -9,59 +9,49 @@ import UIKit
 
 protocol WalletViewProtocol: UIScrollView { }
 
-class WalletView: UIScrollView, WalletViewProtocol, ConfigurableView {
+class WalletView: ScrollView<VerticalStackView>, WalletViewProtocol {
     
-    private lazy var containerView: VerticalStackView = VerticalStackView()
+    // MARK: - UI Components
+
     private lazy var headerView: WalletHeaderView = WalletHeaderView()
     private lazy var balanceView: WalletBalanceView = WalletBalanceView()
     private lazy var cardView: WalletCardsView = WalletCardsView()
     private lazy var quoteView: WalletQuoteView = WalletQuoteView()
     private lazy var menuView: WalletMenuView = WalletMenuView()
+    private lazy var containerView: VerticalStackView = VerticalStackView()
     
     // MARK: - Init
     
     init() {
         super.init(frame: .zero)
-        configure()
+        contentView = containerView
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        configure()
+        contentView = containerView
     }
     
     // MARK: - Configure
     
-    func configure() {
-        contentInsetAdjustmentBehavior = .never
+    override func configure() {
+        super.configure()
         backgroundColor = .init(literal: WalletColorLiterals.primary)
         containerView.spacing = 16
         containerView.backgroundColor = .clear
         containerView.layoutMargins = .init(edges: 16)
-        configureHierarchy()
-        configureConstraints()
     }
     
     // MARK: - Hierarchy
     
-    func configureHierarchy() {
-        addSubview(containerView)
+    override func configureHierarchy() {
+        super.configureHierarchy()
         containerView.addArrangedSubviews([
             headerView,
             balanceView,
             cardView,
             quoteView,
             menuView
-        ])
-    }
-    
-    func configureConstraints() {
-        containerView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            containerView.topAnchor.constraint(equalTo: self.topAnchor),
-            containerView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            containerView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            containerView.widthAnchor.constraint(equalTo: self.widthAnchor),
         ])
     }
 }
