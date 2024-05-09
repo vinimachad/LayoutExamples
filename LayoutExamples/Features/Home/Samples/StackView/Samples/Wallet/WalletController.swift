@@ -56,8 +56,8 @@ class WalletController: UIViewController {
     
     private func configureNavigationBarAppearance() {
         let navBarAppearance = UINavigationBarAppearance()
-        navBarAppearance.configureWithOpaqueBackground()
-        navBarAppearance.backgroundColor = .init(literal: WalletColorLiterals.primary)
+        navBarAppearance.configureWithDefaultBackground()
+        navBarAppearance.backgroundEffect = UIBlurEffect(style: .light)
         navigationController?.navigationBar.tintColor = .black
         navigationController?.setDefaultAppearance(navBarAppearance)
     }

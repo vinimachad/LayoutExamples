@@ -11,6 +11,7 @@ enum WalletImageLiterals: String, ImageTokenProtocol  {
     case menu
     case scan
     case add
+    case more
     
     // MARK: - ImageTokenProtocol implementation
     

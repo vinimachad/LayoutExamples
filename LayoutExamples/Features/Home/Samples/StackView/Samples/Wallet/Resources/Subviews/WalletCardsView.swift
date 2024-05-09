@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WalletCardsView: UIView, ConfigurableView {
+final class WalletCardsView: UIView, ConfigurableView {
     
     // MARK: - Init
     
@@ -23,17 +23,22 @@ class WalletCardsView: UIView, ConfigurableView {
     
     // MARK: - Layout methods
     
-    private func createCard(data: UIColor) -> UIView {
-        let view = UIView()
-        view.backgroundColor = data
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+    private func createCard(data: UIColor) -> Card {
+        let contentView = Card()
+        contentView.viewModel = (
+            cardLogo: .menu,
+            dollarValue: "USD 16,450.00",
+            lastDigits: "*********7839",
+            dueDate: "07/25",
+            name: "Arnold Jackson"
+        )
+        return contentView
     }
     
     // MARK: - Configure
     
     func configure() {
-        let cards: [UIColor] = [.red, .gray, .blue, .black, .systemPink, .green, .cyan, .purple]
+        let cards: [UIColor] = [.red, .gray]
         
         cards.reversed().enumerated().forEach {
             let view = self.createCard(data: $0.element)
@@ -44,9 +49,8 @@ class WalletCardsView: UIView, ConfigurableView {
                 
                 if  viewIndexInSubviews == 0 {
                     let parentView = self
-                    
+                    view.backgroundColor = .init(literal: WalletColorLiterals.white100)
                     NSLayoutConstraint.activate([
-                        view.heightAnchor.constraint(equalToConstant: 150),
                         view.topAnchor.constraint(equalTo: parentView.topAnchor),
                         view.leadingAnchor.constraint(equalTo: parentView.leadingAnchor),
                         view.trailingAnchor.constraint(equalTo: parentView.trailingAnchor)
@@ -57,14 +61,12 @@ class WalletCardsView: UIView, ConfigurableView {
                     
                     if ((viewIndexInSubviews % (cards.count - 1)) != 0) {
                         NSLayoutConstraint.activate([
-                            view.heightAnchor.constraint(equalToConstant: 150),
                             view.leadingAnchor.constraint(equalTo: leadingAnchor),
                             view.trailingAnchor.constraint(equalTo: trailingAnchor),
                             view.centerYAnchor.constraint(equalTo: previousView.centerYAnchor, constant: 45),
                         ])
                     } else {
                         NSLayoutConstraint.activate([
-                            view.heightAnchor.constraint(equalToConstant: 150),
                             view.leadingAnchor.constraint(equalTo: leadingAnchor),
                             view.trailingAnchor.constraint(equalTo: trailingAnchor),
                             view.bottomAnchor.constraint(equalTo: bottomAnchor),
@@ -73,6 +75,82 @@ class WalletCardsView: UIView, ConfigurableView {
                     }
                 }
             }
+        }
+    }
+}
+
+extension WalletCardsView {
+    private class Card: VerticalStackView {
+        
+        // MARK: - Public properties
+        
+        typealias ViewModel = (cardLogo: WalletImageLiterals, dollarValue: String, lastDigits: String, dueDate: String, name: String)
+        
+        var viewModel: ViewModel? {
+            didSet {
+                updateViewConfigurations()
+            }
+        }
+        
+        // MARK: - UI Components
+        
+        private lazy var dollarValueLabel: UILabel = {
+            let view = UILabel()
+            view.font = .systemFont(ofSize: 25, weight: .medium)
+            return view
+        }()
+      
+        // MARK: - Layout methods
+        
+        private func createHeader() -> HorizontalStackView {
+            let view = HorizontalStackView()
+            view.widthDistribution = .equalSpacing
+            let leftIconImageView = UIImageView()
+            let righIconImageView = UIImageView()
+            
+            if let viewModel {
+                leftIconImageView.contentMode = .scaleAspectFit
+                righIconImageView.contentMode = .scaleAspectFit
+                leftIconImageView.image = .init(literal: viewModel.cardLogo)?.withTintColor(.gray, renderingMode: .alwaysTemplate)
+                righIconImageView.image = .init(literal: WalletImageLiterals.more)?.withTintColor(.blue, renderingMode: .alwaysTemplate)
+            }
+            
+            view.addArrangedSubviews([leftIconImageView, righIconImageView])
+            return view
+        }
+        
+        private func createInfos() -> HorizontalStackView {
+            let view = HorizontalStackView()
+            view.widthDistribution = .equalSpacing
+            let cardNumberLabel = UILabel()
+            let dueDateLabel = UILabel()
+            let nameLabel = UILabel()
+            
+            if let viewModel {
+                cardNumberLabel.text = viewModel.lastDigits
+                dueDateLabel.text = viewModel.dueDate
+                nameLabel.text = viewModel.name
+            }
+            
+            view.addArrangedSubviews([cardNumberLabel, dueDateLabel, nameLabel])
+            return view
+        }
+        
+        // MARK: - Configure
+        
+        override func configure() {
+            spacing = 40
+            heightDistribution = .fillProportionally
+            cornerRadius = 16
+            backgroundColor = .white
+            layoutMargins = .init(edges: 16)
+            translatesAutoresizingMaskIntoConstraints = false
+        }
+        
+        private func updateViewConfigurations() {
+            dollarValueLabel.text = viewModel?.dollarValue
+            dollarValueLabel.setContentHuggingPriority(.init(100), for: .vertical)
+            addArrangedSubviews([createHeader(), dollarValueLabel, createInfos()])
         }
     }
 }

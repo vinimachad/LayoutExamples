@@ -33,20 +33,25 @@ class VerticalStackView: UIStackView, ConfigurableView {
     
     init() {
         super.init(frame: .zero)
+        defaultConfigurations()
         configure()
     }
     
     required init(coder: NSCoder) {
         super.init(coder: coder)
+        defaultConfigurations()
         configure()
     }
     
     // MARK: - Configure
     
-    func configure() {
+    private func defaultConfigurations() {
         axis = .vertical
         horizontalAlignment = .fill
         heightDistribution = .fill
+    }
+    
+    func configure() {
         configureHierarchy()
         configurePriorities()
         configureConstraints()
