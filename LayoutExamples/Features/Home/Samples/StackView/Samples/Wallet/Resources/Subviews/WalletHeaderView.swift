@@ -61,8 +61,9 @@ class WalletHeaderView: HorizontalStackView {
     
     override func configure() {
         super.configure()
-        spacing = 8
+        widthDistribution = .equalSpacing
         verticalAlignment = .center
+        setCustomSpacing(8, after: iconView, relation: .equal)
         setupAttributedTextNameLabel()
     }
     
@@ -72,10 +73,6 @@ class WalletHeaderView: HorizontalStackView {
             nameLabel,
             moreButton
         ])
-    }
-    
-    override func configurePriorities() {
-        nameLabel.setContentHuggingPriority(.init(100), for: .horizontal)
     }
     
     override func configureConstraints() {

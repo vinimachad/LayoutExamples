@@ -147,7 +147,7 @@ extension WalletCardsView {
         
         override func configure() {
             spacing = 40
-            heightDistribution = .fillProportionally
+            heightDistribution = .equalSpacing
             cornerRadius = 16
             backgroundColor = .white
             layoutMargins = .init(edges: 16)
@@ -156,7 +156,6 @@ extension WalletCardsView {
         
         private func updateViewConfigurations() {
             dollarValueLabel.text = viewModel?.dollarValue
-            dollarValueLabel.setContentHuggingPriority(.init(100), for: .vertical)
             addArrangedSubviews([createHeader(), dollarValueLabel, createInfos()])
         }
     }
