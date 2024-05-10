@@ -48,6 +48,13 @@
 		3CA6050D2BEB9BE0007E7DA0 /* ViewConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA6050C2BEB9BE0007E7DA0 /* ViewConfigurations.swift */; };
 		3CA6050F2BEC45D8007E7DA0 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA6050E2BEC45D8007E7DA0 /* ScrollView.swift */; };
 		3CA605132BEC5AD3007E7DA0 /* UINavigationController+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA605122BEC5AD3007E7DA0 /* UINavigationController+Style.swift */; };
+		3CA605152BEDA4CA007E7DA0 /* WalletViewWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA605142BEDA4CA007E7DA0 /* WalletViewWorker.swift */; };
+		3CA605192BEDA831007E7DA0 /* BundleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA605182BEDA831007E7DA0 /* BundleService.swift */; };
+		3CA6051C2BEDA90A007E7DA0 /* WalletHomesMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CA6051B2BEDA90A007E7DA0 /* WalletHomesMock.json */; };
+		3CA6051E2BEDAB6D007E7DA0 /* WalletCheckingAccountMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CA6051D2BEDAB6D007E7DA0 /* WalletCheckingAccountMock.json */; };
+		3CA605222BEDB6C2007E7DA0 /* Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA605212BEDB6C2007E7DA0 /* Decode.swift */; };
+		3CA605252BEDBA02007E7DA0 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA605242BEDBA02007E7DA0 /* AppError.swift */; };
+		3CA605272BEDBF50007E7DA0 /* ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA605262BEDBF50007E7DA0 /* ResponseData.swift */; };
 		3CAF97842BE9D0B30009F9D2 /* WalletHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAF97832BE9D0B30009F9D2 /* WalletHeaderView.swift */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +102,13 @@
 		3CA6050C2BEB9BE0007E7DA0 /* ViewConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfigurations.swift; sourceTree = "<group>"; };
 		3CA6050E2BEC45D8007E7DA0 /* ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
 		3CA605122BEC5AD3007E7DA0 /* UINavigationController+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Style.swift"; sourceTree = "<group>"; };
+		3CA605142BEDA4CA007E7DA0 /* WalletViewWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewWorker.swift; sourceTree = "<group>"; };
+		3CA605182BEDA831007E7DA0 /* BundleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleService.swift; sourceTree = "<group>"; };
+		3CA6051B2BEDA90A007E7DA0 /* WalletHomesMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WalletHomesMock.json; sourceTree = "<group>"; };
+		3CA6051D2BEDAB6D007E7DA0 /* WalletCheckingAccountMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WalletCheckingAccountMock.json; sourceTree = "<group>"; };
+		3CA605212BEDB6C2007E7DA0 /* Decode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decode.swift; sourceTree = "<group>"; };
+		3CA605242BEDBA02007E7DA0 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		3CA605262BEDBF50007E7DA0 /* ResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseData.swift; sourceTree = "<group>"; };
 		3CAF97832BE9D0B30009F9D2 /* WalletHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -178,6 +192,8 @@
 		3C295C2C2BE47FAC004081A1 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				3CA605232BEDB9F8007E7DA0 /* Models */,
+				3CA605162BEDA79C007E7DA0 /* Services */,
 				3CA604F12BEA813F007E7DA0 /* Tokens */,
 				3C295C482BE6A1BC004081A1 /* UI */,
 				3C295C3A2BE55A91004081A1 /* Coordinator */,
@@ -189,13 +205,9 @@
 		3C295C2D2BE47FB6004081A1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3CA605202BEDB6AC007E7DA0 /* Foundation */,
+				3CA6051F2BEDB69D007E7DA0 /* UIKit */,
 				3CA605022BEAF165007E7DA0 /* Token */,
-				3C295C652BE84C3A004081A1 /* UIEdgesInsets+Utils.swift */,
-				3C295C2E2BE47FCA004081A1 /* UIView+Debug.swift */,
-				3C295C302BE55006004081A1 /* UIView+Utils.swift */,
-				3C295C682BE84F3B004081A1 /* UIStackView+Utils.swift */,
-				3CA604F82BEA8E4A007E7DA0 /* NSMutableAttributedString+Utils.swift */,
-				3CA605122BEC5AD3007E7DA0 /* UINavigationController+Style.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -245,6 +257,7 @@
 				3C295C592BE84550004081A1 /* WalletViewModel.swift */,
 				3C295C5B2BE84557004081A1 /* WalletView.swift */,
 				3C295C5D2BE84562004081A1 /* WalletModel.swift */,
+				3CA605142BEDA4CA007E7DA0 /* WalletViewWorker.swift */,
 			);
 			path = Wallet;
 			sourceTree = "<group>";
@@ -322,9 +335,57 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		3CA605162BEDA79C007E7DA0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3CA605182BEDA831007E7DA0 /* BundleService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3CA6051A2BEDA8C8007E7DA0 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				3CA6051B2BEDA90A007E7DA0 /* WalletHomesMock.json */,
+				3CA6051D2BEDAB6D007E7DA0 /* WalletCheckingAccountMock.json */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		3CA6051F2BEDB69D007E7DA0 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				3C295C652BE84C3A004081A1 /* UIEdgesInsets+Utils.swift */,
+				3C295C2E2BE47FCA004081A1 /* UIView+Debug.swift */,
+				3C295C302BE55006004081A1 /* UIView+Utils.swift */,
+				3C295C682BE84F3B004081A1 /* UIStackView+Utils.swift */,
+				3CA604F82BEA8E4A007E7DA0 /* NSMutableAttributedString+Utils.swift */,
+				3CA605122BEC5AD3007E7DA0 /* UINavigationController+Style.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		3CA605202BEDB6AC007E7DA0 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				3CA605212BEDB6C2007E7DA0 /* Decode.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		3CA605232BEDB9F8007E7DA0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3CA605242BEDBA02007E7DA0 /* AppError.swift */,
+				3CA605262BEDBF50007E7DA0 /* ResponseData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		3CAF97812BE9D0980009F9D2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3CA6051A2BEDA8C8007E7DA0 /* Mocks */,
 				3CA604EE2BEA8100007E7DA0 /* Tokens */,
 				3CAF97822BE9D09F0009F9D2 /* Subviews */,
 			);
@@ -402,6 +463,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C295C122BE271BE004081A1 /* LaunchScreen.storyboard in Resources */,
+				3CA6051C2BEDA90A007E7DA0 /* WalletHomesMock.json in Resources */,
+				3CA6051E2BEDAB6D007E7DA0 /* WalletCheckingAccountMock.json in Resources */,
 				3CA604ED2BEA805E007E7DA0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -421,6 +484,7 @@
 				3C295C692BE84F3B004081A1 /* UIStackView+Utils.swift in Sources */,
 				3C295C1E2BE2738B004081A1 /* HomeController.swift in Sources */,
 				3C295C062BE271BC004081A1 /* AppDelegate.swift in Sources */,
+				3CA605252BEDBA02007E7DA0 /* AppError.swift in Sources */,
 				3CA605062BEB085A007E7DA0 /* WalletMenuView.swift in Sources */,
 				3C295C372BE552F1004081A1 /* StackViewSampleController.swift in Sources */,
 				3C295C2F2BE47FCA004081A1 /* UIView+Debug.swift in Sources */,
@@ -432,14 +496,17 @@
 				3CA604FB2BEAD126007E7DA0 /* WalletBalanceView.swift in Sources */,
 				3C295C542BE7CB2B004081A1 /* StackViewSampleFactory.swift in Sources */,
 				3C295C582BE84549004081A1 /* WalletController.swift in Sources */,
+				3CA605192BEDA831007E7DA0 /* BundleService.swift in Sources */,
 				3C295C3C2BE55AA1004081A1 /* Coordinator.swift in Sources */,
 				3CA6050F2BEC45D8007E7DA0 /* ScrollView.swift in Sources */,
 				3C295C5E2BE84562004081A1 /* WalletModel.swift in Sources */,
+				3CA605272BEDBF50007E7DA0 /* ResponseData.swift in Sources */,
 				3C295C522BE7C760004081A1 /* StackViewSampleViewModel.swift in Sources */,
 				3CA605042BEAF17B007E7DA0 /* UIColor+Utils.swift in Sources */,
 				3C295C502BE7C2DE004081A1 /* StackViewSampleModel.swift in Sources */,
 				3CAF97842BE9D0B30009F9D2 /* WalletHeaderView.swift in Sources */,
 				3C295C4E2BE6A255004081A1 /* GridCollectionFlowLayout.swift in Sources */,
+				3CA605222BEDB6C2007E7DA0 /* Decode.swift in Sources */,
 				3CA605092BEB9ACA007E7DA0 /* WalletCardsView.swift in Sources */,
 				3C295C632BE84B25004081A1 /* HorizontalStackView.swift in Sources */,
 				3C295C612BE847B1004081A1 /* VerticalStackView.swift in Sources */,
@@ -449,6 +516,7 @@
 				3C295C3E2BE55BF4004081A1 /* HomeFactory.swift in Sources */,
 				3C295C432BE68478004081A1 /* AppCoordinator.swift in Sources */,
 				3C295C5C2BE84557004081A1 /* WalletView.swift in Sources */,
+				3CA605152BEDA4CA007E7DA0 /* WalletViewWorker.swift in Sources */,
 				3C295C5A2BE84550004081A1 /* WalletViewModel.swift in Sources */,
 				3C295C312BE55006004081A1 /* UIView+Utils.swift in Sources */,
 				3C295C222BE2739F004081A1 /* HomeViewModel.swift in Sources */,

@@ -46,12 +46,14 @@ class WalletController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+        bind()
+        viewModel?.load()
     }
     
     // MARK: - Configure
     
     private func configure() {
-        
+        contentView?.walletDelegate = self
     }
     
     private func configureNavigationBarAppearance() {
@@ -63,6 +65,12 @@ class WalletController: UIViewController {
     }
     
     private func bind() {
+        
+    }
+}
+
+extension WalletController: WalletViewDelegate {
+    func showCardSelector() {
         
     }
 }

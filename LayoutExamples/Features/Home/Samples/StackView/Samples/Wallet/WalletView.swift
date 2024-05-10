@@ -7,15 +7,25 @@
 
 import UIKit
 
-protocol WalletViewProtocol: UIScrollView { }
+protocol WalletViewDelegate: AnyObject {
+    func showCardSelector()
+}
+
+protocol WalletViewProtocol: UIScrollView {
+    var walletDelegate: WalletViewDelegate? { get set }
+}
 
 class WalletView: ScrollView<VerticalStackView>, WalletViewProtocol {
+    
+    // MARK: - Public properties
+    
+    weak var walletDelegate: WalletViewDelegate?
     
     // MARK: - UI Components
 
     private lazy var headerView: WalletHeaderView = WalletHeaderView()
     private lazy var balanceView: WalletBalanceView = WalletBalanceView()
-    private lazy var cardView: WalletCardsView = WalletCardsView()
+    private lazy var cardsView: WalletCardsView = WalletCardsView()
     private lazy var quoteView: WalletQuoteView = WalletQuoteView()
     private lazy var menuView: WalletMenuView = WalletMenuView()
     private lazy var containerView: VerticalStackView = VerticalStackView()
@@ -36,6 +46,7 @@ class WalletView: ScrollView<VerticalStackView>, WalletViewProtocol {
     
     override func configure() {
         super.configure()
+        cardsView.delegate = self
         containerView.spacing = 16
         containerView.backgroundColor = .clear
         containerView.layoutMargins = .init(edges: 16)
@@ -50,9 +61,15 @@ class WalletView: ScrollView<VerticalStackView>, WalletViewProtocol {
         containerView.addArrangedSubviews([
             headerView,
             balanceView,
-            cardView,
+            cardsView,
             quoteView,
             menuView
         ])
+    }
+}
+
+extension WalletView: WalletCardsDelegate {
+    func didTapContainerCards() {
+        walletDelegate?.showCardSelector()
     }
 }

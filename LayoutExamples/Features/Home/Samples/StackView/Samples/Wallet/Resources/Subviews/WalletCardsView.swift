@@ -7,7 +7,15 @@
 
 import UIKit
 
+protocol WalletCardsDelegate: AnyObject {
+    func didTapContainerCards()
+}
+
 final class WalletCardsView: UIView, ConfigurableView {
+    
+    // MARK: - Public properties
+    
+    weak var delegate: WalletCardsDelegate?
     
     // MARK: - Init
     
@@ -39,9 +47,10 @@ final class WalletCardsView: UIView, ConfigurableView {
     
     func configure() {
         let cards: [UIColor] = [.red, .gray, .blue, .red]
-        
+        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapContainerCards)))
         cards.reversed().enumerated().forEach {
             let view = self.createCard(data: $0.element)
+            view.isUserInteractionEnabled = false
             addSubview(view)
             
             if let viewIndexInSubviews = subviews.firstIndex(of: view) {
@@ -76,15 +85,19 @@ final class WalletCardsView: UIView, ConfigurableView {
             }
         }
     }
+    
+    @objc private func didTapContainerCards() {
+        delegate?.didTapContainerCards()
+    }
 }
 
 extension WalletCardsView {
     private class Card: VerticalStackView {
+        typealias ViewModel = (cardLogo: WalletImageLiterals, dollarValue: String, lastDigits: String, dueDate: String, name: String)
         
         // MARK: - Public properties
         
-        typealias ViewModel = (cardLogo: WalletImageLiterals, dollarValue: String, lastDigits: String, dueDate: String, name: String)
-        
+        var onTapCard: (() -> Void)?
         var viewModel: ViewModel? {
             didSet {
                 updateViewConfigurations()
@@ -152,11 +165,18 @@ extension WalletCardsView {
             backgroundColor = .white
             layoutMargins = .init(edges: 16)
             translatesAutoresizingMaskIntoConstraints = false
+            addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapCard)))
         }
         
         private func updateViewConfigurations() {
             dollarValueLabel.text = viewModel?.dollarValue
             addArrangedSubviews([createHeader(), dollarValueLabel, createInfos()])
+        }
+        
+        // MARK: - Actions
+        
+        @objc private func didTapCard() {
+            print("testecard")
         }
     }
 }
