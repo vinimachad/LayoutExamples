@@ -8,13 +8,17 @@
 import Foundation
 
 protocol WalletViewWorkerProtocol {
-    func getCards(success: @escaping Completion<WalletModel.Response.Home>, failure: @escaping Completion<AppError>)
+    func getHomes(
+        success: @escaping Completion<WalletModel.Response.Home>,
+        failure: @escaping Completion<AppError>,
+        finally: EmptyCompletion?
+    )
 }
 
 class WalletViewWorker: WalletViewWorkerProtocol {
     typealias Response = WalletModel.Response
     
-    // MARK - Private properties
+    // MARK: - Private properties
     
     private var service: BundleServiceProtocol
     
@@ -26,10 +30,15 @@ class WalletViewWorker: WalletViewWorkerProtocol {
     
     // MARK: - WalletViewWorkerProtocol
     
-    func getCards(success: @escaping Completion<Response.Home>, failure: @escaping Completion<AppError>) {
+    func getHomes(
+        success: @escaping Completion<Response.Home>,
+        failure: @escaping Completion<AppError>,
+        finally: EmptyCompletion?
+    ) {
         service.loadJson(
             "WalletHomesMock",
             model: Response.Home.self,
+           queue: .main,
             completion: { result in
                 switch result {
                 case .success(let response):
@@ -37,18 +46,7 @@ class WalletViewWorker: WalletViewWorkerProtocol {
                 case .failure(let error):
                     failure(error)
                 }
+                finally?()
             })
-    }
-    
-    func getQuotes() {
-        
-    }
-    
-    func getAccountInfo() {
-        
-    }
-    
-    func getCheckingAccount() {
-        
     }
 }

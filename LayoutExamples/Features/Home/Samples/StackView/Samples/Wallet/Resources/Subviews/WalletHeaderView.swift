@@ -9,12 +9,23 @@ import UIKit
 
 class WalletHeaderView: HorizontalStackView {
     
+    typealias ViewModel = (name: String, avatarImage: String)
+    
+    // MARK: - Public properties
+    
+    var viewModel: ViewModel? {
+        didSet {
+            updateView()
+        }
+    }
+    
     // MARK: - UI Components
     
-    private lazy var iconView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .orange
+    private lazy var iconView: UIImageView = {
+        let view = UIImageView()
         view.setRounded()
+        view.backgroundColor = .white
+        view.contentMode = .scaleAspectFit
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -42,14 +53,21 @@ class WalletHeaderView: HorizontalStackView {
         moreButton.setRounded()
     }
     
+    // MARK: - Update Methods
+    
+    private func updateView() {
+        guard let (name, avatarImage) = viewModel else { return}
+        iconView.setImage(from: avatarImage, placeholder: UIImage(literal: WalletImageLiterals.scan))
+        setupAttributedTextNameLabel(name: name)
+    }
+    
     // MARK: - Layout methods
     
-    private func setupAttributedTextNameLabel() {
-        let name = "Vinicius"
-        let full = "Hello,\n"
+    private func setupAttributedTextNameLabel(name: String) {
+        let hello = "Hello,\n"
         
         let mutable = NSMutableAttributedString()
-        mutable.addAttribute(.foregroundColor, value: UIColor.black.withAlphaComponent(0.7), string: full)
+        mutable.addAttribute(.foregroundColor, value: UIColor.black.withAlphaComponent(0.7), string: hello)
         mutable.addAttributes([
             .font: UIFont.systemFont(ofSize: 16, weight: .bold),
             .foregroundColor: UIColor.black
@@ -64,7 +82,6 @@ class WalletHeaderView: HorizontalStackView {
         widthDistribution = .equalSpacing
         verticalAlignment = .center
         setCustomSpacing(8, after: iconView, relation: .equal)
-        setupAttributedTextNameLabel()
     }
     
     override func configureHierarchy() {

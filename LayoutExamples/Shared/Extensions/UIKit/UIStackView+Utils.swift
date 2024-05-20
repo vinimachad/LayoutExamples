@@ -17,7 +17,6 @@ extension UIStackView {
         let nextViewIndex = arrangedSubviews.index(after: viewIndex)
         guard nextViewIndex < subviews.count else { return }
         
-        let nextView = subviews[nextViewIndex]
         let constant = spacing * -1
         
         var constraint: NSLayoutConstraint?

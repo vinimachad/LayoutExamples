@@ -8,25 +8,45 @@
 import Foundation
 
 protocol WalletViewModelProtocol {
+    var onUpdateViewStateWith: Completion<WalletView.State>? { get set }
     func load()
 }
 
 class WalletViewModel: WalletViewModelProtocol {
     
+    // MARK: - Public properties
+    
+    var onUpdateViewStateWith: Completion<WalletView.State>?
+    
+    // MARK: - Private properties
+    
     private var worker: WalletViewWorkerProtocol
-
+    
+    // MARK: - Init
+    
     init(worker: WalletViewWorkerProtocol = WalletViewWorker()) {
         self.worker = worker
     }
     
+    // MARK: - WalletViewModelProtocol Methods
+    
     func load() {
-        worker.getCards(
+        onUpdateViewStateWith?(.loading)
+        worker.getHomes(
             success: { [weak self] response in
-                print(response)
+                let homesViewModel = WalletModel.ViewModel.Home(
+                    firstName: response.account.firstName,
+                    avatarImage: response.account.avatarImage,
+                    balance: response.checkingAccount.balance,
+                    quotes: response.quotes,
+                    cards: response.cards
+                )
+                self?.onUpdateViewStateWith?(.present(homesViewModel))
             },
             failure: { [weak self] error in
-                print(error)
-            }
+                self?.onUpdateViewStateWith?(.error)
+            },
+            finally: nil
         )
     }
 }

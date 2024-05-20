@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C0D88B32BF58CEF000A68A4 /* UIImageView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0D88B22BF58CEF000A68A4 /* UIImageView+Utils.swift */; };
 		3C295C062BE271BC004081A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C295C052BE271BC004081A1 /* AppDelegate.swift */; };
 		3C295C122BE271BE004081A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C295C102BE271BE004081A1 /* LaunchScreen.storyboard */; };
 		3C295C1E2BE2738B004081A1 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C295C1D2BE2738B004081A1 /* HomeController.swift */; };
@@ -33,6 +34,7 @@
 		3C295C632BE84B25004081A1 /* HorizontalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C295C622BE84B25004081A1 /* HorizontalStackView.swift */; };
 		3C295C662BE84C3A004081A1 /* UIEdgesInsets+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C295C652BE84C3A004081A1 /* UIEdgesInsets+Utils.swift */; };
 		3C295C692BE84F3B004081A1 /* UIStackView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C295C682BE84F3B004081A1 /* UIStackView+Utils.swift */; };
+		3C8AEDEE2BF308950062FE2E /* CallbackQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8AEDED2BF308950062FE2E /* CallbackQueue.swift */; };
 		3CA604ED2BEA805E007E7DA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CA604EC2BEA805E007E7DA0 /* Assets.xcassets */; };
 		3CA604F02BEA8108007E7DA0 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA604EF2BEA8108007E7DA0 /* Image.swift */; };
 		3CA604F32BEA8149007E7DA0 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA604F22BEA8149007E7DA0 /* Images.swift */; };
@@ -55,10 +57,14 @@
 		3CA605222BEDB6C2007E7DA0 /* Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA605212BEDB6C2007E7DA0 /* Decode.swift */; };
 		3CA605252BEDBA02007E7DA0 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA605242BEDBA02007E7DA0 /* AppError.swift */; };
 		3CA605272BEDBF50007E7DA0 /* ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA605262BEDBF50007E7DA0 /* ResponseData.swift */; };
+		3CA6052A2BEE6718007E7DA0 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA605292BEE6718007E7DA0 /* Currency.swift */; };
+		3CA6052C2BEE67F4007E7DA0 /* Double+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA6052B2BEE67F4007E7DA0 /* Double+Currency.swift */; };
+		3CA6052E2BEFCB00007E7DA0 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA6052D2BEFCB00007E7DA0 /* String+Utils.swift */; };
 		3CAF97842BE9D0B30009F9D2 /* WalletHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAF97832BE9D0B30009F9D2 /* WalletHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C0D88B22BF58CEF000A68A4 /* UIImageView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Utils.swift"; sourceTree = "<group>"; };
 		3C295C022BE271BC004081A1 /* LayoutExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LayoutExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C295C052BE271BC004081A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C295C112BE271BE004081A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -87,6 +93,7 @@
 		3C295C622BE84B25004081A1 /* HorizontalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalStackView.swift; sourceTree = "<group>"; };
 		3C295C652BE84C3A004081A1 /* UIEdgesInsets+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgesInsets+Utils.swift"; sourceTree = "<group>"; };
 		3C295C682BE84F3B004081A1 /* UIStackView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Utils.swift"; sourceTree = "<group>"; };
+		3C8AEDED2BF308950062FE2E /* CallbackQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallbackQueue.swift; sourceTree = "<group>"; };
 		3CA604EC2BEA805E007E7DA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3CA604EF2BEA8108007E7DA0 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		3CA604F22BEA8149007E7DA0 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
@@ -109,6 +116,9 @@
 		3CA605212BEDB6C2007E7DA0 /* Decode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decode.swift; sourceTree = "<group>"; };
 		3CA605242BEDBA02007E7DA0 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		3CA605262BEDBF50007E7DA0 /* ResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseData.swift; sourceTree = "<group>"; };
+		3CA605292BEE6718007E7DA0 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		3CA6052B2BEE67F4007E7DA0 /* Double+Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Currency.swift"; sourceTree = "<group>"; };
+		3CA6052D2BEFCB00007E7DA0 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
 		3CAF97832BE9D0B30009F9D2 /* WalletHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -192,6 +202,8 @@
 		3C295C2C2BE47FAC004081A1 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				3C8AEDEC2BF3085F0062FE2E /* Utils */,
+				3CA605282BEE66FF007E7DA0 /* PropertyWrappers */,
 				3CA605232BEDB9F8007E7DA0 /* Models */,
 				3CA605162BEDA79C007E7DA0 /* Services */,
 				3CA604F12BEA813F007E7DA0 /* Tokens */,
@@ -299,6 +311,14 @@
 			path = StackView;
 			sourceTree = "<group>";
 		};
+		3C8AEDEC2BF3085F0062FE2E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3C8AEDED2BF308950062FE2E /* CallbackQueue.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		3CA604EE2BEA8100007E7DA0 /* Tokens */ = {
 			isa = PBXGroup;
 			children = (
@@ -361,6 +381,7 @@
 				3C295C682BE84F3B004081A1 /* UIStackView+Utils.swift */,
 				3CA604F82BEA8E4A007E7DA0 /* NSMutableAttributedString+Utils.swift */,
 				3CA605122BEC5AD3007E7DA0 /* UINavigationController+Style.swift */,
+				3C0D88B22BF58CEF000A68A4 /* UIImageView+Utils.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -369,6 +390,8 @@
 			isa = PBXGroup;
 			children = (
 				3CA605212BEDB6C2007E7DA0 /* Decode.swift */,
+				3CA6052B2BEE67F4007E7DA0 /* Double+Currency.swift */,
+				3CA6052D2BEFCB00007E7DA0 /* String+Utils.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -380,6 +403,14 @@
 				3CA605262BEDBF50007E7DA0 /* ResponseData.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		3CA605282BEE66FF007E7DA0 /* PropertyWrappers */ = {
+			isa = PBXGroup;
+			children = (
+				3CA605292BEE6718007E7DA0 /* Currency.swift */,
+			);
+			path = PropertyWrappers;
 			sourceTree = "<group>";
 		};
 		3CAF97812BE9D0980009F9D2 /* Resources */ = {
@@ -490,6 +521,7 @@
 				3C295C2F2BE47FCA004081A1 /* UIView+Debug.swift in Sources */,
 				3CA604F52BEA824F007E7DA0 /* UIImage+Utils.swift in Sources */,
 				3C295C392BE55A7B004081A1 /* HomeCoordinator.swift in Sources */,
+				3CA6052A2BEE6718007E7DA0 /* Currency.swift in Sources */,
 				3C295C242BE2784F004081A1 /* HomeModel.swift in Sources */,
 				3CA604F92BEA8E4A007E7DA0 /* NSMutableAttributedString+Utils.swift in Sources */,
 				3CA6050D2BEB9BE0007E7DA0 /* ViewConfigurations.swift in Sources */,
@@ -498,6 +530,7 @@
 				3C295C582BE84549004081A1 /* WalletController.swift in Sources */,
 				3CA605192BEDA831007E7DA0 /* BundleService.swift in Sources */,
 				3C295C3C2BE55AA1004081A1 /* Coordinator.swift in Sources */,
+				3CA6052C2BEE67F4007E7DA0 /* Double+Currency.swift in Sources */,
 				3CA6050F2BEC45D8007E7DA0 /* ScrollView.swift in Sources */,
 				3C295C5E2BE84562004081A1 /* WalletModel.swift in Sources */,
 				3CA605272BEDBF50007E7DA0 /* ResponseData.swift in Sources */,
@@ -506,14 +539,17 @@
 				3C295C502BE7C2DE004081A1 /* StackViewSampleModel.swift in Sources */,
 				3CAF97842BE9D0B30009F9D2 /* WalletHeaderView.swift in Sources */,
 				3C295C4E2BE6A255004081A1 /* GridCollectionFlowLayout.swift in Sources */,
+				3CA6052E2BEFCB00007E7DA0 /* String+Utils.swift in Sources */,
 				3CA605222BEDB6C2007E7DA0 /* Decode.swift in Sources */,
 				3CA605092BEB9ACA007E7DA0 /* WalletCardsView.swift in Sources */,
 				3C295C632BE84B25004081A1 /* HorizontalStackView.swift in Sources */,
 				3C295C612BE847B1004081A1 /* VerticalStackView.swift in Sources */,
 				3C295C272BE27F1F004081A1 /* BoxCollectionViewCell.swift in Sources */,
+				3C0D88B32BF58CEF000A68A4 /* UIImageView+Utils.swift in Sources */,
 				3C295C662BE84C3A004081A1 /* UIEdgesInsets+Utils.swift in Sources */,
 				3CA604F32BEA8149007E7DA0 /* Images.swift in Sources */,
 				3C295C3E2BE55BF4004081A1 /* HomeFactory.swift in Sources */,
+				3C8AEDEE2BF308950062FE2E /* CallbackQueue.swift in Sources */,
 				3C295C432BE68478004081A1 /* AppCoordinator.swift in Sources */,
 				3C295C5C2BE84557004081A1 /* WalletView.swift in Sources */,
 				3CA605152BEDA4CA007E7DA0 /* WalletViewWorker.swift in Sources */,

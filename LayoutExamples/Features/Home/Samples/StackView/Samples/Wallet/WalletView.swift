@@ -12,14 +12,26 @@ protocol WalletViewDelegate: AnyObject {
 }
 
 protocol WalletViewProtocol: UIScrollView {
+    var state: WalletView.State? { get set }
     var walletDelegate: WalletViewDelegate? { get set }
 }
 
 class WalletView: ScrollView<VerticalStackView>, WalletViewProtocol {
     
+    enum State {
+        case loading
+        case present(WalletModel.ViewModel.Home)
+        case error
+    }
+    
     // MARK: - Public properties
     
     weak var walletDelegate: WalletViewDelegate?
+    var state: State? {
+        didSet {
+            updateViewByState()
+        }
+    }
     
     // MARK: - UI Components
 
@@ -40,6 +52,19 @@ class WalletView: ScrollView<VerticalStackView>, WalletViewProtocol {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         contentView = containerView
+    }
+    
+    // MARK: - Updates
+    
+    private func updateViewByState() {
+        guard let state else { return }
+        switch state {
+        case .loading: break
+        case .present(let viewModel):
+            headerView.viewModel = (name: viewModel.firstName, viewModel.avatarImage)
+        case .error: break
+        }
+        
     }
     
     // MARK: - Configure

@@ -46,7 +46,7 @@ final class WalletCardsView: UIView, ConfigurableView {
     // MARK: - Configure
     
     func configure() {
-        let cards: [UIColor] = [.red, .gray, .blue, .red]
+        let cards: [UIColor] = [.red, .gray, .blue, .red, .green, .blue, .green, .blue]
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapContainerCards)))
         cards.reversed().enumerated().forEach {
             let view = self.createCard(data: $0.element)

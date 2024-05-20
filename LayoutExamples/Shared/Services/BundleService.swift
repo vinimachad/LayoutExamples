@@ -21,8 +21,6 @@ class BundleService: BundleServiceProtocol {
     
     // MARK: - Init
     
-    private init() { }
-    
     // MARK: - BundleServiceProtocol Methods
     
     func loadJson<T: Decodable>(
@@ -30,27 +28,30 @@ class BundleService: BundleServiceProtocol {
         model: T.Type,
         completion: @escaping Completion<AppResult<T>>
     ) {
+        let mainQueue: DispatchQueue = DispatchQueue.main
         if let mock = Bundle.main.url(forResource: mockFile, withExtension: "json") {
             do {
                 let data = try Data(contentsOf: mock)
                 
                 do {
                     let response = try data.decode(type: ResponseData<T>.self)
-                    completion(.success(response.results))
+                   mainQueue.async { completion(.success(response.results)) }
                 } catch let error {
-                    completion(.failure(.mapping(message: error.localizedDescription)))
+                   mainQueue.async { completion(.failure(.mapping(message: error.localizedDescription))) }   
                 }
             } catch let error {
                 guard let apiError = error as? RequestError else {
-                    completion(.failure(.unowned(message: error.localizedDescription)))
+                   mainQueue.async { completion(.failure(.unowned(message: error.localizedDescription))) }
                     return
                 }
                 
-                completion(.failure(.requestError(
+               mainQueue.async {
+                   completion(.failure(.requestError(
                     code: apiError.code,
                     title: apiError.title,
                     description: apiError.description
                 )))
+               }
             }
         }
     }

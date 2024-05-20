@@ -67,7 +67,7 @@ final class HomeController: UIViewController {
     // MARK: - BindIn
     
     private func bind() {
-        contentView?.bindIn(items: viewModel?.items ?? [])
+        self.contentView?.bindIn(items: self.viewModel?.items ?? [])
     }
 }
 
