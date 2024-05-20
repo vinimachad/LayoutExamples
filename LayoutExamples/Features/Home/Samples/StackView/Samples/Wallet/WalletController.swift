@@ -65,7 +65,7 @@ class WalletController: UIViewController {
     }
     
     private func bind() {
-        viewModel?.onUpdateViewStateWith = { [weak self] state in
+        self.viewModel?.onUpdateViewStateWith = { [weak self] state in
             self?.contentView?.state = state
         }
     }

@@ -29,29 +29,32 @@ class BundleService: BundleServiceProtocol {
         completion: @escaping Completion<AppResult<T>>
     ) {
         let mainQueue: DispatchQueue = DispatchQueue.main
-        if let mock = Bundle.main.url(forResource: mockFile, withExtension: "json") {
-            do {
-                let data = try Data(contentsOf: mock)
-                
+        DispatchQueue.global(qos: .default).async {
+            if let mock = Bundle.main.url(forResource: mockFile, withExtension: "json") {
                 do {
-                    let response = try data.decode(type: ResponseData<T>.self)
-                   mainQueue.async { completion(.success(response.results)) }
+                    let data = try Data(contentsOf: mock)
+                    
+                    do {
+                        let response = try data.decode(type: ResponseData<T>.self)
+                        mainQueue.async { completion(.success(response.results)) }
+                    } catch let error {
+                        mainQueue.async { completion(.failure(.mapping(message: error.localizedDescription))) }
+                    }
+                    
                 } catch let error {
-                   mainQueue.async { completion(.failure(.mapping(message: error.localizedDescription))) }   
+                    guard let apiError = error as? RequestError else {
+                        mainQueue.async { completion(.failure(.unowned(message: error.localizedDescription))) }
+                        return
+                    }
+                    
+                    mainQueue.async {
+                        completion(.failure(.requestError(
+                            code: apiError.code,
+                            title: apiError.title,
+                            description: apiError.description
+                        )))
+                    }
                 }
-            } catch let error {
-                guard let apiError = error as? RequestError else {
-                   mainQueue.async { completion(.failure(.unowned(message: error.localizedDescription))) }
-                    return
-                }
-                
-               mainQueue.async {
-                   completion(.failure(.requestError(
-                    code: apiError.code,
-                    title: apiError.title,
-                    description: apiError.description
-                )))
-               }
             }
         }
     }

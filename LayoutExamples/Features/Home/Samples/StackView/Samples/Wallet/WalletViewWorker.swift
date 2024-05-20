@@ -38,7 +38,6 @@ class WalletViewWorker: WalletViewWorkerProtocol {
         service.loadJson(
             "WalletHomesMock",
             model: Response.Home.self,
-           queue: .main,
             completion: { result in
                 switch result {
                 case .success(let response):
