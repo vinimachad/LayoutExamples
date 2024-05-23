@@ -8,12 +8,8 @@
 import Foundation
 
 protocol WalletViewWorkerProtocol {
+    func getHomes(completion: AsyncResultHandler<WalletModel.Response.Home>)
     func getQuotes(coins: String, completion: AsyncResultHandler<WalletModel.Response.Quotes>)
-    func getHomes(
-        success: @escaping Completion<WalletModel.Response.Home>,
-        failure: @escaping Completion<AppError>,
-        finally: EmptyCompletion?
-    )
 }
 
 class WalletViewWorker: WalletViewWorkerProtocol {
@@ -33,22 +29,18 @@ class WalletViewWorker: WalletViewWorkerProtocol {
     
     // MARK: - WalletViewWorkerProtocol
     
-    func getHomes(
-        success: @escaping Completion<Response.Home>,
-        failure: @escaping Completion<AppError>,
-        finally: EmptyCompletion?
-    ) {
+    func getHomes(completion: AsyncResultHandler<WalletModel.Response.Home>) {
         bundleService.loadJson(
             "WalletHomesMock",
             model: Response.Home.self,
             completion: { result in
                 switch result {
                 case .success(let response):
-                    success(response)
+                    completion.success?(response)
                 case .failure(let error):
-                    failure(error)
+                    completion.failure?(error)
                 }
-                finally?()
+                completion.finally?()
             })
     }
     

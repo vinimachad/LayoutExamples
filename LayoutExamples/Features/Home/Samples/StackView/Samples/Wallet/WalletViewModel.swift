@@ -62,7 +62,7 @@ class WalletViewModel: WalletViewModelProtocol {
     
     private func getHomesRequest() {
         dispatchGroup.enter()
-        worker.getHomes(
+        worker.getHomes(completion: .init(
             success: { [weak self] response in
                 self?.homesViewModel = WalletModel.ViewModel.Home(
                     firstName: response.account.firstName,
@@ -75,6 +75,6 @@ class WalletViewModel: WalletViewModelProtocol {
                 print(error)
             },
             finally: { self.dispatchGroup.leave() }
-        )
+        ))
     }
 }
