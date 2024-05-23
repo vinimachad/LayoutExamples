@@ -9,6 +9,13 @@ import UIKit
 
 class WalletBalanceView: VerticalStackView {
     
+    // MARK: - Public properties
+    
+    var balance: String? {
+        get { balanceLabel.text }
+        set { balanceLabel.text = newValue }
+    }
+    
     // MARK: - UI Components
     
     private lazy var titleLabel: UILabel = {
@@ -20,7 +27,7 @@ class WalletBalanceView: VerticalStackView {
     
     private lazy var balanceLabel: UILabel = {
         let view = UILabel()
-        view.text = "$32,184.00"
+        view.text = "$0,00"
         view.adjustsFontSizeToFitWidth = true
         view.font = .systemFont(ofSize: 60, weight: .semibold)
         return view

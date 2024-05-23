@@ -9,6 +9,14 @@ import UIKit
 
 class WalletQuoteView: HorizontalStackView {
     
+    // MARK: - Public properties
+    
+    var quotes: [WalletModel.Response.Quotes.Quote]? {
+        didSet {
+            updateView()
+        }
+    }
+    
     // MARK: - Layout methods
     
     private func createQuoteDetails(data: (coin: String, quote: String)) -> VerticalStackView {
@@ -24,6 +32,7 @@ class WalletQuoteView: HorizontalStackView {
     private func createLabel(_ text: String, fontSize: CGFloat, weight: UIFont.Weight) -> UILabel {
         let view = UILabel()
         view.font = .systemFont(ofSize: fontSize, weight: weight)
+        view.textAlignment = .left
         view.textColor = .init(literal: WalletColorLiterals.white)
         view.adjustsFontSizeToFitWidth = true
         view.text = text.uppercased()
@@ -40,10 +49,16 @@ class WalletQuoteView: HorizontalStackView {
         cornerRadius = 16
         layoutMargins = .init(edges: 16)
         backgroundColor = .init(literal: WalletColorLiterals.red)
-        addArrangedSubviews([
-            createQuoteDetails(data: ("USD", "92,85")),
-            createQuoteDetails(data: ("EUR", "99,65")),
-            createQuoteDetails(data: ("GBP", "132,45")),
-        ])
+    }
+    
+    // MARK: - Updates
+    
+    private func updateView() {
+        guard let quotes else { return }
+        quotes.forEach { quote in
+            addArrangedSubview(
+                createQuoteDetails(data: (quote.coin, quote.value))
+            )
+        }
     }
 }

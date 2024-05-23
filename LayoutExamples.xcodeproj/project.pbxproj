@@ -52,7 +52,6 @@
 		3CA605152BEDA4CA007E7DA0 /* WalletViewWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA605142BEDA4CA007E7DA0 /* WalletViewWorker.swift */; };
 		3CA605192BEDA831007E7DA0 /* BundleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA605182BEDA831007E7DA0 /* BundleService.swift */; };
 		3CA6051C2BEDA90A007E7DA0 /* WalletHomesMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CA6051B2BEDA90A007E7DA0 /* WalletHomesMock.json */; };
-		3CA6051E2BEDAB6D007E7DA0 /* WalletCheckingAccountMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CA6051D2BEDAB6D007E7DA0 /* WalletCheckingAccountMock.json */; };
 		3CA605222BEDB6C2007E7DA0 /* Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA605212BEDB6C2007E7DA0 /* Decode.swift */; };
 		3CA605252BEDBA02007E7DA0 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA605242BEDBA02007E7DA0 /* AppError.swift */; };
 		3CA605272BEDBF50007E7DA0 /* ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA605262BEDBF50007E7DA0 /* ResponseData.swift */; };
@@ -60,6 +59,12 @@
 		3CA6052C2BEE67F4007E7DA0 /* Double+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA6052B2BEE67F4007E7DA0 /* Double+Currency.swift */; };
 		3CA6052E2BEFCB00007E7DA0 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA6052D2BEFCB00007E7DA0 /* String+Utils.swift */; };
 		3CAF97842BE9D0B30009F9D2 /* WalletHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAF97832BE9D0B30009F9D2 /* WalletHeaderView.swift */; };
+		3CB413F42BFC14160044AC66 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB413F32BFC14160044AC66 /* Date+Utils.swift */; };
+		3CB413F62BFCD2400044AC66 /* Array+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB413F52BFCD2400044AC66 /* Array+Utils.swift */; };
+		3CB413F82BFD6C540044AC66 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB413F72BFD6C540044AC66 /* APIService.swift */; };
+		3CB413FB2BFD6D370044AC66 /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB413FA2BFD6D370044AC66 /* APIProvider.swift */; };
+		3CB413FD2BFD708A0044AC66 /* APIMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB413FC2BFD708A0044AC66 /* APIMethods.swift */; };
+		3CF3C3712BFD7ECE0003A392 /* GetQuotesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF3C3702BFD7ECE0003A392 /* GetQuotesProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,7 +115,6 @@
 		3CA605142BEDA4CA007E7DA0 /* WalletViewWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewWorker.swift; sourceTree = "<group>"; };
 		3CA605182BEDA831007E7DA0 /* BundleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleService.swift; sourceTree = "<group>"; };
 		3CA6051B2BEDA90A007E7DA0 /* WalletHomesMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WalletHomesMock.json; sourceTree = "<group>"; };
-		3CA6051D2BEDAB6D007E7DA0 /* WalletCheckingAccountMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WalletCheckingAccountMock.json; sourceTree = "<group>"; };
 		3CA605212BEDB6C2007E7DA0 /* Decode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decode.swift; sourceTree = "<group>"; };
 		3CA605242BEDBA02007E7DA0 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		3CA605262BEDBF50007E7DA0 /* ResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseData.swift; sourceTree = "<group>"; };
@@ -118,6 +122,12 @@
 		3CA6052B2BEE67F4007E7DA0 /* Double+Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Currency.swift"; sourceTree = "<group>"; };
 		3CA6052D2BEFCB00007E7DA0 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
 		3CAF97832BE9D0B30009F9D2 /* WalletHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletHeaderView.swift; sourceTree = "<group>"; };
+		3CB413F32BFC14160044AC66 /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
+		3CB413F52BFCD2400044AC66 /* Array+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Utils.swift"; sourceTree = "<group>"; };
+		3CB413F72BFD6C540044AC66 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		3CB413FA2BFD6D370044AC66 /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
+		3CB413FC2BFD708A0044AC66 /* APIMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMethods.swift; sourceTree = "<group>"; };
+		3CF3C3702BFD7ECE0003A392 /* GetQuotesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetQuotesProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -347,6 +357,7 @@
 		3CA605162BEDA79C007E7DA0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				3CB413F92BFD6D290044AC66 /* API */,
 				3CA605182BEDA831007E7DA0 /* BundleService.swift */,
 			);
 			path = Services;
@@ -356,7 +367,6 @@
 			isa = PBXGroup;
 			children = (
 				3CA6051B2BEDA90A007E7DA0 /* WalletHomesMock.json */,
-				3CA6051D2BEDAB6D007E7DA0 /* WalletCheckingAccountMock.json */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -381,6 +391,8 @@
 				3CA605212BEDB6C2007E7DA0 /* Decode.swift */,
 				3CA6052B2BEE67F4007E7DA0 /* Double+Currency.swift */,
 				3CA6052D2BEFCB00007E7DA0 /* String+Utils.swift */,
+				3CB413F32BFC14160044AC66 /* Date+Utils.swift */,
+				3CB413F52BFCD2400044AC66 /* Array+Utils.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -405,6 +417,7 @@
 		3CAF97812BE9D0980009F9D2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3CF3C36F2BFD7EB50003A392 /* Providers */,
 				3CA6051A2BEDA8C8007E7DA0 /* Mocks */,
 				3CA604EE2BEA8100007E7DA0 /* Tokens */,
 				3CAF97822BE9D09F0009F9D2 /* Subviews */,
@@ -415,13 +428,31 @@
 		3CAF97822BE9D09F0009F9D2 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				3CA605082BEB9ACA007E7DA0 /* WalletCardsView.swift */,
 				3CAF97832BE9D0B30009F9D2 /* WalletHeaderView.swift */,
 				3CA604FA2BEAD126007E7DA0 /* WalletBalanceView.swift */,
 				3CA604FC2BEAD898007E7DA0 /* WalletQuoteView.swift */,
 				3CA605052BEB085A007E7DA0 /* WalletMenuView.swift */,
-				3CA605082BEB9ACA007E7DA0 /* WalletCardsView.swift */,
 			);
 			path = Subviews;
+			sourceTree = "<group>";
+		};
+		3CB413F92BFD6D290044AC66 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				3CB413F72BFD6C540044AC66 /* APIService.swift */,
+				3CB413FA2BFD6D370044AC66 /* APIProvider.swift */,
+				3CB413FC2BFD708A0044AC66 /* APIMethods.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		3CF3C36F2BFD7EB50003A392 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				3CF3C3702BFD7ECE0003A392 /* GetQuotesProvider.swift */,
+			);
+			path = Providers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -484,7 +515,6 @@
 			files = (
 				3C295C122BE271BE004081A1 /* LaunchScreen.storyboard in Resources */,
 				3CA6051C2BEDA90A007E7DA0 /* WalletHomesMock.json in Resources */,
-				3CA6051E2BEDAB6D007E7DA0 /* WalletCheckingAccountMock.json in Resources */,
 				3CA604ED2BEA805E007E7DA0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,8 +533,10 @@
 				3CA604FD2BEAD898007E7DA0 /* WalletQuoteView.swift in Sources */,
 				3C295C692BE84F3B004081A1 /* UIStackView+Utils.swift in Sources */,
 				3C295C1E2BE2738B004081A1 /* HomeController.swift in Sources */,
+				3CB413F62BFCD2400044AC66 /* Array+Utils.swift in Sources */,
 				3C295C062BE271BC004081A1 /* AppDelegate.swift in Sources */,
 				3CA605252BEDBA02007E7DA0 /* AppError.swift in Sources */,
+				3CF3C3712BFD7ECE0003A392 /* GetQuotesProvider.swift in Sources */,
 				3CA605062BEB085A007E7DA0 /* WalletMenuView.swift in Sources */,
 				3C295C372BE552F1004081A1 /* StackViewSampleController.swift in Sources */,
 				3C295C2F2BE47FCA004081A1 /* UIView+Debug.swift in Sources */,
@@ -525,6 +557,7 @@
 				3CA605272BEDBF50007E7DA0 /* ResponseData.swift in Sources */,
 				3C295C522BE7C760004081A1 /* StackViewSampleViewModel.swift in Sources */,
 				3CA605042BEAF17B007E7DA0 /* UIColor+Utils.swift in Sources */,
+				3CB413FB2BFD6D370044AC66 /* APIProvider.swift in Sources */,
 				3C295C502BE7C2DE004081A1 /* StackViewSampleModel.swift in Sources */,
 				3CAF97842BE9D0B30009F9D2 /* WalletHeaderView.swift in Sources */,
 				3C295C4E2BE6A255004081A1 /* GridCollectionFlowLayout.swift in Sources */,
@@ -535,11 +568,14 @@
 				3C295C612BE847B1004081A1 /* VerticalStackView.swift in Sources */,
 				3C295C272BE27F1F004081A1 /* BoxCollectionViewCell.swift in Sources */,
 				3C0D88B32BF58CEF000A68A4 /* UIImageView+Utils.swift in Sources */,
+				3CB413F42BFC14160044AC66 /* Date+Utils.swift in Sources */,
 				3C295C662BE84C3A004081A1 /* UIEdgesInsets+Utils.swift in Sources */,
 				3CA604F32BEA8149007E7DA0 /* Images.swift in Sources */,
 				3C295C3E2BE55BF4004081A1 /* HomeFactory.swift in Sources */,
 				3C295C432BE68478004081A1 /* AppCoordinator.swift in Sources */,
 				3C295C5C2BE84557004081A1 /* WalletView.swift in Sources */,
+				3CB413FD2BFD708A0044AC66 /* APIMethods.swift in Sources */,
+				3CB413F82BFD6C540044AC66 /* APIService.swift in Sources */,
 				3CA605152BEDA4CA007E7DA0 /* WalletViewWorker.swift in Sources */,
 				3C295C5A2BE84550004081A1 /* WalletViewModel.swift in Sources */,
 				3C295C312BE55006004081A1 /* UIView+Utils.swift in Sources */,

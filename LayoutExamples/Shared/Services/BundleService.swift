@@ -29,7 +29,7 @@ class BundleService: BundleServiceProtocol {
         completion: @escaping Completion<AppResult<T>>
     ) {
         let mainQueue: DispatchQueue = DispatchQueue.main
-        DispatchQueue.global(qos: .default).async {
+        DispatchQueue.global().async {
             if let mock = Bundle.main.url(forResource: mockFile, withExtension: "json") {
                 do {
                     let data = try Data(contentsOf: mock)

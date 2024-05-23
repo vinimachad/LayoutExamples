@@ -62,9 +62,11 @@ class WalletView: ScrollView<VerticalStackView>, WalletViewProtocol {
         case .loading: break
         case .present(let viewModel):
             headerView.viewModel = (name: viewModel.firstName, viewModel.avatarImage)
+            balanceView.balance = viewModel.$balance
+            cardsView.cards = viewModel.cards
+            quoteView.quotes = viewModel.quotes
         case .error: break
         }
-        
     }
     
     // MARK: - Configure

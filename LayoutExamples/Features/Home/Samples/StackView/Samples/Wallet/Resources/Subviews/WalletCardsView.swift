@@ -16,6 +16,11 @@ final class WalletCardsView: UIView, ConfigurableView {
     // MARK: - Public properties
     
     weak var delegate: WalletCardsDelegate?
+    var cards: [WalletModel.Response.Card] = [] {
+        didSet {
+            updateView()
+        }
+    }
     
     // MARK: - Init
     
@@ -31,14 +36,14 @@ final class WalletCardsView: UIView, ConfigurableView {
     
     // MARK: - Layout methods
     
-    private func createCard(data: UIColor) -> Card {
+    private func createCard(data: WalletModel.Response.Card) -> Card {
         let contentView = Card()
         contentView.viewModel = (
             cardLogo: .menu,
-            dollarValue: "USD 16,450.00",
-            lastDigits: "*********7839",
-            dueDate: "07/25",
-            name: "Arnold Jackson"
+            dollarValue: data.invoiceValue.toCurrency(),
+            lastDigits: data.lastDigits,
+            dueDate: data.dueDate.toString(format: .shortMonthYear),
+            name: data.ownerName
         )
         return contentView
     }
@@ -46,45 +51,44 @@ final class WalletCardsView: UIView, ConfigurableView {
     // MARK: - Configure
     
     func configure() {
-        let cards: [UIColor] = [.red, .gray, .blue, .red, .green, .blue, .green, .blue]
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapContainerCards)))
-        cards.reversed().enumerated().forEach {
-            let view = self.createCard(data: $0.element)
-            view.isUserInteractionEnabled = false
-            addSubview(view)
+    }
+    
+    // MARK: - Updates
+    
+    func updateView() {
+        cards.reversed().enumerated().forEach { index, cardData in
+            let cardView = self.createCard(data: cardData)
+            cardView.isUserInteractionEnabled = false
+            addSubview(cardView)
             
-            if let viewIndexInSubviews = subviews.firstIndex(of: view) {
-                let previousViewIndex = subviews.index(before: viewIndexInSubviews)
+            if index == 0 {
+                NSLayoutConstraint.activate([
+                    cardView.topAnchor.constraint(equalTo: self.topAnchor),
+                    cardView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+                    cardView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
+                ])
                 
-                if  viewIndexInSubviews == 0 {
-                    let parentView = self
-                    NSLayoutConstraint.activate([
-                        view.topAnchor.constraint(equalTo: parentView.topAnchor),
-                        view.leadingAnchor.constraint(equalTo: parentView.leadingAnchor),
-                        view.trailingAnchor.constraint(equalTo: parentView.trailingAnchor)
-                    ])
-                } else {
-                    
-                    let previousView = subviews[previousViewIndex]
-                    
-                    if ((viewIndexInSubviews % (cards.count - 1)) != 0) {
-                        NSLayoutConstraint.activate([
-                            view.leadingAnchor.constraint(equalTo: leadingAnchor),
-                            view.trailingAnchor.constraint(equalTo: trailingAnchor),
-                            view.centerYAnchor.constraint(equalTo: previousView.centerYAnchor, constant: 45),
-                        ])
-                    } else {
-                        NSLayoutConstraint.activate([
-                            view.leadingAnchor.constraint(equalTo: leadingAnchor),
-                            view.trailingAnchor.constraint(equalTo: trailingAnchor),
-                            view.bottomAnchor.constraint(equalTo: bottomAnchor),
-                            view.centerYAnchor.constraint(equalTo: previousView.centerYAnchor, constant: 45),
-                        ])
-                    }
+                if (cards.count == 1) {
+                    cardView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+                }
+            } else {
+                let previousView = subviews[subviews.previousIndex]
+                NSLayoutConstraint.activate([
+                    cardView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+                    cardView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+                    cardView.centerYAnchor.constraint(equalTo: previousView.centerYAnchor, constant: 45)
+                ])
+                
+                if index == cards.lastIndex {
+                    cardView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
                 }
             }
         }
     }
+
+    
+    // MARK: - Actions
     
     @objc private func didTapContainerCards() {
         delegate?.didTapContainerCards()

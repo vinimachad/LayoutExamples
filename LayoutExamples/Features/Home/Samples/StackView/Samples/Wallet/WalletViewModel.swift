@@ -20,7 +20,10 @@ class WalletViewModel: WalletViewModelProtocol {
     
     // MARK: - Private properties
     
+    private var dispatchGroup = DispatchGroup()
     private var worker: WalletViewWorkerProtocol
+    private var homesViewModel: WalletModel.ViewModel.Home?
+    private var quotesResponse: [WalletModel.Response.Quotes.Quote] = []
     
     // MARK: - Init
     
@@ -32,21 +35,50 @@ class WalletViewModel: WalletViewModelProtocol {
     
     func load() {
         onUpdateViewStateWith?(.loading)
+        getHomesRequest()
+        getQuoteRequest()
+        
+        dispatchGroup.notify(queue: .main) {
+            guard var viewModel = self.homesViewModel else { return }
+            viewModel.quotes = self.quotesResponse
+            self.onUpdateViewStateWith?(.present(viewModel))
+        }
+    }
+    
+    // MARK: - Requests Methods
+    
+    private func getQuoteRequest() {
+        dispatchGroup.enter()
+        worker.getQuotes(coins: "USD-BRL,EUR-BRL,GBP-BRL", completion: .init(
+            success: { [weak self] response in
+                self?.quotesResponse = response.quotes
+            },
+            failure: { error in
+                print(error)
+            },
+            finally: {
+                self.dispatchGroup.leave()
+            }
+        ))
+    }
+    
+    private func getHomesRequest() {
+        dispatchGroup.enter()
         worker.getHomes(
             success: { [weak self] response in
-                let homesViewModel = WalletModel.ViewModel.Home(
+                self?.homesViewModel = WalletModel.ViewModel.Home(
                     firstName: response.account.firstName,
                     avatarImage: response.account.avatarImage,
                     balance: response.checkingAccount.balance,
-                    quotes: response.quotes,
                     cards: response.cards
                 )
-                self?.onUpdateViewStateWith?(.present(homesViewModel))
             },
             failure: { [weak self] error in
-                self?.onUpdateViewStateWith?(.error)
+                print(error)
             },
-            finally: nil
+            finally: {
+                self.dispatchGroup.leave()
+            }
         )
     }
 }

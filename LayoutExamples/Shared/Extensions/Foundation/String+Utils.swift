@@ -12,10 +12,11 @@ extension String {
     // MARK: - Date Helpers
     
     enum DateFormats: String {
-        case shortDate = "dd/MM/yyyy"
+        case fullDate = "dd/MM/yyyy"
+        case shortMonthYear = "MM/yy"
     }
     
-    func toDate(_ format: DateFormats = .shortDate) -> Date {
+    func toDate(_ format: DateFormats = .fullDate) -> Date {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format.rawValue
         guard let date = dateFormatter.date(from: self) else { return Date() }

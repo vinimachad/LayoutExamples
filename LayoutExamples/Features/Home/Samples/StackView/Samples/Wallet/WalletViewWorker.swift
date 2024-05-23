@@ -8,6 +8,7 @@
 import Foundation
 
 protocol WalletViewWorkerProtocol {
+    func getQuotes(coins: String, completion: AsyncResultHandler<WalletModel.Response.Quotes>)
     func getHomes(
         success: @escaping Completion<WalletModel.Response.Home>,
         failure: @escaping Completion<AppError>,
@@ -20,12 +21,14 @@ class WalletViewWorker: WalletViewWorkerProtocol {
     
     // MARK: - Private properties
     
-    private var service: BundleServiceProtocol
+    private var apiService: APIServiceProtocol
+    private var bundleService: BundleServiceProtocol
     
     // MARK: - Init
     
-    init(service: BundleServiceProtocol = BundleService.shared) {
-        self.service = service
+    init(bundleService: BundleServiceProtocol = BundleService.shared, apiService: APIServiceProtocol = APIService.shared) {
+        self.apiService = apiService
+        self.bundleService = bundleService
     }
     
     // MARK: - WalletViewWorkerProtocol
@@ -35,7 +38,7 @@ class WalletViewWorker: WalletViewWorkerProtocol {
         failure: @escaping Completion<AppError>,
         finally: EmptyCompletion?
     ) {
-        service.loadJson(
+        bundleService.loadJson(
             "WalletHomesMock",
             model: Response.Home.self,
             completion: { result in
@@ -47,5 +50,18 @@ class WalletViewWorker: WalletViewWorkerProtocol {
                 }
                 finally?()
             })
+    }
+    
+    func getQuotes(coins: String, completion: AsyncResultHandler<WalletModel.Response.Quotes>) {
+        let provider = GetQuotesProvider(coins: coins)
+        apiService.fetch(Response.Quotes.self, provider: provider, completion: { result in
+            switch result {
+            case .success(let response):
+                completion.success?(response)
+            case .failure(let error):
+                completion.failure?(error)
+            }
+            completion.finally?()
+        })
     }
 }
