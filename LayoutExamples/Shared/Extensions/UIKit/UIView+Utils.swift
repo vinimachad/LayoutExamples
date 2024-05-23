@@ -32,4 +32,12 @@ extension UIView {
         let rect = CGRect(x: bounds.origin.x + pos.x, y: bounds.origin.y + pos.y, width: bounds.width, height: bounds.height)
         layer.shadowPath = UIBezierPath(roundedRect: rect, cornerRadius: cornerRadius).cgPath
     }
+    
+    // MARK: - Subviews Methods
+    
+    func removeAllSubviews() {
+        subviews.forEach { view in
+            view.removeFromSuperview()
+        }
+    }
 }

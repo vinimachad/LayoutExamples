@@ -13,7 +13,7 @@ class WalletHeaderView: HorizontalStackView {
     
     // MARK: - Public properties
     
-    var     viewModel: ViewModel? {
+    var viewModel: ViewModel? {
         didSet {
             updateView()
         }

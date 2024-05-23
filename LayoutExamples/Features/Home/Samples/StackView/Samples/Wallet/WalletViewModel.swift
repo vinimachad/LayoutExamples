@@ -56,9 +56,7 @@ class WalletViewModel: WalletViewModelProtocol {
             failure: { error in
                 print(error)
             },
-            finally: {
-                self.dispatchGroup.leave()
-            }
+            finally: { self.dispatchGroup.leave() }
         ))
     }
     
@@ -73,12 +71,10 @@ class WalletViewModel: WalletViewModelProtocol {
                     cards: response.cards
                 )
             },
-            failure: { [weak self] error in
+            failure: { error in
                 print(error)
             },
-            finally: {
-                self.dispatchGroup.leave()
-            }
+            finally: { self.dispatchGroup.leave() }
         )
     }
 }
