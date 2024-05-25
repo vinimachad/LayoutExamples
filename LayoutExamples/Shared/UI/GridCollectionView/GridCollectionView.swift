@@ -42,7 +42,7 @@ open class GridCollectionView<T: GridLayoutItem>: UIView, GridCollectionViewProt
         view.dataSource = self
         view.delegate = self
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .orange
+        view.backgroundColor = .systemBackground
         view.register(BoxCollectionViewCell.self, forCellWithReuseIdentifier: BoxCollectionViewCell.identifier)
         return view
     }()

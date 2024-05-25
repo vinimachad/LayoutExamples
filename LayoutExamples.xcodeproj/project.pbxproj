@@ -35,6 +35,16 @@
 		3C295C662BE84C3A004081A1 /* UIEdgesInsets+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C295C652BE84C3A004081A1 /* UIEdgesInsets+Utils.swift */; };
 		3C295C692BE84F3B004081A1 /* UIStackView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C295C682BE84F3B004081A1 /* UIStackView+Utils.swift */; };
 		3C48F0562BFEE29600FDCA9B /* Skeletonable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C48F0552BFEE29600FDCA9B /* Skeletonable.swift */; };
+		3C48F05A2C0001A400FDCA9B /* BottomSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C48F0592C0001A400FDCA9B /* BottomSheetController.swift */; };
+		3C48F05D2C00173900FDCA9B /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C48F05C2C00173900FDCA9B /* BottomSheetView.swift */; };
+		3C48F0612C00185200FDCA9B /* BottomSheetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C48F0602C00185200FDCA9B /* BottomSheetButton.swift */; };
+		3C48F0632C00185D00FDCA9B /* BottomSheetButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C48F0622C00185D00FDCA9B /* BottomSheetButtonModel.swift */; };
+		3C48F0652C001AFB00FDCA9B /* BottomSheetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C48F0642C001AFB00FDCA9B /* BottomSheetModel.swift */; };
+		3C48F0672C001B9400FDCA9B /* BottomSheetTextFieldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C48F0662C001B9400FDCA9B /* BottomSheetTextFieldModel.swift */; };
+		3C48F06A2C002BCE00FDCA9B /* Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C48F0692C002BCE00FDCA9B /* Blur.swift */; };
+		3C48F06E2C0121E300FDCA9B /* BottomSheetTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C48F06D2C0121E300FDCA9B /* BottomSheetTextField.swift */; };
+		3C48F0702C01227000FDCA9B /* UIContentConfiguration+Stateless.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C48F06F2C01227000FDCA9B /* UIContentConfiguration+Stateless.swift */; };
+		3C48F0762C012E9A00FDCA9B /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C48F0752C012E9A00FDCA9B /* TextField.swift */; };
 		3CA604ED2BEA805E007E7DA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CA604EC2BEA805E007E7DA0 /* Assets.xcassets */; };
 		3CA604F02BEA8108007E7DA0 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA604EF2BEA8108007E7DA0 /* Image.swift */; };
 		3CA604F32BEA8149007E7DA0 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA604F22BEA8149007E7DA0 /* Images.swift */; };
@@ -103,6 +113,16 @@
 		3C295C652BE84C3A004081A1 /* UIEdgesInsets+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgesInsets+Utils.swift"; sourceTree = "<group>"; };
 		3C295C682BE84F3B004081A1 /* UIStackView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Utils.swift"; sourceTree = "<group>"; };
 		3C48F0552BFEE29600FDCA9B /* Skeletonable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skeletonable.swift; sourceTree = "<group>"; };
+		3C48F0592C0001A400FDCA9B /* BottomSheetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetController.swift; sourceTree = "<group>"; };
+		3C48F05C2C00173900FDCA9B /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
+		3C48F0602C00185200FDCA9B /* BottomSheetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetButton.swift; sourceTree = "<group>"; };
+		3C48F0622C00185D00FDCA9B /* BottomSheetButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetButtonModel.swift; sourceTree = "<group>"; };
+		3C48F0642C001AFB00FDCA9B /* BottomSheetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetModel.swift; sourceTree = "<group>"; };
+		3C48F0662C001B9400FDCA9B /* BottomSheetTextFieldModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetTextFieldModel.swift; sourceTree = "<group>"; };
+		3C48F0692C002BCE00FDCA9B /* Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blur.swift; sourceTree = "<group>"; };
+		3C48F06D2C0121E300FDCA9B /* BottomSheetTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetTextField.swift; sourceTree = "<group>"; };
+		3C48F06F2C01227000FDCA9B /* UIContentConfiguration+Stateless.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIContentConfiguration+Stateless.swift"; sourceTree = "<group>"; };
+		3C48F0752C012E9A00FDCA9B /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		3CA604EC2BEA805E007E7DA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3CA604EF2BEA8108007E7DA0 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		3CA604F22BEA8149007E7DA0 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
@@ -295,6 +315,7 @@
 		3C295C482BE6A1BC004081A1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				3C48F0582C00018F00FDCA9B /* Component */,
 				3C48F0572BFEE29D00FDCA9B /* Protocols */,
 				3CA6050B2BEB9BCD007E7DA0 /* View */,
 				3C295C5F2BE847A8004081A1 /* StackView */,
@@ -338,6 +359,53 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		3C48F0582C00018F00FDCA9B /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				3C48F0742C012E9100FDCA9B /* TextField */,
+				3C48F05B2C00170D00FDCA9B /* BottomSheet */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		3C48F05B2C00170D00FDCA9B /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				3C48F05F2C00181900FDCA9B /* Button */,
+				3C48F05E2C00181000FDCA9B /* TextField */,
+				3C48F0592C0001A400FDCA9B /* BottomSheetController.swift */,
+				3C48F05C2C00173900FDCA9B /* BottomSheetView.swift */,
+				3C48F0642C001AFB00FDCA9B /* BottomSheetModel.swift */,
+			);
+			path = BottomSheet;
+			sourceTree = "<group>";
+		};
+		3C48F05E2C00181000FDCA9B /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				3C48F0662C001B9400FDCA9B /* BottomSheetTextFieldModel.swift */,
+				3C48F06D2C0121E300FDCA9B /* BottomSheetTextField.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		3C48F05F2C00181900FDCA9B /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				3C48F0602C00185200FDCA9B /* BottomSheetButton.swift */,
+				3C48F0622C00185D00FDCA9B /* BottomSheetButtonModel.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		3C48F0742C012E9100FDCA9B /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				3C48F0752C012E9A00FDCA9B /* TextField.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
 		3CA604EE2BEA8100007E7DA0 /* Tokens */ = {
 			isa = PBXGroup;
 			children = (
@@ -370,6 +438,7 @@
 			children = (
 				3CA6050C2BEB9BE0007E7DA0 /* ViewConfigurations.swift */,
 				3CA6050E2BEC45D8007E7DA0 /* ScrollView.swift */,
+				3C48F0692C002BCE00FDCA9B /* Blur.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -401,6 +470,7 @@
 				3CA604F82BEA8E4A007E7DA0 /* NSMutableAttributedString+Utils.swift */,
 				3CA605122BEC5AD3007E7DA0 /* UINavigationController+Style.swift */,
 				3C0D88B22BF58CEF000A68A4 /* UIImageView+Utils.swift */,
+				3C48F06F2C01227000FDCA9B /* UIContentConfiguration+Stateless.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -618,11 +688,15 @@
 				3C295C1E2BE2738B004081A1 /* HomeController.swift in Sources */,
 				3CB413F62BFCD2400044AC66 /* Array+Utils.swift in Sources */,
 				3C295C062BE271BC004081A1 /* AppDelegate.swift in Sources */,
+				3C48F05A2C0001A400FDCA9B /* BottomSheetController.swift in Sources */,
+				3C48F0702C01227000FDCA9B /* UIContentConfiguration+Stateless.swift in Sources */,
+				3C48F0762C012E9A00FDCA9B /* TextField.swift in Sources */,
 				3CA605252BEDBA02007E7DA0 /* AppError.swift in Sources */,
 				3CF3C3712BFD7ECE0003A392 /* GetQuotesProvider.swift in Sources */,
 				3CA605062BEB085A007E7DA0 /* WalletMenuView.swift in Sources */,
 				3C295C372BE552F1004081A1 /* StackViewSampleController.swift in Sources */,
 				3C295C2F2BE47FCA004081A1 /* UIView+Debug.swift in Sources */,
+				3C48F0652C001AFB00FDCA9B /* BottomSheetModel.swift in Sources */,
 				3CA604F52BEA824F007E7DA0 /* UIImage+Utils.swift in Sources */,
 				3C295C392BE55A7B004081A1 /* HomeCoordinator.swift in Sources */,
 				3CA6052A2BEE6718007E7DA0 /* Currency.swift in Sources */,
@@ -641,6 +715,8 @@
 				3C295C522BE7C760004081A1 /* StackViewSampleViewModel.swift in Sources */,
 				3CA605042BEAF17B007E7DA0 /* UIColor+Utils.swift in Sources */,
 				3CB413FB2BFD6D370044AC66 /* APIProvider.swift in Sources */,
+				3C48F0632C00185D00FDCA9B /* BottomSheetButtonModel.swift in Sources */,
+				3C48F05D2C00173900FDCA9B /* BottomSheetView.swift in Sources */,
 				3C295C502BE7C2DE004081A1 /* StackViewSampleModel.swift in Sources */,
 				3CAF97842BE9D0B30009F9D2 /* WalletHeaderView.swift in Sources */,
 				3C295C4E2BE6A255004081A1 /* GridCollectionFlowLayout.swift in Sources */,
@@ -654,12 +730,16 @@
 				3CC3AC672BFECB3700EC128B /* WalletCardLoadingView.swift in Sources */,
 				3CB413F42BFC14160044AC66 /* Date+Utils.swift in Sources */,
 				3C295C662BE84C3A004081A1 /* UIEdgesInsets+Utils.swift in Sources */,
+				3C48F0612C00185200FDCA9B /* BottomSheetButton.swift in Sources */,
+				3C48F0672C001B9400FDCA9B /* BottomSheetTextFieldModel.swift in Sources */,
 				3CA604F32BEA8149007E7DA0 /* Images.swift in Sources */,
+				3C48F06E2C0121E300FDCA9B /* BottomSheetTextField.swift in Sources */,
 				3C295C3E2BE55BF4004081A1 /* HomeFactory.swift in Sources */,
 				3C295C432BE68478004081A1 /* AppCoordinator.swift in Sources */,
 				3C295C5C2BE84557004081A1 /* WalletView.swift in Sources */,
 				3CB413FD2BFD708A0044AC66 /* APIMethods.swift in Sources */,
 				3CB413F82BFD6C540044AC66 /* APIService.swift in Sources */,
+				3C48F06A2C002BCE00FDCA9B /* Blur.swift in Sources */,
 				3CA605152BEDA4CA007E7DA0 /* WalletViewWorker.swift in Sources */,
 				3C295C5A2BE84550004081A1 /* WalletViewModel.swift in Sources */,
 				3C295C312BE55006004081A1 /* UIView+Utils.swift in Sources */,

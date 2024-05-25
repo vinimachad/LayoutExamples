@@ -22,6 +22,7 @@ class WalletBalanceView: VerticalStackView {
         let view = UILabel()
         view.text = "Your Overall Balance"
         view.font = .systemFont(ofSize: 16, weight: .light)
+        view.textColor = .black
         return view
     }()
     
@@ -30,6 +31,7 @@ class WalletBalanceView: VerticalStackView {
         view.text = "$0,00"
         view.adjustsFontSizeToFitWidth = true
         view.font = .systemFont(ofSize: 60, weight: .semibold)
+        view.textColor = .black
         return view
     }()
     

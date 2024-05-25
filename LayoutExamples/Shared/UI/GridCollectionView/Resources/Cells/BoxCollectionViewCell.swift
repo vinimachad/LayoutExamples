@@ -44,7 +44,7 @@ class BoxCollectionViewCell: UICollectionViewCell {
     // MARK: - Configure
     
     private func configure() {
-        backgroundColor = .white
+        backgroundColor = .secondarySystemBackground
         layer.cornerRadius = 8
         layer.masksToBounds = true
         configureHierarchy()

@@ -27,6 +27,7 @@ extension UINavigationController {
         } else {
             appearance = UINavigationBarAppearance()
             appearance.configureWithDefaultBackground()
+            appearance.backgroundColor = .secondarySystemBackground
         }
         
         if (setScrollEdgeAppearance) {

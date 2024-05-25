@@ -7,19 +7,25 @@
 
 import UIKit
 
-class WalletController: UIViewController {
+protocol WalletControllerDelegate: AnyObject {
+    func presentBottomSheet()
+}
+
+class WalletController: UIViewController, NeedBlur {
     
     // MARK: - Private properties
     
     private var viewModel: WalletViewModelProtocol?
     private var contentView: WalletViewProtocol?
+    private weak var coordinatorDelegate: WalletControllerDelegate?
     
     // MARK: - Init
     
-    init(viewModel: WalletViewModelProtocol, contentView: WalletViewProtocol) {
+    init(viewModel: WalletViewModelProtocol, contentView: WalletViewProtocol, coordinatorDelegate: WalletControllerDelegate?) {
         super.init(nibName: nil, bundle: nil)
         self.viewModel = viewModel
         self.contentView = contentView
+        self.coordinatorDelegate = coordinatorDelegate
     }
     
     required init?(coder: NSCoder) {
@@ -29,7 +35,6 @@ class WalletController: UIViewController {
     // MARK: - Life cycle
     
     override func loadView() {
-        super.loadView()
         view = contentView
     }
     
@@ -46,11 +51,24 @@ class WalletController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+        coordinatorDelegate?.presentBottomSheet()
         bind()
         viewModel?.load()
     }
     
+    // MARK: - Motion Methods
+    
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            coordinatorDelegate?.presentBottomSheet()
+        }
+    }
+    
     // MARK: - Configure
+    
+    override func becomeFirstResponder() -> Bool {
+        true
+    }
     
     private func configure() {
         contentView?.walletDelegate = self

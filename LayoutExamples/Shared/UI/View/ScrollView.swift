@@ -11,10 +11,22 @@ class ScrollView<View: UIView>: UIScrollView, ConfigurableView {
     
     // MARK: - UI Components
     
-    var contentView: View? {
+    var contentView: View? = View() {
         didSet {
             configure()
         }
+    }
+    
+    // MARK: - Init
+    
+    init() {
+        super.init(frame: .zero)
+        configure()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        configure()
     }
     
     // MARK: - Configure

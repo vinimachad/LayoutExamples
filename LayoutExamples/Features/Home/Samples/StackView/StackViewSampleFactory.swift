@@ -14,9 +14,9 @@ enum StackViewSampleFactory {
         return StackViewSampleController(viewModel: viewModel, contentView: contentView, coordinatorDelegate: coordinatorDelegate)
     }
     
-    static func wallet() -> WalletController {
+    static func wallet(coordinatorDelegate: WalletControllerDelegate?) -> WalletController {
         let contentView = WalletView()
         let viewModel = WalletViewModel()
-        return WalletController(viewModel: viewModel, contentView: contentView)
+        return WalletController(viewModel: viewModel, contentView: contentView, coordinatorDelegate: coordinatorDelegate)
     }
 }

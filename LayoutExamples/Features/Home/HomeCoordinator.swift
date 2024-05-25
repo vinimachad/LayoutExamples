@@ -46,12 +46,30 @@ extension HomeCoordinator: HomeCoordinatorDelegate {
 
 // MARK: - StackViewSampleCoordinatorDelegate
 
-extension HomeCoordinator: StackViewSampleCoordinatorDelegate {
+extension HomeCoordinator: StackViewSampleCoordinatorDelegate, WalletControllerDelegate {
     func routeTo(_ destination: StackViewSampleModel.Item) {
         switch destination {
         case .wallet:
-            let walletController = StackViewSampleFactory.wallet()
+            let walletController = StackViewSampleFactory.wallet(coordinatorDelegate: self)
             navigationController.pushViewController(walletController, animated: true)
         }
+    }
+    
+    func presentBottomSheet() {
+        let controller = BottomSheetController()
+        let navigation = UINavigationController(rootViewController: controller)
+        navigation.modalPresentationStyle = .pageSheet
+        
+        controller.buildSheet(with: .init(
+            title: "Teste sheet",
+            textFields: [
+                .init(name: "name", label: "User Name"),
+                .init(name: "avatar_url", label: "Avatar url",  placeholder: "Avatar url"),
+                .init(name: "balance", label: "Balance"),
+                
+            ]
+        ))
+        
+        navigationController.present(navigation, animated: true)
     }
 }

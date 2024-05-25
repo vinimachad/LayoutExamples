@@ -51,8 +51,8 @@ class WalletView: ScrollView<UIView>, WalletViewProtocol {
     
     // MARK: - Init
     
-    init() {
-        super.init(frame: .zero)
+    override init() {
+        super.init()
         contentView = UIView()
     }
     

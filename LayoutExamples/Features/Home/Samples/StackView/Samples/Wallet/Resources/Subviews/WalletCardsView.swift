@@ -111,7 +111,7 @@ extension WalletCardsView {
         // MARK: - UI Components
         
         private lazy var dollarValueLabel: UILabel = {
-            let view = UILabel()
+            let view = createLabel()
             view.font = .systemFont(ofSize: 25, weight: .medium)
             return view
         }()
@@ -139,9 +139,9 @@ extension WalletCardsView {
             
             let view = HorizontalStackView()
             view.widthDistribution = .equalSpacing
-            let cardNumberLabel = UILabel()
-            let dueDateLabel = UILabel()
-            let nameLabel = UILabel()
+            let cardNumberLabel = createLabel()
+            let dueDateLabel = createLabel()
+            let nameLabel = createLabel()
             
             if let viewModel {
                 cardNumberLabel.text = viewModel.lastDigits
@@ -150,6 +150,13 @@ extension WalletCardsView {
             }
             
             view.addArrangedSubviews([cardNumberLabel, dueDateLabel, nameLabel])
+            return view
+        }
+        
+        private func createLabel() -> UILabel {
+            let view = UILabel()
+            view.textColor = .black
+            view.font = .preferredFont(forTextStyle: .body)
             return view
         }
         
