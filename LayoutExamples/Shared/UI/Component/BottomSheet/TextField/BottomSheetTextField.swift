@@ -11,7 +11,6 @@ class BottomSheetTextField: VerticalStackView {
     
     // MARK: - Public Properties
     
-    var onMoveTextField: Completion<CGFloat>?
     var viewModel: BottomSheetTextFieldModel? {
         didSet {
             updateView()
@@ -84,16 +83,6 @@ class BottomSheetTextField: VerticalStackView {
 }
 
 extension BottomSheetTextField: UITextFieldDelegate {
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        onMoveTextField?(250)
-    }
-    
-    // Finish Editing The Text Field
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        onMoveTextField?(-250)
-    }
-    
-    // Hide the keyboard when the return key pressed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

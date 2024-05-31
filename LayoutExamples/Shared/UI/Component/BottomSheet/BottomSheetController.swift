@@ -7,16 +7,25 @@
 
 import UIKit
 
+protocol BottomSheetControllerDelegate: AnyObject, CoordinatorDelegate {
+
+}
+
 class BottomSheetController: UIViewController {
     
     // MARK: - Private properties
     
     private var contentView: BottomSheetView
+    private var model: BottomSheetModel?
+    private weak var coordinatorDelegate: BottomSheetControllerDelegate?
     
     // MARK: - Init
     
-    init(contentView: BottomSheetView = BottomSheetView()) {
+    init(contentView: BottomSheetView = BottomSheetView(), model: BottomSheetModel, coordinatorDelegate: BottomSheetControllerDelegate?) {
         self.contentView = contentView
+        self.model = model
+        self.coordinatorDelegate = coordinatorDelegate
+        self.contentView.viewModel = model
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -48,6 +57,7 @@ class BottomSheetController: UIViewController {
     // MARK: - Configure
     
     private func configure() {
+        title = self.model?.title
         accessibilityViewIsModal = true
         navigationItem.rightBarButtonItem = .init(barButtonSystemItem: .done, target: self, action: #selector(didDoneEdit))
         navigationItem.leftBarButtonItem = .init(barButtonSystemItem: .cancel, target: self, action: #selector(didCancelEdit))
@@ -57,18 +67,14 @@ class BottomSheetController: UIViewController {
         }
     }
     
-    func buildSheet(with model: BottomSheetModel) {
-        title = model.title
-        contentView.viewModel = model
-    }
-    
     // MARK: - Actions Methods
     
     @objc private func didCancelEdit() {
-        
+        coordinatorDelegate?.dismiss()
     }
     
     @objc private func didDoneEdit() {
-        
+        coordinatorDelegate?.dismiss()
+        model?.onDoneEditing?()
     }
 }

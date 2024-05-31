@@ -11,4 +11,5 @@ struct BottomSheetModel {
     var title: String
     var buttons: [BottomSheetButtonModel] = []
     var textFields: [BottomSheetTextFieldModel] = []
+    var onDoneEditing: EmptyCompletion? = nil
 }

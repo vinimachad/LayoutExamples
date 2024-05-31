@@ -12,8 +12,8 @@ protocol CoordinatorProtocol {
     var navigationController: UINavigationController { get }
     var childCoordinator: CoordinatorProtocol? { get set }
     func start() -> UIViewController
-    func dismiss()
-    func returnToPrevious()
+    func dismissController()
+    func popController()
 }
 
 protocol CoordinatorDelegate {
@@ -25,20 +25,20 @@ protocol CoordinatorDelegate {
 
 extension CoordinatorDelegate where Self: CoordinatorProtocol {
     func dismiss() {
-        self.dismiss()
+        self.dismissController()
     }
     
     func returnToPrevious() {
-        self.returnToPrevious()
+        self.popController()
     }
 }
 
 extension CoordinatorProtocol {
-    func dismiss() {
+    func dismissController() {
         navigationController.dismiss(animated: true)
     }
     
-    func returnToPrevious() {
+    func popController() {
         navigationController.popViewController(animated: true)
     }
 }

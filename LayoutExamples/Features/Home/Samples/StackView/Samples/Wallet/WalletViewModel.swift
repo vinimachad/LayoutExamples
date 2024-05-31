@@ -57,7 +57,10 @@ class WalletViewModel: WalletViewModelProtocol {
                 .init(name: "balance", label: "Balance", keyboardType: .decimalPad),
                 .init(name: "cards_count", label: "Quantity cards", keyboardType: .numberPad),
                 .init(name: "quotes", label: "Quotes", supportingText: "Use: USD-BRL,EUR-BRL..."),
-            ]
+            ],
+            onDoneEditing: {
+                print("didDone")
+            }
         )
         onPresentBottomSheet?(model)
     }
