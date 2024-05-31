@@ -16,7 +16,7 @@ class BottomSheetView: ScrollView<VerticalStackView> {
     // MARK: - Layout Methods
     
     func createFieldsContainerView() -> VerticalStackView {
-        var containerView = VerticalStackView()
+        let containerView = VerticalStackView()
         let textFields = viewModel?.textFields.map { model -> BottomSheetTextField in
             let view = BottomSheetTextField()
             view.viewModel = model
@@ -29,7 +29,7 @@ class BottomSheetView: ScrollView<VerticalStackView> {
     }
     
     func createButtonsContainerView() -> VerticalStackView {
-        var containerView = VerticalStackView()
+        let containerView = VerticalStackView()
         let buttons = viewModel?.buttons.map { model -> BottomSheetButton in
             let view = BottomSheetButton()
             view.viewModel = model

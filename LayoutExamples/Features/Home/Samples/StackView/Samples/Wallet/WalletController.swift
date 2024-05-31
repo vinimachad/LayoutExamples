@@ -8,7 +8,7 @@
 import UIKit
 
 protocol WalletControllerDelegate: AnyObject {
-    func presentBottomSheet()
+    func presentBottomSheet(with model: BottomSheetModel)
 }
 
 class WalletController: UIViewController, NeedBlur {
@@ -51,7 +51,6 @@ class WalletController: UIViewController, NeedBlur {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-        coordinatorDelegate?.presentBottomSheet()
         bind()
         viewModel?.load()
     }
@@ -60,7 +59,7 @@ class WalletController: UIViewController, NeedBlur {
     
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
-            coordinatorDelegate?.presentBottomSheet()
+            viewModel?.didPresentBottomSheet()
         }
     }
     
@@ -85,6 +84,10 @@ class WalletController: UIViewController, NeedBlur {
     private func bind() {
         self.viewModel?.onUpdateViewStateWith = { [weak self] state in
             self?.contentView?.state = state
+        }
+        
+        self.viewModel?.onPresentBottomSheet = { [weak self] model in
+            self?.coordinatorDelegate?.presentBottomSheet(with: model)
         }
     }
 }

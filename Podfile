@@ -4,5 +4,6 @@
 target 'LayoutExamples' do
   use_frameworks!
   pod 'SkeletonView'
+  pod 'IQKeyboardManagerSwift'
 
 end

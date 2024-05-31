@@ -8,14 +8,17 @@
 import Foundation
 
 protocol WalletViewModelProtocol {
+    var onPresentBottomSheet: Completion<BottomSheetModel>? { get set }
     var onUpdateViewStateWith: Completion<WalletView.State>? { get set }
     func load()
+    func didPresentBottomSheet()
 }
 
 class WalletViewModel: WalletViewModelProtocol {
     
     // MARK: - Public properties
     
+    var onPresentBottomSheet: Completion<BottomSheetModel>?
     var onUpdateViewStateWith: Completion<WalletView.State>?
     
     // MARK: - Private properties
@@ -43,6 +46,20 @@ class WalletViewModel: WalletViewModelProtocol {
             viewModel.quotes = self.quotesResponse
             self.onUpdateViewStateWith?(.present(viewModel))
         }
+    }
+    
+    func didPresentBottomSheet() {
+        let model = BottomSheetModel(
+            title: "Customizador da WalletView",
+            textFields: [
+                .init(name: "name", label: "User name", onTextChange: { text in print("name: \(text)")}),
+                .init(name: "avatar_image", label: "Avatar url", keyboardType: .URL, onTextChange: { text in print("avatar: \(text)")}),
+                .init(name: "balance", label: "Balance", keyboardType: .decimalPad),
+                .init(name: "cards_count", label: "Quantity cards", keyboardType: .numberPad),
+                .init(name: "quotes", label: "Quotes", supportingText: "Use: USD-BRL,EUR-BRL..."),
+            ]
+        )
+        onPresentBottomSheet?(model)
     }
     
     // MARK: - Requests Methods

@@ -55,21 +55,11 @@ extension HomeCoordinator: StackViewSampleCoordinatorDelegate, WalletControllerD
         }
     }
     
-    func presentBottomSheet() {
+    func presentBottomSheet(with model: BottomSheetModel) {
         let controller = BottomSheetController()
         let navigation = UINavigationController(rootViewController: controller)
         navigation.modalPresentationStyle = .pageSheet
-        
-        controller.buildSheet(with: .init(
-            title: "Teste sheet",
-            textFields: [
-                .init(name: "name", label: "User Name"),
-                .init(name: "avatar_url", label: "Avatar url",  placeholder: "Avatar url"),
-                .init(name: "balance", label: "Balance"),
-                
-            ]
-        ))
-        
+        controller.buildSheet(with: model)
         navigationController.present(navigation, animated: true)
     }
 }

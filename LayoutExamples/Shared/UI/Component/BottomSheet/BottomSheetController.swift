@@ -13,8 +13,6 @@ class BottomSheetController: UIViewController {
     
     private var contentView: BottomSheetView
     
-    // MARK: - Public properties
-    
     // MARK: - Init
     
     init(contentView: BottomSheetView = BottomSheetView()) {
@@ -41,6 +39,10 @@ class BottomSheetController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
     }
     
     // MARK: - Configure
