@@ -57,6 +57,7 @@ final class WalletCardsView: UIView, ConfigurableView {
     // MARK: - Updates
     
     func updateView() {
+        removeAllSubviews()
         cards.reversed().enumerated().forEach { index, cardData in
             let cardView = self.createCard(data: cardData)
             cardView.isUserInteractionEnabled = false
