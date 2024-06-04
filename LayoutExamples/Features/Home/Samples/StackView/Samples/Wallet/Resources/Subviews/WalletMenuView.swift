@@ -7,21 +7,37 @@
 
 import UIKit
 
+protocol WalletMenuViewDelegate: AnyObject {
+    func didTapAdd()
+    func didTapScan()
+    func didTapPay()
+}
+
 class WalletMenuView: HorizontalStackView {
     
     private typealias ButtonData = (bgColor: WalletColorLiterals, image: WalletImageLiterals?, text: String? )
     
+    // MARK: - Public properties
+    
+    weak var delegate: WalletMenuViewDelegate?
+    
+    // MARK: - Constant's
+    
+    private let kCornerRadius: CGFloat = 16
+    private let kHorizontalItemSpacing: CGFloat = 16
+    private let kButtonSize: CGFloat = 60
+    
     // MARK: - UI Components
     
-    private lazy var addButton: UIButton = createButton(data: (bgColor: .white, image: .add, text: nil), action: nil)
-    private lazy var scanButton: UIButton = createButton(data: (bgColor: .white, image: .scan, text: nil), action: nil)
-    private lazy var paymentButton: UIButton = createButton(data: (bgColor: .blue, image: nil, text: "SWIFT Payment"), action: nil)
+    private lazy var addButton: UIButton = createButton(data: (bgColor: .white, image: .add, text: nil), action: #selector(didTapAdd))
+    private lazy var scanButton: UIButton = createButton(data: (bgColor: .white, image: .scan, text: nil), action: #selector(didTapScan))
+    private lazy var paymentButton: UIButton = createButton(data: (bgColor: .blue, image: nil, text: "SWIFT Payment"), action: #selector(didTapPay))
     
     // MARK: - Layout methods
     
-    private func createButton(data: ButtonData, action: (() -> Void)? = nil) -> UIButton {
-        let view = UIButton()
-        view.cornerRadius = 16
+    private func createButton(data: ButtonData, action: Selector) -> UIButton {
+        let view: ButtonProtocol = UIButton()
+        view.cornerRadius = kCornerRadius
         
         if let imageLiterals = data.image {
             view.setImage(.init(literal: imageLiterals)?.withRenderingMode(.alwaysTemplate), for: .normal)
@@ -33,7 +49,7 @@ class WalletMenuView: HorizontalStackView {
         }
         
         view.backgroundColor = .init(literal: data.bgColor)
-        action?()
+        view.addTarget(self, action: action, for: .touchUpInside)
         return view
     }
     
@@ -41,7 +57,7 @@ class WalletMenuView: HorizontalStackView {
     
     override func configure() {
         super.configure()
-        spacing = 16
+        spacing = kHorizontalItemSpacing
     }
     
     override func configureHierarchy() {
@@ -53,22 +69,33 @@ class WalletMenuView: HorizontalStackView {
     }
     
     override func configurePriorities() {
-        paymentButton.setContentHuggingPriority(.init(100), for: .horizontal)
-    }
-    
-    override func configureConstraints() {
-        NSLayoutConstraint.activate([
-            
-        ])
+        paymentButton.setContentExpansionPriority(.high, for: .horizontal)
     }
     
     private func configureButtonImageConstraints(_ button: UIButton) {
         if let imageView = button.imageView {
             imageView.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
-                button.heightAnchor.constraint(equalToConstant: 60),
-                button.widthAnchor.constraint(equalToConstant: 60),
+                button.heightAnchor.constraint(equalToConstant: kButtonSize),
+                button.widthAnchor.constraint(equalToConstant: kButtonSize),
             ])
         }
+    }
+    
+    // MARK: - Actions
+    
+    @objc private func didTapAdd(sender: UIButton) {
+        sender.animateTap()
+        delegate?.didTapAdd()
+    }
+    
+    @objc private func didTapScan(sender: UIButton) {
+        sender.animateTap()
+        delegate?.didTapScan()
+    }
+    
+    @objc private func didTapPay(sender: UIButton) {
+        sender.animateTap()
+        delegate?.didTapPay()
     }
 }

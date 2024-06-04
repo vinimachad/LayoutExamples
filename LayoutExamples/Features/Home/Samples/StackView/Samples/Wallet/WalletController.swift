@@ -99,7 +99,5 @@ class WalletController: UIViewController, NeedBlur {
 }
 
 extension WalletController: WalletViewDelegate {
-    func showCardSelector() {
-        
-    }
+    func showCardSelector() { /*Implementar no futuro*/ }
 }
