@@ -53,7 +53,7 @@ enum WalletModel {
         }
         
         struct Card: Decodable {
-            var logo: String
+            var logo: Logo
             var dueDate: Date
             var invoiceValue: Double
             var number: String
@@ -62,6 +62,12 @@ enum WalletModel {
             var lastDigits: String {
                 let digits = number.suffix(4)
                 return String(repeating: "*", count: number.count - 4) + digits
+            }
+            
+            enum Logo: String, Decodable, CaseIterable {
+                case elo
+                case visa
+                case mastercard
             }
         }
         

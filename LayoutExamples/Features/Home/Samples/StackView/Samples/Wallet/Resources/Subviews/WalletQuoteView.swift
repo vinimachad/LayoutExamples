@@ -55,6 +55,7 @@ class WalletQuoteView: HorizontalStackView {
     
     private func updateView() {
         guard let quotes else { return }
+        removeAllSubviews()
         quotes.forEach { quote in
             addArrangedSubview(
                 createQuoteDetails(data: (quote.coin, quote.value))

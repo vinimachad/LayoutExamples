@@ -31,6 +31,7 @@ class WalletViewModel: WalletViewModelProtocol {
     // MARK: - Editing properties
     
     private var workingHomesViewModel: WalletModel.ViewModel.Home?
+    private var workingQuotesRequest: String?
     
     // MARK: - Init
     
@@ -74,12 +75,24 @@ class WalletViewModel: WalletViewModelProtocol {
                         }
                     )
                 }),
-                .init(name: "quotes", label: "Quotes", supportingText: "Use: USD-BRL,EUR-BRL..."),
+                .init(name: "quotes", label: "Quotes", supportingText: "Use: USD-BRL,EUR-BRL...", onTextChange: { quotes in
+                    self.updateIfNotEmpty(quotes, completion: {
+                        self.workingQuotesRequest = quotes
+                    })
+                }),
             ],
             onDoneEditing: {
-                guard let viewModel = self.workingHomesViewModel else { return }
-                self.homesViewModel = viewModel
-                self.onUpdateViewStateWith?(.present(viewModel))
+                if let workingQuotesRequest = self.workingQuotesRequest {
+                    self.onUpdateViewStateWith?(.loading)
+                    self.getQuoteRequest(coins: workingQuotesRequest)
+                }
+                
+                self.dispatchGroup.notify(queue: .main) {
+                    guard var viewModel = self.workingHomesViewModel else { return }
+                    viewModel.quotes = self.quotesResponse
+                    self.homesViewModel = viewModel
+                    self.onUpdateViewStateWith?(.present(viewModel))
+                }
             }
         )
         onPresentBottomSheet?(model)
@@ -87,9 +100,9 @@ class WalletViewModel: WalletViewModelProtocol {
     
     // MARK: - Requests Methods
     
-    private func getQuoteRequest() {
+    private func getQuoteRequest(coins: String = "USD-BRL,EUR-BRL,GBP-BRL") {
         dispatchGroup.enter()
-        worker.getQuotes(coins: "USD-BRL,EUR-BRL,GBP-BRL", completion: .init(
+        worker.getQuotes(coins: coins, completion: .init(
             success: { [weak self] response in
                 self?.quotesResponse = response.quotes
             },
@@ -130,37 +143,14 @@ class WalletViewModel: WalletViewModelProtocol {
         var cards = [WalletModel.Response.Card]()
         
         for _ in 0..<cardsLenght {
-            let name = "\(self.randomString(lenght: 8)) \(self.randomString(lenght: 1)) \(self.randomString(lenght: 7))"
-            let cardNumber = self.randomNumber(lenght: 13)
+            let name = "\(Randomize.randomString(lenght: 8)) \(Randomize.randomString(lenght: 1)) \(Randomize.randomString(lenght: 7))"
+            let cardNumber = Randomize.randomNumber(lenght: 13)
             let invoice = Double.random(in: 0..<3000)
             let dueDate = Date().addingTimeInterval(8000)
-            cards.append(.init(logo: "mastercard", dueDate: dueDate, invoiceValue: invoice, number: cardNumber, ownerName: name))
+            let logos = WalletModel.Response.Card.Logo.allCases
+            cards.append(.init(logo: Randomize.randomArrayElement(logos) ?? .mastercard, dueDate: dueDate, invoiceValue: invoice, number: cardNumber, ownerName: name))
         }
         
         return cards
-    }
-    
-    private func randomString(lenght: Int) -> String {
-        let charSet = "abcdefghijklmnpqrstuvwxyz".split(separator: "")
-        var string = ""
-        
-        for _ in 0..<lenght {
-            let randomPos = Int.random(in: 0..<charSet.count)
-            string += charSet[randomPos]
-        }
-        
-        return string
-    }
-    
-    private func randomNumber(lenght: Int) -> String {
-        let charSet = "1234567890".split(separator: "")
-        var string = ""
-        
-        for _ in 0..<lenght {
-            let randomPos = Int.random(in: 0..<charSet.count)
-            string += charSet[randomPos]
-        }
-        
-        return string
     }
 }

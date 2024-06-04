@@ -39,7 +39,7 @@ final class WalletCardsView: UIView, ConfigurableView {
     private func createCard(data: WalletModel.Response.Card) -> Card {
         let contentView = Card()
         contentView.viewModel = (
-            cardLogo: .menu,
+            cardLogo: WalletImageLiterals(rawValue: data.logo.rawValue) ?? .mastercard,
             dollarValue: data.invoiceValue.toCurrency(),
             lastDigits: data.lastDigits,
             dueDate: data.dueDate.toString(format: .shortMonthYear),
@@ -122,17 +122,20 @@ extension WalletCardsView {
         private func createHeader() -> HorizontalStackView {
             let view = HorizontalStackView()
             view.widthDistribution = .equalSpacing
+            view.verticalAlignment = .center
             let leftIconImageView = UIImageView()
             let righIconImageView = UIImageView()
             
             if let viewModel {
-                leftIconImageView.contentMode = .scaleAspectFit
-                righIconImageView.contentMode = .scaleAspectFit
-                leftIconImageView.image = .init(literal: viewModel.cardLogo)?.withTintColor(.gray, renderingMode: .alwaysTemplate)
+                leftIconImageView.image = .init(literal: viewModel.cardLogo)?.withTintColor(.gray, renderingMode: .alwaysOriginal)
                 righIconImageView.image = .init(literal: WalletImageLiterals.more)?.withTintColor(.blue, renderingMode: .alwaysTemplate)
             }
             
             view.addArrangedSubviews([leftIconImageView, righIconImageView])
+            NSLayoutConstraint.activate([
+                righIconImageView.heightAnchor.constraint(equalToConstant: 30),
+                righIconImageView.widthAnchor.constraint(equalToConstant: 30)
+            ])
             return view
         }
         
