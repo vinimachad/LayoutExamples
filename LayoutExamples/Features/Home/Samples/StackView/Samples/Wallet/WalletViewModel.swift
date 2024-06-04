@@ -11,7 +11,9 @@ protocol WalletViewModelProtocol {
     var onPresentBottomSheet: Completion<BottomSheetModel>? { get set }
     var onUpdateViewStateWith: Completion<WalletView.State>? { get set }
     func load()
+    #if DEBUG
     func didPresentBottomSheet()
+    #endif
 }
 
 class WalletViewModel: WalletViewModelProtocol {
@@ -53,6 +55,7 @@ class WalletViewModel: WalletViewModelProtocol {
         }
     }
     
+    #if DEBUG
     func didPresentBottomSheet() {
         workingHomesViewModel = homesViewModel
         let model = BottomSheetModel(
@@ -97,6 +100,7 @@ class WalletViewModel: WalletViewModelProtocol {
         )
         onPresentBottomSheet?(model)
     }
+    #endif
     
     // MARK: - Requests Methods
     

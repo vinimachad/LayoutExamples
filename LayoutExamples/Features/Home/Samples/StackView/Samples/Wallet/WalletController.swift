@@ -8,7 +8,9 @@
 import UIKit
 
 protocol WalletControllerDelegate: AnyObject {
+    #if DEBUG
     func presentBottomSheet(with model: BottomSheetModel)
+    #endif
 }
 
 class WalletController: UIViewController, NeedBlur {
@@ -57,11 +59,13 @@ class WalletController: UIViewController, NeedBlur {
     
     // MARK: - Motion Methods
     
+    #if DEBUG
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
             viewModel?.didPresentBottomSheet()
         }
     }
+    #endif
     
     // MARK: - Configure
     
@@ -86,9 +90,11 @@ class WalletController: UIViewController, NeedBlur {
             self?.contentView?.state = state
         }
         
+        #if DEBUG
         self.viewModel?.onPresentBottomSheet = { [weak self] model in
             self?.coordinatorDelegate?.presentBottomSheet(with: model)
         }
+        #endif
     }
 }
 

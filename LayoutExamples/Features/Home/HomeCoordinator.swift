@@ -55,10 +55,12 @@ extension HomeCoordinator: StackViewSampleCoordinatorDelegate, WalletControllerD
         }
     }
     
+    #if DEBUG
     func presentBottomSheet(with model: BottomSheetModel) {
         let coordinator = BottomSheetCoordinator()
         let controller = coordinator.start(model)
         childCoordinator = coordinator
         navigationController.present(controller, animated: true)
     }
+    #endif
 }
