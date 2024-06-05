@@ -88,9 +88,18 @@ Design da Interface by Valeria Afanaseva
       <th>GIF</th>
     </tr>
   <tr>
-      <td><img src="./Assets/StackView/WalletView/loading.png" width="300"></td>
-      <td><img src="./Assets/StackView/WalletView/success.png"  width="300"></td>
-      <td><img src="./Assets/StackView/WalletView/gif.gif"  width="300"></td>
+      <td>
+        <div>
+          <img src="./Assets/StackView/WalletView/loading.png" width="300" style="border: 3px solid black;">
+          <span style="color: gray">Utilizando SkeletonView</span>
+        </div>
+      </td>
+      <td>
+        <img src="./Assets/StackView/WalletView/success.png"  width="300" style="border: 3px solid black;">
+      </td>
+      <td>
+        <img src="./Assets/StackView/WalletView/gif.gif"  width="300" style="border: 3px solid black;">
+      </td>
   </tr>
 </table>
 
