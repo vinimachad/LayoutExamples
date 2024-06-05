@@ -63,4 +63,10 @@ extension HomeCoordinator: StackViewSampleCoordinatorDelegate, WalletControllerD
         navigationController.present(controller, animated: true)
     }
     #endif
+    
+    func presentAlert(title: String, description: String) {
+        let alert = UIAlertController(title: title, message: description, preferredStyle: .alert)
+        alert.addAction(.init(title: "Ok, entendi", style: .cancel))
+        navigationController.present(alert, animated: true)
+    }
 }

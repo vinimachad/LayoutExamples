@@ -17,24 +17,30 @@ class WalletQuoteView: HorizontalStackView {
         }
     }
     
+    // MARK: - Constant's
+    
+    private let kHorizontalItemSpacing: CGFloat = 32
+    private let kCornerRadius: CGFloat = 16
+    private let kMargin: CGFloat = 16
+    
     // MARK: - Layout methods
     
     private func createQuoteDetails(data: (coin: String, quote: String)) -> VerticalStackView {
-        let coinLabel = createLabel(data.coin, fontSize: 16, weight: .light)
-        let quoteLabel = createLabel(data.quote, fontSize: 25, weight: .bold)
+        let kVerticalItemSpacing: CGFloat = 4
+        let coinLabel = createLabel(data.coin, fontSize: .body, weight: .regular)
+        let quoteLabel = createLabel(data.quote, fontSize: .title2, weight: .bold)
         let view = VerticalStackView()
         view.horizontalAlignment = .leading
-        view.spacing = 4
+        view.spacing = kVerticalItemSpacing
         view.addArrangedSubviews([coinLabel, quoteLabel])
         return view
     }
     
-    private func createLabel(_ text: String, fontSize: CGFloat, weight: UIFont.Weight) -> UILabel {
+    private func createLabel(_ text: String, fontSize: UIFont.Size, weight: UIFont.Weight) -> UILabel {
         let view = UILabel()
-        view.font = .systemFont(ofSize: fontSize, weight: weight)
+        view.font = .setFont(fontSize, weight: weight)
         view.textAlignment = .left
         view.textColor = .init(literal: WalletColorLiterals.white)
-        view.adjustsFontSizeToFitWidth = true
         view.text = text.uppercased()
         return view
     }
@@ -43,11 +49,11 @@ class WalletQuoteView: HorizontalStackView {
     
     override func configure() {
         super.configure()
-        spacing = 32
+        spacing = kHorizontalItemSpacing
         verticalAlignment = .center
         widthDistribution = .equalSpacing
-        cornerRadius = 16
-        layoutMargins = .init(edges: 16)
+        cornerRadius = kCornerRadius
+        layoutMargins = .init(edges: kMargin)
         backgroundColor = .init(literal: WalletColorLiterals.red)
     }
     

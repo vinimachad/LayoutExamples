@@ -75,10 +75,11 @@ final class WalletCardsView: UIView, ConfigurableView {
                 }
             } else {
                 let previousView = subviews[subviews.previousIndex]
+                let kVerticalSpacing: CGFloat = 45
                 NSLayoutConstraint.activate([
                     cardView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
                     cardView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-                    cardView.centerYAnchor.constraint(equalTo: previousView.centerYAnchor, constant: 45)
+                    cardView.centerYAnchor.constraint(equalTo: previousView.centerYAnchor, constant: kVerticalSpacing)
                 ])
                 
                 if index == cards.lastIndex {
@@ -109,17 +110,24 @@ extension WalletCardsView {
             }
         }
         
+        // MARK: - Constant's
+        
+        private let kHorizontalItemSpacing: CGFloat = 40
+        private let kCornerRadius: CGFloat = 16
+        private let kMargin: CGFloat = 16
+        
         // MARK: - UI Components
         
         private lazy var dollarValueLabel: UILabel = {
             let view = createLabel()
-            view.font = .systemFont(ofSize: 25, weight: .medium)
+            view.font = .setFont(.title2, weight: .bold)
             return view
         }()
       
         // MARK: - Layout methods
         
         private func createHeader() -> HorizontalStackView {
+            let kIconSize: CGFloat = 30
             let view = HorizontalStackView()
             view.widthDistribution = .equalSpacing
             view.verticalAlignment = .center
@@ -133,8 +141,8 @@ extension WalletCardsView {
             
             view.addArrangedSubviews([leftIconImageView, righIconImageView])
             NSLayoutConstraint.activate([
-                righIconImageView.heightAnchor.constraint(equalToConstant: 30),
-                righIconImageView.widthAnchor.constraint(equalToConstant: 30)
+                righIconImageView.heightAnchor.constraint(equalToConstant: kIconSize),
+                righIconImageView.widthAnchor.constraint(equalToConstant: kIconSize)
             ])
             return view
         }
@@ -160,7 +168,7 @@ extension WalletCardsView {
         private func createLabel() -> UILabel {
             let view = UILabel()
             view.textColor = .black
-            view.font = .preferredFont(forTextStyle: .body)
+            view.font = .setFont(.body)
             return view
         }
         
@@ -174,11 +182,11 @@ extension WalletCardsView {
         // MARK: - Configure
         
         override func configure() {
-            spacing = 40
+            spacing = kHorizontalItemSpacing
             heightDistribution = .equalSpacing
-            cornerRadius = 16
+            cornerRadius = kCornerRadius
             backgroundColor = .white
-            layoutMargins = .init(edges: 16)
+            layoutMargins = .init(edges: kMargin)
             translatesAutoresizingMaskIntoConstraints = false
             addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapCard)))
         }
@@ -191,7 +199,7 @@ extension WalletCardsView {
         // MARK: - Actions
         
         @objc private func didTapCard() {
-            print("testecard")
+            print("Did Tap On Card")
         }
     }
 }

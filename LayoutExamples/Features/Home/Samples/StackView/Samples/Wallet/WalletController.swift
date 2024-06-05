@@ -8,6 +8,7 @@
 import UIKit
 
 protocol WalletControllerDelegate: AnyObject {
+    func presentAlert(title: String, description: String)
     #if DEBUG
     func presentBottomSheet(with model: BottomSheetModel)
     #endif
@@ -99,5 +100,33 @@ class WalletController: UIViewController, NeedBlur {
 }
 
 extension WalletController: WalletViewDelegate {
+    func didTapMore() {
+        coordinatorDelegate?.presentAlert(
+            title: "Você clicou no botão de Mais",
+            description: "Não temos desenvovimento da proxíma tela."
+        )
+    }
+    
+    func didTapAdd() {
+        coordinatorDelegate?.presentAlert(
+            title: "Você clicou no botão de Adicionar",
+            description: "Não temos desenvovimento da proxíma tela."
+        )
+    }
+    
+    func didTapScan() {
+        coordinatorDelegate?.presentAlert(
+            title: "Você clicou no botão de Escanear",
+            description: "Não temos desenvovimento da proxíma tela."
+        )
+    }
+    
+    func didTapPay() {
+        coordinatorDelegate?.presentAlert(
+            title: "Você clicou no botão de Pagar",
+            description: "Não temos desenvovimento da proxíma tela."
+        )
+    }
+    
     func showCardSelector() { /*Implementar no futuro*/ }
 }

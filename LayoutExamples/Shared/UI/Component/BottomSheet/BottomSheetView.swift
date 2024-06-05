@@ -54,7 +54,6 @@ class BottomSheetView: ScrollView<VerticalStackView> {
     // MARK: - Update
     
     private func updateView() {
-        guard let viewModel else { return }
         contentView?.addArrangedSubviews([createFieldsContainerView(), createButtonsContainerView()])
     }
 }

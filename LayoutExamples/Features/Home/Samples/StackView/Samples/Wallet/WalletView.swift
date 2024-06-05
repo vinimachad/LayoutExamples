@@ -9,6 +9,10 @@ import UIKit
 
 protocol WalletViewDelegate: AnyObject {
     func showCardSelector()
+    func didTapMore()
+    func didTapAdd()
+    func didTapScan()
+    func didTapPay()
 }
 
 protocol WalletViewProtocol: UIScrollView {
@@ -73,6 +77,7 @@ class WalletView: ScrollView<UIView>, WalletViewProtocol {
             balanceView.balance = viewModel.$balance
             cardsView.cards = viewModel.cards
             quoteView.quotes = viewModel.quotes
+            setDelegates()
             configureHierarchyLoadedView()
         case .error: break
         }
@@ -82,7 +87,6 @@ class WalletView: ScrollView<UIView>, WalletViewProtocol {
     
     override func configure() {
         super.configure()
-        cardsView.delegate = self
         backgroundColor = .init(literal: WalletColorLiterals.primary)
     }
     
@@ -96,6 +100,12 @@ class WalletView: ScrollView<UIView>, WalletViewProtocol {
             menuView
         ])
         containerView.setCustomSpacing(32, after: headerView)
+    }
+    
+    private func setDelegates() {
+        headerView.delegate = self
+        cardsView.delegate = self
+        menuView.delegate = self
     }
     
     // MARK: - Hierarchy
@@ -114,8 +124,29 @@ class WalletView: ScrollView<UIView>, WalletViewProtocol {
     }
 }
 
-extension WalletView: WalletCardsDelegate {
+extension WalletView: WalletCardsDelegate, WalletHeaderViewDelegate, WalletMenuViewDelegate {
+    
     func didTapContainerCards() {
         walletDelegate?.showCardSelector()
+    }
+    
+    // MARK: - WalletHeaderViewDelegate
+    
+    func didTapMore() {
+        walletDelegate?.didTapMore()
+    }
+    
+    // MARK: - WalletMenuViewDelegate
+    
+    func didTapAdd() {
+        walletDelegate?.didTapAdd()
+    }
+    
+    func didTapScan() {
+        walletDelegate?.didTapScan()
+    }
+    
+    func didTapPay() {
+        walletDelegate?.didTapPay()
     }
 }

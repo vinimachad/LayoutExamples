@@ -48,6 +48,7 @@
 		3C48F07A2C0A1FA600FDCA9B /* BottomSheetCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C48F0792C0A1FA600FDCA9B /* BottomSheetCoordinator.swift */; };
 		3C48F07D2C0E543700FDCA9B /* Randomize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C48F07C2C0E543700FDCA9B /* Randomize.swift */; };
 		3C48F07F2C0FBE8E00FDCA9B /* ButtonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C48F07E2C0FBE8D00FDCA9B /* ButtonProtocol.swift */; };
+		3C48F0842C0FD9AD00FDCA9B /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C48F0832C0FD9AD00FDCA9B /* Fonts.swift */; };
 		3CA604ED2BEA805E007E7DA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CA604EC2BEA805E007E7DA0 /* Assets.xcassets */; };
 		3CA604F02BEA8108007E7DA0 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA604EF2BEA8108007E7DA0 /* Image.swift */; };
 		3CA604F32BEA8149007E7DA0 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA604F22BEA8149007E7DA0 /* Images.swift */; };
@@ -129,6 +130,7 @@
 		3C48F0792C0A1FA600FDCA9B /* BottomSheetCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetCoordinator.swift; sourceTree = "<group>"; };
 		3C48F07C2C0E543700FDCA9B /* Randomize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Randomize.swift; sourceTree = "<group>"; };
 		3C48F07E2C0FBE8D00FDCA9B /* ButtonProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonProtocol.swift; sourceTree = "<group>"; };
+		3C48F0832C0FD9AD00FDCA9B /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		3CA604EC2BEA805E007E7DA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3CA604EF2BEA8108007E7DA0 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		3CA604F22BEA8149007E7DA0 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
@@ -444,6 +446,7 @@
 			children = (
 				3CA604F22BEA8149007E7DA0 /* Images.swift */,
 				3CA605002BEAEFA9007E7DA0 /* Colors.swift */,
+				3C48F0832C0FD9AD00FDCA9B /* Fonts.swift */,
 			);
 			path = Tokens;
 			sourceTree = "<group>";
@@ -725,6 +728,7 @@
 				3CA604F52BEA824F007E7DA0 /* UIImage+Utils.swift in Sources */,
 				3C295C392BE55A7B004081A1 /* HomeCoordinator.swift in Sources */,
 				3CA6052A2BEE6718007E7DA0 /* Currency.swift in Sources */,
+				3C48F0842C0FD9AD00FDCA9B /* Fonts.swift in Sources */,
 				3C295C242BE2784F004081A1 /* HomeModel.swift in Sources */,
 				3CA604F92BEA8E4A007E7DA0 /* NSMutableAttributedString+Utils.swift in Sources */,
 				3CA6050D2BEB9BE0007E7DA0 /* ViewConfigurations.swift in Sources */,

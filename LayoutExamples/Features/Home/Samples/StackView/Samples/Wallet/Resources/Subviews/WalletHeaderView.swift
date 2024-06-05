@@ -7,17 +7,26 @@
 
 import UIKit
 
+protocol WalletHeaderViewDelegate: AnyObject {
+    func didTapMore()
+}
+
 class WalletHeaderView: HorizontalStackView {
     
     typealias ViewModel = (name: String, avatarImage: String)
     
     // MARK: - Public properties
     
+    weak var delegate: WalletHeaderViewDelegate?
     var viewModel: ViewModel? {
         didSet {
             updateView()
         }
     }
+    
+    // MARK: - Constant's
+    
+    private let kIconSize: CGFloat = 40
     
     // MARK: - UI Components
     
@@ -42,6 +51,7 @@ class WalletHeaderView: HorizontalStackView {
         view.contentMode = .scaleAspectFit
         view.setImage(.init(literal: WalletImageLiterals.menu)?.withRenderingMode(.alwaysTemplate), for: .normal)
         view.imageView?.tintColor = .black
+        view.addTarget(self, action: #selector(didTapMore), for: .touchUpInside)
         return view
     }()
     
@@ -69,19 +79,26 @@ class WalletHeaderView: HorizontalStackView {
         let mutable = NSMutableAttributedString()
         mutable.addAttribute(.foregroundColor, value: UIColor.black.withAlphaComponent(0.7), string: hello)
         mutable.addAttributes([
-            .font: UIFont.systemFont(ofSize: 16, weight: .bold),
+            .font: UIFont.setFont(.headline, weight: .bold),
             .foregroundColor: UIColor.black
         ], string: name)
         nameLabel.attributedText = mutable
+    }
+    
+    // MARK: - Actions
+    
+    @objc private func didTapMore() {
+        delegate?.didTapMore()
     }
     
     // MARK: - Configure
     
     override func configure() {
         super.configure()
+        let kCustomSpacing: CGFloat = 8
         widthDistribution = .equalSpacing
         verticalAlignment = .center
-        setCustomSpacing(8, after: iconView, relation: .equal)
+        setCustomSpacing(kCustomSpacing, after: iconView, relation: .equal)
     }
     
     override func configureHierarchy() {
@@ -90,17 +107,18 @@ class WalletHeaderView: HorizontalStackView {
             nameLabel,
             moreButton
         ])
+        insertSpacerView(after: nameLabel)
     }
     
     override func configureConstraints() {
         NSLayoutConstraint.activate([
-            iconView.widthAnchor.constraint(equalToConstant: 40),
-            iconView.heightAnchor.constraint(equalToConstant: 40)
+            iconView.widthAnchor.constraint(equalToConstant: kIconSize),
+            iconView.heightAnchor.constraint(equalToConstant: kIconSize)
         ])
         
         NSLayoutConstraint.activate([
-            moreButton.widthAnchor.constraint(equalToConstant: 40),
-            moreButton.heightAnchor.constraint(equalToConstant: 40),
+            moreButton.widthAnchor.constraint(equalToConstant: kIconSize),
+            moreButton.heightAnchor.constraint(equalToConstant: kIconSize),
         ])
     }
 }

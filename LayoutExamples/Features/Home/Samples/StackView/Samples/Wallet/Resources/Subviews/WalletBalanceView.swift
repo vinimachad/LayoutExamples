@@ -16,12 +16,16 @@ class WalletBalanceView: VerticalStackView {
         set { balanceLabel.text = newValue }
     }
     
+    // MARK: - Constant's
+    
+    private let kVerticalItemSpacing: CGFloat = 4
+    
     // MARK: - UI Components
     
     private lazy var titleLabel: UILabel = {
         let view = UILabel()
         view.text = "Your Overall Balance"
-        view.font = .systemFont(ofSize: 16, weight: .light)
+        view.font = .setFont(.body, weight: .light)
         view.textColor = .black
         return view
     }()
@@ -30,7 +34,7 @@ class WalletBalanceView: VerticalStackView {
         let view = UILabel()
         view.text = "$0,00"
         view.adjustsFontSizeToFitWidth = true
-        view.font = .systemFont(ofSize: 60, weight: .semibold)
+        view.font = .setFont(.largeTitle, weight: .bold)
         view.textColor = .black
         return view
     }()
@@ -39,7 +43,7 @@ class WalletBalanceView: VerticalStackView {
     
     override func configure() {
         super.configure()
-        spacing = 4
+        spacing = kVerticalItemSpacing
         horizontalAlignment = .leading
     }
     

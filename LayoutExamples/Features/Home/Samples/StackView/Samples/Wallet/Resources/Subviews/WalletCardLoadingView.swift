@@ -16,15 +16,15 @@ class WalletCardLoadingView: VerticalStackView, Skeletonable {
         let kSize = 40.0
         let view = HorizontalStackView()
         let avatarIcon = createFakeView(width: kSize, height: kSize)
-        let nameLabel: UILabel = createFakeView(height: kSize)
+        let nameLabel: UILabel = createFakeView(width: 100, height: kSize)
         let menuIcon = createFakeView(width: kSize, height: kSize)
         nameLabel.numberOfLines = 2
-        nameLabel.skeletonPaddingInsets = .init(top: 0, left: 0, bottom: 0, right: 90)
         view.widthDistribution = .equalSpacing
         view.verticalAlignment = .center
         view.isSkeletonable = true
         view.addArrangedSubviews([avatarIcon, nameLabel, menuIcon])
         view.setCustomSpacing(8, after: avatarIcon, relation: .equal)
+        view.insertSpacerView(after: nameLabel)
         return view
     }
     
