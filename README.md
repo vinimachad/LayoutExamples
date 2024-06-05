@@ -90,15 +90,14 @@ Design da Interface by Valeria Afanaseva
   <tr>
       <td>
         <div>
-          <img src="./Assets/StackView/WalletView/loading.png" width="300" style="border: 3px solid black;">
-          <span style="color: gray">Utilizando SkeletonView</span>
+          <img src="./Assets/StackView/WalletView/loading.png" width="250" style="border: 3px solid black;">
         </div>
       </td>
       <td>
-        <img src="./Assets/StackView/WalletView/success.png"  width="300" style="border: 3px solid black;">
+        <img src="./Assets/StackView/WalletView/success.png"  width="250" style="border: 3px solid black;">
       </td>
       <td>
-        <img src="./Assets/StackView/WalletView/gif.gif"  width="300" style="border: 3px solid black;">
+        <img src="./Assets/StackView/WalletView/gif.gif"  width="250" style="border: 3px solid black;">
       </td>
   </tr>
 </table>
