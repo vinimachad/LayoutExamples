@@ -11,7 +11,7 @@ protocol HomeViewModelProtocol {
     var items: [HomeModel.Item.Name] { get }
 }
 
-class HomeViewModel: HomeViewModelProtocol {
+final class HomeViewModel: HomeViewModelProtocol {
     
     var items: [HomeModel.Item.Name] {
         HomeModel.Item.Name.allCases

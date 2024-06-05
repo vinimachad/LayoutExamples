@@ -9,7 +9,7 @@ import UIKit
 
 enum HomeModel {
     struct Item {
-        enum Name: CaseIterable {
+        enum Name: CaseIterable, GridLayoutItem {
             case stackView
             case collectionView
             case tableView

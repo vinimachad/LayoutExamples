@@ -7,27 +7,75 @@
 
 import UIKit
 
-class StackViewSampleController: UIViewController {
+protocol StackViewSampleCoordinatorDelegate: AnyObject, CoordinatorDelegate {
+    func routeTo(_ destination: StackViewSampleModel.Item)
+}
+
+final class StackViewSampleController: UIViewController {
     
-    init() {
+    typealias Item = StackViewSampleModel.Item
+    
+    // MARK: - Private properties
+    
+    private var contentView: (any GridCollectionViewProtocol<Item>)?
+    private var viewModel: StackViewSampleViewModelProtocol?
+    private weak var coordinatorDelegate: StackViewSampleCoordinatorDelegate?
+    
+    // MARK: - Init
+    
+    init(
+        viewModel: StackViewSampleViewModelProtocol,
+        contentView: any GridCollectionViewProtocol<Item>,
+        coordinatorDelegate: StackViewSampleCoordinatorDelegate?
+        
+    ) {
         super.init(nibName: nil, bundle: nil)
+        self.viewModel = viewModel
+        self.contentView = contentView
+        self.coordinatorDelegate = coordinatorDelegate
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     
+    // MARK: - Life cycle
+    
     override func loadView() {
         super.loadView()
-        let view = UIView()
-        view.backgroundColor = .red
-        NSLayoutConstraint.activate([
-            view.topAnchor.constraint(equalTo: view.topAnchor),
-            view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-        ])
-        self.view = view
+        self.view = contentView
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setDefaultAppearance()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.resetNavigationAppearance()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = "Stack View Samples"
+        configure()
+        bind()
+    }
+    
+    private func configure() {
+        contentView?.delegate = self
+    }
+    
+    private func bind() {
+        contentView?.bindIn(items: viewModel?.items ?? [])
+    }
+}
+
+// MARK: - GridCollectionViewDelegate
+
+extension StackViewSampleController: GridCollectionViewDelegate {
+    func didSelect(at row: Int, with item: StackViewSampleModel.Item) {
+        coordinatorDelegate?.routeTo(item)
+    }
 }

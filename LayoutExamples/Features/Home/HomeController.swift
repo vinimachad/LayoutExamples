@@ -7,11 +7,13 @@
 
 import UIKit
 
-class HomeController: UIViewController {
-        
+final class HomeController: UIViewController {
+    
+    typealias Item = HomeModel.Item.Name
+    
     // MARK: - Private properties
     
-    private var contentView: HomeViewProtocol?
+    private var contentView: (any GridCollectionViewProtocol<Item>)?
     private var viewModel: HomeViewModelProtocol?
     private weak var coordinatorDelegate: HomeCoordinatorDelegate?
     
@@ -19,7 +21,7 @@ class HomeController: UIViewController {
     
     init(
         viewModel: HomeViewModelProtocol,
-        contentView: HomeViewProtocol,
+        contentView: any GridCollectionViewProtocol<Item>,
         coordinatorDelegate: HomeCoordinatorDelegate?
     ) {
         super.init(nibName: nil, bundle: nil)
@@ -40,8 +42,19 @@ class HomeController: UIViewController {
         view = contentView
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setDefaultAppearance()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.resetNavigationAppearance()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Layout Samples"
         bind()
     }
     
@@ -54,14 +67,14 @@ class HomeController: UIViewController {
     // MARK: - BindIn
     
     private func bind() {
-        contentView?.bindIn(items: viewModel?.items ?? [])
+        self.contentView?.bindIn(items: self.viewModel?.items ?? [])
     }
 }
 
 // MARK: - HomeViewDelegate
 
-extension HomeController: HomeViewDelegate {
-    func didSelect(at row: Int, with item: HomeModel.Item.Name) {
+extension HomeController: GridCollectionViewDelegate {
+    func didSelect(at row: Int, with item: Item) {
         coordinatorDelegate?.routeTo(item)
     }
 }

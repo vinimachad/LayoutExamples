@@ -1,0 +1,35 @@
+{
+  "results": {
+    "checking_account": {
+      "balance": 1244
+    },
+    "account": {
+      "full_name": "Vinicius Galhardo Machado",
+      "first_name": "Vinicius",
+      "avatar_image": "https://media.licdn.com/dms/image/C4D03AQGvzbdrDpgK7Q/profile-displayphoto-shrink_400_400/0/1642180959918?e=1720656000&v=beta&t=ecVsf-X6e6_YJ89K-npczqQHQf3cXGbqR5wYI0Oo3ao"
+    },
+    "cards": [
+      {
+        "logo": "visa",
+        "due_date": "2028-12-09T00:00:00Z",
+        "invoice_value": 852,
+        "number": "0192874112784",
+        "owner_name": "Vinicius G Machado"
+      },
+      {
+        "logo": "mastercard",
+        "due_date": "2028-12-09T00:00:00Z",
+        "invoice_value": 852,
+        "number": "0192874112784",
+        "owner_name": "Vinicius G Machado"
+      },
+      {
+        "logo": "elo",
+        "due_date": "2028-12-09T00:00:00Z",
+        "invoice_value": 852,
+        "number": "0192874112784",
+        "owner_name": "Vinicius G Machado"
+      }
+    ]
+  }
+}
