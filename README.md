@@ -81,9 +81,18 @@ Desenvolvimento de layouts utilizando `StackViews` para a organização do conte
 [Referência do layout no Dribble 🏀](https://dribbble.com/shots/24079428-Online-Wallet-Mobile-iOS-App)
 Design da Interface by Valeria Afanaseva
 
-| Carregando                                                                                          | Sucesso                                                                                             | GIF                                                                                             |
-| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| <img src="./Assets/StackView/WalletView/loading.png" width="300" style="border: 6px solid black;"/> | <img src="./Assets/StackView/WalletView/success.png" width="300" style="border: 6px solid black;"/> | <img src="./Assets/StackView/WalletView/gif.gif" width="300" style="border: 6px solid black;"/> |
+<table>
+  <tr>
+      <th>Carregando</th>
+      <th>Sucesso</th>
+      <th>GIF</th>
+    </tr>
+  <tr>
+      <td><img src="./Assets/StackView/WalletView/loading.png" width="300"></td>
+      <td><img src="./Assets/StackView/WalletView/success.png"  width="300"></td>
+      <td><img src="./Assets/StackView/WalletView/gif.gif"  width="300"></td>
+  </tr>
+</table>
 
 ## CollectionView
 
