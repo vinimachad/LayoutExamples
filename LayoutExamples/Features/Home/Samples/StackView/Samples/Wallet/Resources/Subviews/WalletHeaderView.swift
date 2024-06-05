@@ -67,7 +67,7 @@ class WalletHeaderView: HorizontalStackView {
     
     private func updateView() {
         guard let (name, avatarImage) = viewModel else { return}
-        iconView.setImage(from: avatarImage, placeholder: UIImage(literal: WalletImageLiterals.scan))
+        iconView.setImage(from: avatarImage, placeholder: UIImage(literal: WalletImageLiterals.avatarPlaceholder))
         setupAttributedTextNameLabel(name: name)
     }
     

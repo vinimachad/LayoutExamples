@@ -425,13 +425,6 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		3C48F0822C0FCEBF00FDCA9B /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		3CA604EE2BEA8100007E7DA0 /* Tokens */ = {
 			isa = PBXGroup;
 			children = (
@@ -493,7 +486,6 @@
 				3C295C652BE84C3A004081A1 /* UIEdgesInsets+Utils.swift */,
 				3C295C2E2BE47FCA004081A1 /* UIView+Debug.swift */,
 				3C295C302BE55006004081A1 /* UIView+Utils.swift */,
-				3C48F0822C0FCEBF00FDCA9B /* New Group */,
 				3C295C682BE84F3B004081A1 /* UIStackView+Utils.swift */,
 				3CA604F82BEA8E4A007E7DA0 /* NSMutableAttributedString+Utils.swift */,
 				3CA605122BEC5AD3007E7DA0 /* UINavigationController+Style.swift */,

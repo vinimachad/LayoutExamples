@@ -16,7 +16,10 @@ extension UIImageView {
         
         image = placeholder
         queue.async {
-            guard let data = try? Data(contentsOf: url) else { return }
+            guard let data = try? Data(contentsOf: url) else {
+                DispatchQueue.main.async { self.image = placeholder }
+                return
+            }
             DispatchQueue.main.async {
                 self.image = UIImage(data: data)
             }

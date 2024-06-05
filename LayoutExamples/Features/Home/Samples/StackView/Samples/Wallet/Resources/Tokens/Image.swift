@@ -15,6 +15,7 @@ enum WalletImageLiterals: String, ImageTokenProtocol  {
     case elo
     case visa
     case mastercard
+    case avatarPlaceholder = "avatar_placeholder"
     
     // MARK: - ImageTokenProtocol implementation
     
