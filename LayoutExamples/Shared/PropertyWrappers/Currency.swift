@@ -25,7 +25,7 @@ import Foundation
         currency
     }
     
-    // MARKL - Private properties
+    // MARK: - Private properties
     
     private var currency: String
     
