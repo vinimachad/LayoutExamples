@@ -12,7 +12,9 @@ enum CollectionViewSamplesFactory {
         CollectionViewSamplesController(coordinatorDelegate: coordinatorDelegate)
     }
     
-    static func appStore() -> UIViewController {
-        UIViewController()
+    static func appStore() -> AppStoreController {
+        let viewModel = AppStoreViewModel()
+        let view = AppStoreView()
+        return AppStoreController(viewModel: viewModel, contentView: view, coordinatorDelegate: nil)
     }
 }

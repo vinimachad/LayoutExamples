@@ -84,6 +84,17 @@
 		3CE21E272C363695006BA1DB /* GridCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE21E262C363695006BA1DB /* GridCollectionController.swift */; };
 		3CE21E292C36370E006BA1DB /* GridCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE21E282C36370E006BA1DB /* GridCollectionViewModel.swift */; };
 		3CE21E2B2C363F36006BA1DB /* CollectionViewSamplesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE21E2A2C363F36006BA1DB /* CollectionViewSamplesFactory.swift */; };
+		3CE21E2E2C364447006BA1DB /* AppStoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE21E2D2C364447006BA1DB /* AppStoreController.swift */; };
+		3CE21E302C364452006BA1DB /* AppStoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE21E2F2C364452006BA1DB /* AppStoreViewModel.swift */; };
+		3CE21E332C36446A006BA1DB /* AppStoreModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE21E322C36446A006BA1DB /* AppStoreModels.swift */; };
+		3CE21E352C38B488006BA1DB /* AppStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE21E342C38B488006BA1DB /* AppStoreView.swift */; };
+		3CE21E392C398739006BA1DB /* AppStoreCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE21E382C398739006BA1DB /* AppStoreCollectionLayout.swift */; };
+		3CE21E3B2C3994CB006BA1DB /* AppStoreCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE21E3A2C3994CB006BA1DB /* AppStoreCollectionDataSource.swift */; };
+		3CE21E3E2C3999E6006BA1DB /* CollectionCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE21E3D2C3999E6006BA1DB /* CollectionCellProtocol.swift */; };
+		3CE21E412C39A432006BA1DB /* AppStoreFeatureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE21E402C39A432006BA1DB /* AppStoreFeatureCell.swift */; };
+		3CE21E432C3AC6C1006BA1DB /* AppStoreFeatureCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE21E422C3AC6C0006BA1DB /* AppStoreFeatureCellViewModel.swift */; };
+		3CE21E452C3AD68E006BA1DB /* AppStoreWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE21E442C3AD68E006BA1DB /* AppStoreWorker.swift */; };
+		3CE21E492C3AD74E006BA1DB /* AppsMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CE21E482C3AD74E006BA1DB /* AppsMock.json */; };
 		3CF3C3712BFD7ECE0003A392 /* GetQuotesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF3C3702BFD7ECE0003A392 /* GetQuotesProvider.swift */; };
 		88A18DF4E1EAD1D917806AC9 /* Pods_LayoutExamples.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 233AB9D081AEC4812CBCCB00 /* Pods_LayoutExamples.framework */; };
 /* End PBXBuildFile section */
@@ -170,6 +181,17 @@
 		3CE21E262C363695006BA1DB /* GridCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionController.swift; sourceTree = "<group>"; };
 		3CE21E282C36370E006BA1DB /* GridCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionViewModel.swift; sourceTree = "<group>"; };
 		3CE21E2A2C363F36006BA1DB /* CollectionViewSamplesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewSamplesFactory.swift; sourceTree = "<group>"; };
+		3CE21E2D2C364447006BA1DB /* AppStoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreController.swift; sourceTree = "<group>"; };
+		3CE21E2F2C364452006BA1DB /* AppStoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreViewModel.swift; sourceTree = "<group>"; };
+		3CE21E322C36446A006BA1DB /* AppStoreModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreModels.swift; sourceTree = "<group>"; };
+		3CE21E342C38B488006BA1DB /* AppStoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreView.swift; sourceTree = "<group>"; };
+		3CE21E382C398739006BA1DB /* AppStoreCollectionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreCollectionLayout.swift; sourceTree = "<group>"; };
+		3CE21E3A2C3994CB006BA1DB /* AppStoreCollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreCollectionDataSource.swift; sourceTree = "<group>"; };
+		3CE21E3D2C3999E6006BA1DB /* CollectionCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCellProtocol.swift; sourceTree = "<group>"; };
+		3CE21E402C39A432006BA1DB /* AppStoreFeatureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreFeatureCell.swift; sourceTree = "<group>"; };
+		3CE21E422C3AC6C0006BA1DB /* AppStoreFeatureCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreFeatureCellViewModel.swift; sourceTree = "<group>"; };
+		3CE21E442C3AD68E006BA1DB /* AppStoreWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreWorker.swift; sourceTree = "<group>"; };
+		3CE21E482C3AD74E006BA1DB /* AppsMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AppsMock.json; sourceTree = "<group>"; };
 		3CF3C3702BFD7ECE0003A392 /* GetQuotesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetQuotesProvider.swift; sourceTree = "<group>"; };
 		8CCCC529F87EACCB7B7E4AFA /* Pods-LayoutExamples.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LayoutExamples.debug.xcconfig"; path = "Target Support Files/Pods-LayoutExamples/Pods-LayoutExamples.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -375,6 +397,7 @@
 			children = (
 				3C48F0552BFEE29600FDCA9B /* Skeletonable.swift */,
 				3C48F07E2C0FBE8D00FDCA9B /* ButtonProtocol.swift */,
+				3CE21E3D2C3999E6006BA1DB /* CollectionCellProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -571,11 +594,61 @@
 		3CE21E1F2C363448006BA1DB /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				3CE21E2C2C364439006BA1DB /* Samples */,
 				3CE21E202C363455006BA1DB /* CollectionViewSamplesController.swift */,
 				3CE21E242C3634D3006BA1DB /* CollectionViewSamplesModel.swift */,
 				3CE21E2A2C363F36006BA1DB /* CollectionViewSamplesFactory.swift */,
 			);
 			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		3CE21E2C2C364439006BA1DB /* Samples */ = {
+			isa = PBXGroup;
+			children = (
+				3CE21E312C364457006BA1DB /* AppStore */,
+			);
+			path = Samples;
+			sourceTree = "<group>";
+		};
+		3CE21E312C364457006BA1DB /* AppStore */ = {
+			isa = PBXGroup;
+			children = (
+				3CE21E462C3AD728006BA1DB /* Resources */,
+				3CE21E2D2C364447006BA1DB /* AppStoreController.swift */,
+				3CE21E2F2C364452006BA1DB /* AppStoreViewModel.swift */,
+				3CE21E322C36446A006BA1DB /* AppStoreModels.swift */,
+				3CE21E342C38B488006BA1DB /* AppStoreView.swift */,
+				3CE21E382C398739006BA1DB /* AppStoreCollectionLayout.swift */,
+				3CE21E3A2C3994CB006BA1DB /* AppStoreCollectionDataSource.swift */,
+				3CE21E442C3AD68E006BA1DB /* AppStoreWorker.swift */,
+			);
+			path = AppStore;
+			sourceTree = "<group>";
+		};
+		3CE21E3F2C39A422006BA1DB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3CE21E402C39A432006BA1DB /* AppStoreFeatureCell.swift */,
+				3CE21E422C3AC6C0006BA1DB /* AppStoreFeatureCellViewModel.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3CE21E462C3AD728006BA1DB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3CE21E472C3AD738006BA1DB /* Mocks */,
+				3CE21E3F2C39A422006BA1DB /* Cells */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3CE21E472C3AD738006BA1DB /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				3CE21E482C3AD74E006BA1DB /* AppsMock.json */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		3CF3C36F2BFD7EB50003A392 /* Providers */ = {
@@ -666,6 +739,7 @@
 				3C295C122BE271BE004081A1 /* LaunchScreen.storyboard in Resources */,
 				3CA6051C2BEDA90A007E7DA0 /* WalletHomesMock.json in Resources */,
 				3CA604ED2BEA805E007E7DA0 /* Assets.xcassets in Resources */,
+				3CE21E492C3AD74E006BA1DB /* AppsMock.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -739,8 +813,10 @@
 				3C295C2F2BE47FCA004081A1 /* UIView+Debug.swift in Sources */,
 				3C48F0652C001AFB00FDCA9B /* BottomSheetModel.swift in Sources */,
 				3CA604F52BEA824F007E7DA0 /* UIImage+Utils.swift in Sources */,
+				3CE21E2E2C364447006BA1DB /* AppStoreController.swift in Sources */,
 				3C295C392BE55A7B004081A1 /* HomeCoordinator.swift in Sources */,
 				3CA6052A2BEE6718007E7DA0 /* Currency.swift in Sources */,
+				3CE21E452C3AD68E006BA1DB /* AppStoreWorker.swift in Sources */,
 				3C48F0842C0FD9AD00FDCA9B /* Fonts.swift in Sources */,
 				3C295C242BE2784F004081A1 /* HomeModel.swift in Sources */,
 				3CE21E2B2C363F36006BA1DB /* CollectionViewSamplesFactory.swift in Sources */,
@@ -750,10 +826,14 @@
 				3C295C542BE7CB2B004081A1 /* StackViewSampleFactory.swift in Sources */,
 				3C295C582BE84549004081A1 /* WalletController.swift in Sources */,
 				3CA605192BEDA831007E7DA0 /* BundleService.swift in Sources */,
+				3CE21E392C398739006BA1DB /* AppStoreCollectionLayout.swift in Sources */,
+				3CE21E352C38B488006BA1DB /* AppStoreView.swift in Sources */,
+				3CE21E412C39A432006BA1DB /* AppStoreFeatureCell.swift in Sources */,
 				3C295C3C2BE55AA1004081A1 /* Coordinator.swift in Sources */,
 				3CA6052C2BEE67F4007E7DA0 /* Double+Currency.swift in Sources */,
 				3CE21E252C3634D3006BA1DB /* CollectionViewSamplesModel.swift in Sources */,
 				3CA6050F2BEC45D8007E7DA0 /* ScrollView.swift in Sources */,
+				3CE21E332C36446A006BA1DB /* AppStoreModels.swift in Sources */,
 				3C48F07D2C0E543700FDCA9B /* Randomize.swift in Sources */,
 				3C295C5E2BE84562004081A1 /* WalletModel.swift in Sources */,
 				3CA605272BEDBF50007E7DA0 /* ResponseData.swift in Sources */,
@@ -762,7 +842,11 @@
 				3C48F0632C00185D00FDCA9B /* BottomSheetButtonModel.swift in Sources */,
 				3CE21E292C36370E006BA1DB /* GridCollectionViewModel.swift in Sources */,
 				3C48F05D2C00173900FDCA9B /* BottomSheetView.swift in Sources */,
+				3CE21E3B2C3994CB006BA1DB /* AppStoreCollectionDataSource.swift in Sources */,
 				3C295C502BE7C2DE004081A1 /* StackViewSampleModel.swift in Sources */,
+				3CE21E432C3AC6C1006BA1DB /* AppStoreFeatureCellViewModel.swift in Sources */,
+				3CE21E3E2C3999E6006BA1DB /* CollectionCellProtocol.swift in Sources */,
+				3CE21E302C364452006BA1DB /* AppStoreViewModel.swift in Sources */,
 				3CE21E212C363455006BA1DB /* CollectionViewSamplesController.swift in Sources */,
 				3CAF97842BE9D0B30009F9D2 /* WalletHeaderView.swift in Sources */,
 				3C295C4E2BE6A255004081A1 /* GridCollectionFlowLayout.swift in Sources */,
