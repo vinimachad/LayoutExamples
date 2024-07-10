@@ -12,7 +12,7 @@ final class AppStoreView: UIView, ConfigurableView {
     // MARK: - UI Components
     
     private(set) lazy var collectionView: UICollectionView = {
-        let view = UICollectionView(frame: .zero, collectionViewLayout: AppStoreCollectionLayout())
+        let view = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
         view.delegate = self
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentInset = .init(top: 16)
@@ -45,6 +45,7 @@ final class AppStoreView: UIView, ConfigurableView {
     
     func bind(sections: [AppStoreModels.Section]) {
         self.sections = sections
+        collectionView.collectionViewLayout = AppStoreCollectionLayout(sections: sections)
         dataSource = AppStoreCollectionDataSource(collectionView: collectionView, sections: sections)
     }
     
