@@ -11,64 +11,29 @@ protocol StackViewSampleCoordinatorDelegate: AnyObject, CoordinatorDelegate {
     func routeTo(_ destination: StackViewSampleModel.Item)
 }
 
-final class StackViewSampleController: UIViewController {
-    
-    typealias Item = StackViewSampleModel.Item
+final class StackViewSampleController: GridCollectionController<StackViewSampleModel.Item> {
     
     // MARK: - Private properties
     
-    private var contentView: (any GridCollectionViewProtocol<Item>)?
-    private var viewModel: StackViewSampleViewModelProtocol?
     private weak var coordinatorDelegate: StackViewSampleCoordinatorDelegate?
     
     // MARK: - Init
     
-    init(
-        viewModel: StackViewSampleViewModelProtocol,
-        contentView: any GridCollectionViewProtocol<Item>,
-        coordinatorDelegate: StackViewSampleCoordinatorDelegate?
-        
-    ) {
-        super.init(nibName: nil, bundle: nil)
-        self.viewModel = viewModel
-        self.contentView = contentView
+    init(coordinatorDelegate: StackViewSampleCoordinatorDelegate?) {
+        super.init(viewModel: GridCollectionViewModel(), contentView: GridCollectionView(), title: "Stack View Samples")
         self.coordinatorDelegate = coordinatorDelegate
+        configure()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        configure()
     }
     
     // MARK: - Life cycle
     
-    override func loadView() {
-        super.loadView()
-        self.view = contentView
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setDefaultAppearance()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.resetNavigationAppearance()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        title = "Stack View Samples"
-        configure()
-        bind()
-    }
-    
     private func configure() {
         contentView?.delegate = self
-    }
-    
-    private func bind() {
-        contentView?.bindIn(items: viewModel?.items ?? [])
     }
 }
 

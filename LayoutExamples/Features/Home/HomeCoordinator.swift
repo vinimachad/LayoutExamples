@@ -38,7 +38,9 @@ extension HomeCoordinator: HomeCoordinatorDelegate {
         case .stackView:
             let stackViewController = StackViewSampleFactory.create(coordinatorDelegate: self)
             navigationController.pushViewController(stackViewController, animated: true)
-        case .collectionView: break
+        case .collectionView:
+            let collectionViewController = CollectionViewSamplesFactory.create(coordinatorDelegate: self)
+            navigationController.pushViewController(collectionViewController, animated: true)
         case .tableView: break
         }
     }
@@ -68,5 +70,17 @@ extension HomeCoordinator: StackViewSampleCoordinatorDelegate, WalletControllerD
         let alert = UIAlertController(title: title, message: description, preferredStyle: .alert)
         alert.addAction(.init(title: "Ok, entendi", style: .cancel))
         navigationController.present(alert, animated: true)
+    }
+}
+
+// MARK: - CollectionViewSamplesCoordinatorDelegate
+
+extension HomeCoordinator: CollectionViewSamplesCoordinatorDelegate {
+    func route(to route: CollectionViewSamplesModel.Item) {
+        switch route {
+        case .appStore:
+            let appStoreController = CollectionViewSamplesFactory.appStore()
+            navigationController.pushViewController(appStoreController, animated: true)
+        }
     }
 }

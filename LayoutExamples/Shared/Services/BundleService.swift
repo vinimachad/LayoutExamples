@@ -19,8 +19,6 @@ class BundleService: BundleServiceProtocol {
     
     static var shared: BundleServiceProtocol = BundleService()
     
-    // MARK: - Init
-    
     // MARK: - BundleServiceProtocol Methods
     
     func loadJson<T: Decodable>(
